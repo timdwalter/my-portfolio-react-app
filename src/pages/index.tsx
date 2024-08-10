@@ -18,8 +18,15 @@ const HomePage: NextPage = () => {
     >
       <div className="wrapper-container">
         <div className="about-container" style={{ textAlign: "center" }}>
-          <div className="desk-animation" style={{ marginBottom: "20px" }}>
-            <DeskAnimationSvg /> {/* Use the new SVG component here */}
+          <div
+            className="desk-animation"
+            style={{
+              marginBottom: "20px",
+              transform: "scale(0.8)", // Scale down to 80%
+              transformOrigin: "center", // Scale from the center
+            }}
+          >
+            <DeskAnimationSvg />
           </div>
           <div className="about-text-container introduction-font">
             <h1 style={{ margin: "0 0 20px" }}>About Me - Tim Daniel Walter</h1>

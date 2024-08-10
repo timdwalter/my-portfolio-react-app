@@ -1,21 +1,21 @@
-	h1 {
-    			font-size: 32px;
-    			text-align: center;
-    			margin-top: 50px;
-    		}
-	p {
-		font-size: 18px;
-		text-align: justify;
-		margin: 10px 100px;
-	}
-	@media (max-width: 1000px) {
-		p {
-			font-size: 14px;
-			text-align: justify;
-			margin: 10px 10px;
-		}
-	}
+h1 {
+  font-size: 32px;
+  text-align: center;
+  margin-top: 50px;
+}
+p {
+  font-size: 18px;
+  text-align: justify;
+  margin: 10px 100px;
+}
+@media (max-width: 1000px) {
+  p {
+    font-size: 14px;
+    text-align: justify;
+    margin: 10px 10px;
+  }
+}
 
-	.name {
-		font-weight: bold;
-	}
+.name {
+  font-weight: bold;
+}

@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+/* Apply the global font family */
+body,
+html {
+  font-family: "Roboto", sans-serif;
+  color: #333; /* Default text color */
+}
+
+/* Navbar styles */
 .navbar {
   background-color: #ffffff;
   color: #525252; /* Matches the `text-zinc-500` in Tailwind */
@@ -22,6 +33,7 @@
   justify-content: center;
 }
 
+/* About container styles */
 .about-container {
   width: 90%;
   height: 80vh; /* Set the height to 80% of the viewport height */
@@ -38,7 +50,29 @@
   padding: 20px; /* Add padding inside the scrollable container */
 }
 
-/* Responsive adjustments for mobile devices */
+/* Text container inside about section */
+.about-text-container {
+  width: 100%; /* Make sure the text container uses full width */
+  margin: 5px 0; /* Adjust margin for better spacing */
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto; /* Ensure this container also allows scrolling if needed */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  font-family: "Roboto", sans-serif;
+}
+
+/* Wrapper container styles */
+.wrapper-container {
+  margin: auto;
+  align-items: center;
+  min-width: 90vw;
+  height: 100%; /* Ensure it takes up full height */
+}
+
+/* Media query for smaller screens, such as mobile phones */
 @media (max-width: 768px) {
   .about-container {
     width: 95%; /* Adjust width to fit smaller screens */
@@ -65,36 +99,6 @@
   }
 }
 
-.about-text-container {
-  width: 100%; /* Make sure the text container uses full width */
-  margin: 5px 0; /* Adjust margin for better spacing */
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow-y: auto; /* Ensure this container also allows scrolling if needed */
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-}
-
-.wrapper-container {
-  margin: auto;
-  align-items: center;
-  min-width: 90vw;
-  height: 100%; /* Ensure it takes up full height */
-}
-
-/* Media query for smaller screens, such as mobile phones */
-@media (max-width: 480px) {
-  .container {
-    padding-left: 10px;
-    padding-right: 10px;
-    width: 90%;
-    min-width: auto;
-    margin: 30px auto;
-  }
-}
-
 svg {
   width: 256px;
   height: 256px;
@@ -106,6 +110,7 @@ svg {
   justify-content: center;
 }
 
+/* Page transition animations */
 .page-transition {
   opacity: 0;
   transition: opacity 0.5s ease;
@@ -128,4 +133,31 @@ svg {
 .page-transition-exit-active {
   opacity: 0;
   transform: translateY(20px);
+}
+
+/* Heading styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700; /* Bold weight for headings */
+  color: #222; /* Slightly darker text color for headings */
+  margin: 0 0 20px; /* Bottom margin for spacing */
+}
+
+/* Paragraph styles */
+p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400; /* Regular weight for body text */
+  line-height: 1.6; /* Improved readability with line height */
+  margin: 0 0 20px; /* Bottom margin for spacing */
+}
+
+.desk-animation {
+  margin-bottom: 20px;
+  transform: scale(0.8); /* Scale down to 80% */
+  transform-origin: center; /* Scale from the center */
 }
