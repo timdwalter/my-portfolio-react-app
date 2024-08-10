@@ -46,6 +46,7 @@ html {
   border-radius: 5px;
   padding: 20px; /* Add padding inside the scrollable container */
   overflow-y: auto; /* Allow the entire container to scroll */
+  min-margin: 10px;
 }
 
 /* Desk animation styles */
