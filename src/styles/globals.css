@@ -35,19 +35,30 @@ html {
 
 /* About container styles */
 .about-container {
+  display: flex;
+  flex-direction: column; /* Ensure that everything is stacked vertically */
+  align-items: center; /* Center items horizontally */
   width: 90%;
   height: 80vh; /* Set the height to 80% of the viewport height */
   margin: 5vh auto; /* Center the container vertically and horizontally */
   background-color: #fff;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; /* Align content to the top */
-  align-items: center;
-  overflow-y: auto; /* Enable vertical scrolling */
-  overflow-x: hidden; /* Prevent horizontal scrolling */
   padding: 20px; /* Add padding inside the scrollable container */
+  overflow-y: auto; /* Allow the entire container to scroll */
+}
+
+/* Desk animation styles */
+.desk-animation {
+  margin-bottom: 20px; /* Space between the SVG and the text */
+  width: 100%; /* Ensure it takes up full width */
+  display: flex;
+  justify-content: center;
+}
+
+.desk-animation svg {
+  width: 20%; /* Adjust width to your preference */
+  height: auto; /* Maintain aspect ratio */
 }
 
 /* Text container inside about section */
@@ -55,21 +66,17 @@ html {
   width: 100%; /* Make sure the text container uses full width */
   margin: 5px 0; /* Adjust margin for better spacing */
   border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow-y: auto; /* Ensure this container also allows scrolling if needed */
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  text-align: center; /* Center the text inside */
   font-family: "Roboto", sans-serif;
+  padding: 10px; /* Add padding inside the text container */
 }
 
 /* Wrapper container styles */
 .wrapper-container {
-  margin: auto;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  min-width: 90vw;
-  height: 100%; /* Ensure it takes up full height */
+  height: 100%;
 }
 
 /* Media query for smaller screens, such as mobile phones */
@@ -80,10 +87,6 @@ html {
     margin: 5vh auto; /* Keep centering */
     padding: 15px; /* Reduce padding for smaller screens */
   }
-
-  .wrapper-container {
-    min-width: 100%; /* Ensure it fits within smaller screens */
-  }
 }
 
 @media (max-width: 480px) {
@@ -93,21 +96,6 @@ html {
     margin: 5vh auto; /* Adjust vertical centering */
     padding: 5px; /* Further reduce padding for very small screens */
   }
-
-  .wrapper-container {
-    min-width: 100%; /* Ensure it fits within smaller screens */
-  }
-}
-
-svg {
-  width: 256px;
-  height: 256px;
-}
-
-.sidebar-icon-container {
-  padding-top: 30px;
-  background-color: transparent;
-  justify-content: center;
 }
 
 /* Page transition animations */
@@ -154,10 +142,4 @@ p {
   font-weight: 400; /* Regular weight for body text */
   line-height: 1.6; /* Improved readability with line height */
   margin: 0 0 20px; /* Bottom margin for spacing */
-}
-
-.desk-animation {
-  margin-bottom: 20px;
-  transform: scale(0.8); /* Scale down to 80% */
-  transform-origin: center; /* Scale from the center */
 }

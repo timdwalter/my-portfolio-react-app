@@ -17,19 +17,12 @@ const HomePage: NextPage = () => {
       style={{ overflow: "hidden", maxWidth: "100%" }} // Ensure the motion div doesn't cause overflow
     >
       <div className="wrapper-container">
-        <div className="about-container" style={{ textAlign: "center" }}>
-          <div
-            className="desk-animation"
-            style={{
-              marginBottom: "20px",
-              transform: "scale(0.8)", // Scale down to 80%
-              transformOrigin: "center", // Scale from the center
-            }}
-          >
+        <div className="about-container">
+          <div className="desk-animation">
             <DeskAnimationSvg />
           </div>
-          <div className="about-text-container introduction-font">
-            <h1 style={{ margin: "0 0 20px" }}>About Me - Tim Daniel Walter</h1>
+          <div className="about-text-container">
+            <h1>About Me - Tim Daniel Walter</h1>
             <p>
               Hello, my name is <span className="name">Tim Daniel Walter</span>,
               and I am a software developer, cloud-architect and consultant with
