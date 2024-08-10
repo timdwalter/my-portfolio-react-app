@@ -30,7 +30,7 @@ body {
   background: #295e8d;
 }
 .greeny {
-  background: #547e24;
+  background: #09f0f8;
 }
 .purple {
   background: #8d295e;
@@ -50,15 +50,16 @@ body {
   transform: translateY(34.375px);
 }
 .honeycomb-cell {
-  flex: 0 1 250px;
-  max-width: 250px;
-  height: 137.5px;
-  margin: 65.4761904762px 12.5px 25px;
+  flex: 0 1 200px; /* Adjust flex-basis to 200px */
+  max-width: 200px; /* Adjust max-width to 200px */
+  height: 110px; /* Adjust height proportionally */
+  margin: 52.4px 10px 20px; /* Adjust margins for better spacing */
   position: relative;
   padding: 0.5em;
   text-align: center;
   z-index: 1;
 }
+
 .honeycomb-cell__title {
   height: 100%;
   display: flex;
@@ -121,7 +122,7 @@ body {
   opacity: 0;
 }
 .honeycomb-cell:hover::before {
-  background: #72f6f8;
+  background: #72f88e;
 }
 .honeycomb-cell:hover::after {
   opacity: 0;
