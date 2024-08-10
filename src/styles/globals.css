@@ -80,6 +80,10 @@ html {
   height: 90%;
 }
 
+.project-container {
+  height: 20vh;
+}
+
 /* Media query for smaller screens, such as mobile phones */
 @media (max-width: 768px) {
   .about-container {
