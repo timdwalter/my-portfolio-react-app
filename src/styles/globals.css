@@ -3,14 +3,12 @@
 @tailwind utilities;
 
 .navbar {
-  z-index: 30;
-  height: 73px; /* Ensure this matches the height in your JSX */
   background-color: #ffffff;
   color: #525252; /* Matches the `text-zinc-500` in Tailwind */
   position: sticky;
   top: 0;
   width: 100%; /* Makes sure it spans the full width */
-  padding: 0 16px; /* Matches `px-4` padding */
+  padding: 0 0px; /* Matches `px-4` padding */
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); /* Matches the shadow-sm */
   display: flex;
   align-items: center;
@@ -20,14 +18,14 @@
   display: flex;
   align-items: center;
   height: 100%;
-  padding-top: 5px;
   background-color: transparent;
   justify-content: center;
 }
 
 .about-container {
   width: 90%;
-  margin: 30px auto;
+  height: 80vh; /* Set the height to 90% of the viewport height */
+  margin: 5vh auto; /* Center the container vertically and horizontally */
   background-color: #fff;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
@@ -36,7 +34,6 @@
   justify-content: center;
   align-items: center;
   min-width: auto;
-  min-height: 800px;
 }
 
 .about-text-container {
@@ -59,7 +56,8 @@
 /* Media query for smaller screens, such as mobile phones */
 @media (max-width: 480px) {
   .container {
-    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
     width: 90%;
     min-width: auto;
     margin: 30px auto;

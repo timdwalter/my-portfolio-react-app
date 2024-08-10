@@ -21,9 +21,9 @@ const Layout = (props: PropsWithChildren) => {
         setCollapsed={setSidebarCollapsed}
         shown={showSidebar}
       />
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col h-screen">
         <Navbar onMenuButtonClick={() => setShowSidebar((prev) => !prev)} />
-        <div className="flex-grow p-4 overflow-auto">{props.children}</div>
+        <div className="flex-grow overflow-auto">{props.children}</div>
       </div>
     </div>
   );
