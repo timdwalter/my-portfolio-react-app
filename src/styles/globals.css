@@ -8,7 +8,7 @@
   position: sticky;
   top: 0;
   width: 100%; /* Makes sure it spans the full width */
-  padding: 0 0px; /* Matches `px-4` padding */
+  padding: 0 16px; /* Matches `px-4` padding */
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); /* Matches the shadow-sm */
   display: flex;
   align-items: center;
@@ -24,33 +24,64 @@
 
 .about-container {
   width: 90%;
-  height: 80vh; /* Set the height to 90% of the viewport height */
+  height: 80vh; /* Set the height to 80% of the viewport height */
   margin: 5vh auto; /* Center the container vertically and horizontally */
   background-color: #fff;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start; /* Align content to the top */
   align-items: center;
-  min-width: auto;
+  overflow-y: auto; /* Enable vertical scrolling */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  padding: 20px; /* Add padding inside the scrollable container */
+}
+
+/* Responsive adjustments for mobile devices */
+@media (max-width: 768px) {
+  .about-container {
+    width: 95%; /* Adjust width to fit smaller screens */
+    height: 70vh; /* Slightly reduce height for better fit */
+    margin: 5vh auto; /* Keep centering */
+    padding: 15px; /* Reduce padding for smaller screens */
+  }
+
+  .wrapper-container {
+    min-width: 100%; /* Ensure it fits within smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .about-container {
+    width: 100%; /* Use full width on very small screens */
+    height: 80vh; /* Further reduce height for very small screens */
+    margin: 5vh auto; /* Adjust vertical centering */
+    padding: 5px; /* Further reduce padding for very small screens */
+  }
+
+  .wrapper-container {
+    min-width: 100%; /* Ensure it fits within smaller screens */
+  }
 }
 
 .about-text-container {
-  width: 95%;
-  margin: 5px;
+  width: 100%; /* Make sure the text container uses full width */
+  margin: 5px 0; /* Adjust margin for better spacing */
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-width: auto;
+  overflow-y: auto; /* Ensure this container also allows scrolling if needed */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .wrapper-container {
   margin: auto;
   align-items: center;
   min-width: 90vw;
+  height: 100%; /* Ensure it takes up full height */
 }
 
 /* Media query for smaller screens, such as mobile phones */

@@ -93,7 +93,7 @@ export default function Home() {
             </a>
 
             <a
-              href="mailto:abc@example.com"
+              href="mailto:tim.d.walter@web.de"
               className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-cyan-300"
               target="_blank"
               rel="noopener noreferrer"

@@ -1,7 +1,9 @@
+/* Universal box-sizing to include padding and border in the element's total width and height */
 * {
   box-sizing: border-box;
 }
 
+/* Ensure html, body, and root element take full width and height */
 html,
 body,
 #root {
@@ -11,11 +13,29 @@ body,
   padding: 0;
 }
 
+/* Body background color */
 body {
   background: #f0f0f0;
 }
 
+/* Main scene container with responsive dimensions */
 .scene {
-  width: 80vw;
-  height: 80vh;
+  width: 80vw; /* 80% of the viewport width */
+  height: 80vh; /* 80% of the viewport height */
+  margin: auto; /* Center the scene horizontally */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .scene {
+    width: 90vw; /* Increase width to 90% on tablets and small desktops */
+    height: 70vh; /* Decrease height slightly */
+  }
+}
+
+@media (max-width: 480px) {
+  .scene {
+    width: 100vw; /* Use full width on mobile devices */
+    height: 60vh; /* Further reduce height for a better fit on small screens */
+  }
 }

@@ -8,20 +8,24 @@ import {
   ChevronDoubleRightIcon,
 } from "@heroicons/react/24/outline";
 
-// add NavItem prop to component prop
+// Add onItemClick to the Props type
 type Props = {
   collapsed: boolean;
   navItems?: NavItem[];
   setCollapsed(collapsed: boolean): void;
   shown: boolean;
+  onItemClick(): void; // Add this line to include onItemClick
 };
+
 const Sidebar = ({
   collapsed,
   navItems = defaultNavItems,
   shown,
   setCollapsed,
+  onItemClick, // Destructure onItemClick from props
 }: Props) => {
   const Icon = collapsed ? ChevronDoubleRightIcon : ChevronDoubleLeftIcon;
+
   return (
     <div
       className={classNames({
@@ -70,6 +74,7 @@ const Sidebar = ({
                     "rounded-md p-2 mx-3 gap-4 ": !collapsed,
                     "rounded-full p-2 mx-3 w-10 h-10": collapsed,
                   })}
+                  onClick={onItemClick} // Collapse sidebar on item click
                 >
                   <Link href={item.href} className="flex gap-2">
                     {item.icon} <span>{!collapsed && item.label}</span>
@@ -84,7 +89,10 @@ const Sidebar = ({
             "grid place-content-stretch p-4 ": true,
           })}
         >
-          <div className="flex gap-4 items-center h-11 overflow-hidden">
+          <div
+            className="flex gap-4 items-center h-11 overflow-hidden"
+            onClick={onItemClick} // Collapse sidebar on profile click
+          >
             <Image
               src={
                 "https://media.licdn.com/dms/image/v2/C4D03AQELwilqBjGztg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1586387026142?e=1728518400&v=beta&t=9oZ30fqMHVn6Nas9LWhk7RfeaogFPzhewvGo3MY3XOQ"
@@ -95,7 +103,7 @@ const Sidebar = ({
               className="rounded-full"
             />
             {!collapsed && (
-              <div className="flex flex-col ">
+              <div className="flex flex-col">
                 <span className="sky my-0">Tim Walter</span>
                 <Link href="/" className="sky text-sm">
                   View Profile
@@ -108,4 +116,5 @@ const Sidebar = ({
     </div>
   );
 };
+
 export default Sidebar;
