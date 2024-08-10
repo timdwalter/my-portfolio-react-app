@@ -121,7 +121,7 @@ body {
   opacity: 0;
 }
 .honeycomb-cell:hover::before {
-  background: #72f88e;
+  background: #72f6f8;
 }
 .honeycomb-cell:hover::after {
   opacity: 0;
