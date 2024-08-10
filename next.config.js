@@ -4,6 +4,6 @@ const nextConfig = {
   images: {
     domains: ["media.licdn.com", "source.unsplash.com"],
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

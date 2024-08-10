@@ -6,6 +6,7 @@ import Sidebar from "./Sidebar";
 const Layout = (props: PropsWithChildren) => {
   const [collapsed, setSidebarCollapsed] = useState(true);
   const [showSidebar, setShowSidebar] = useState(false);
+
   return (
     <div
       className={classNames({
@@ -20,9 +21,9 @@ const Layout = (props: PropsWithChildren) => {
         setCollapsed={setSidebarCollapsed}
         shown={showSidebar}
       />
-      <div className="">
+      <div className="flex flex-col min-h-screen">
         <Navbar onMenuButtonClick={() => setShowSidebar((prev) => !prev)} />
-        {props.children}
+        <div className="flex-grow p-4 overflow-auto">{props.children}</div>
       </div>
     </div>
   );

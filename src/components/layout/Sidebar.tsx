@@ -87,7 +87,7 @@ const Sidebar = ({
           <div className="flex gap-4 items-center h-11 overflow-hidden">
             <Image
               src={
-                "https://media.licdn.com/dms/image/C4D03AQELwilqBjGztg/profile-displayphoto-shrink_800_800/0/1586387025245?e=1687392000&v=beta&t=5CIQf5aH5tgyd42WK1Fl197c41W6HAudath7iJVIWKE"
+                "https://media.licdn.com/dms/image/v2/C4D03AQELwilqBjGztg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1586387026142?e=1728518400&v=beta&t=9oZ30fqMHVn6Nas9LWhk7RfeaogFPzhewvGo3MY3XOQ"
               }
               height={36}
               width={36}
