@@ -23,15 +23,21 @@ const Navbar = (props: Props) => {
       <div className="navbar-icon-container">
         <Image
           src="/TimTechSolutions-side.png"
-          alt="TimTech Solutions"
+          alt="TimTech Solutions Logo"
           width={160}
           height={20}
           priority
         />
       </div>
       <div className="flex-grow"></div>
-      <button className="md:hidden" onClick={props.onMenuButtonClick}>
-        <Bars3Icon className="h-6 w-6" />
+      <button 
+        className="md:hidden p-2 hover:bg-zinc-100 rounded-lg transition-colors"
+        onClick={props.onMenuButtonClick}
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        type="button"
+      >
+        <Bars3Icon className="h-6 w-6" aria-hidden="true" />
       </button>
     </nav>
   );

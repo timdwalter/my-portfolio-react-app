@@ -57,8 +57,12 @@ const HomePage: NextPage = () => {
               developer, cloud-architect, or consultant, please do not hesitate
               to reach out to me.
             </p>
-            <a href="https://www.linkedin.com/in/tim-d-walter/" className="btn">
-              Click here to get in touch
+            <a 
+              href="https://www.linkedin.com/in/tim-d-walter/" 
+              className="btn inline-block px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+              aria-label="Get in touch - Opens LinkedIn profile"
+            >
+              Get in touch
             </a>
           </div>
         </div>

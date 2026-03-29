@@ -9,6 +9,8 @@ const DeskAnimationSvg: React.FC = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       style={{ maxWidth: "100%", height: "auto" }} // Responsive SVG sizing
+      role="img"
+      aria-label="Illustration of a developer's workspace with laptop, desk, and coffee cup"
     >
       <g id="study">
         <rect width="64" height="64" />
