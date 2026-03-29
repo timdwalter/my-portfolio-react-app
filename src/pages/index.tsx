@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import React from "react";
 import { motion } from "framer-motion";
-import DeskAnimationSvg from "./DeskAnimationSvg"; // Import the new SVG component
+import DeskAnimationSvg from "./DeskAnimationSvg";
 
 const HomePage: NextPage = () => {
   return (
@@ -14,7 +14,7 @@ const HomePage: NextPage = () => {
         stiffness: 230,
         damping: 30,
       }}
-      style={{ overflow: "hidden", maxWidth: "100%" }} // Ensure the motion div doesn't cause overflow
+      style={{ overflow: "hidden", maxWidth: "100%" }}
     >
       <div className="wrapper-container">
         <div className="about-container">

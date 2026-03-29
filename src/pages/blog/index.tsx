@@ -1,11 +1,39 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
-
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+interface BlogPost {
+  title: string;
+  description: string;
+  url: string;
+  date: string;
+  category: string;
+}
+
+const blogPosts: BlogPost[] = [
+  {
+    title: "101 Leveraging Reciprocity in Software Development",
+    description:
+      "Explore how the principle of reciprocity can be effectively applied in software development teams to build stronger relationships, improve collaboration, and create a culture of mutual support.",
+    url: "https://medium.com/@timwalter23/101-leveraging-reciprocity-in-software-development-3d69dd2c156e",
+    date: "Medium",
+    category: "Team Dynamics",
+  },
+  {
+    title:
+      "Persuasion in Software Development Teams: Mastering (Social) Conformity",
+    description:
+      "Learn how social conformity influences team dynamics and decision-making in software development. Discover strategies to influence and persuade while maintaining team integrity and psychological safety.",
+    url: "https://medium.com/@timwalter23/persuasion-in-software-development-teams-mastering-social-conformity-5335cd7de421",
+    date: "Medium",
+    category: "Leadership",
+  },
+];
+
+export default function Blog() {
   return (
     <motion.div
       initial={{ x: 300, opacity: 0 }}
@@ -19,112 +47,94 @@ export default function Home() {
     >
       <main className={`wrapper-container ${inter.className}`}>
         <div className="about-container">
-          <div
-            className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px]
-            before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent
-            before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px]
-            after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl
-            after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10
-            after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]"
-          >
-            <Image
-              className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] rounded-full"
-              src="/TDW-LOGO.png"
-              alt="Tim Daniel Walter"
-              width={300}
-              height={200}
-              priority
-            />
+          {/* Header */}
+          <div className="mb-12">
+            <h1 className="text-4xl md:text-5xl font-bold text-secondary-900 mb-4">
+              Blog & Articles
+            </h1>
+            <p className="text-lg text-secondary-600 max-w-2xl">
+              Insights on software development, team dynamics, and technology
+              leadership. Exploring best practices and lessons learned from
+              years in the industry.
+            </p>
           </div>
-          <p>Hello friend - Nice seeing you here :)</p>
 
-          <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-            <a
-              href="https://www.linkedin.com/in/tim-d-walter/"
-              className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-cyan-300"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <h2 className={`mb-3 text-2xl font-semibold`}>
-                Linkedin{" "}
-                <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                  -&gt;
-                </span>
-              </h2>
-              <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-                Find in-depth information about me on Linkedin.
-              </p>
-            </a>
+          {/* Blog Posts Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            {blogPosts.map((post, index) => (
+              <motion.a
+                key={index}
+                href={post.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group rounded-lg border border-primary-200 overflow-hidden transition-all hover:border-primary-500 hover:shadow-lg"
+                whileHover={{ y: -4 }}
+              >
+                {/* Image */}
+                <div className="relative h-48 overflow-hidden bg-gray-200">
+                  <Image
+                    src={
+                      index === 0
+                        ? "/blog-placeholder-reciprocity.svg"
+                        : "/blog-placeholder-conformity.svg"
+                    }
+                    alt={post.title}
+                    width={600}
+                    height={315}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
 
-            <a
-              href="https://www.xing.com/profile/Tim_Walter96/cv"
-              className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300
-                    hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-cyan-300"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <h2 className={`mb-3 text-2xl font-semibold`}>
-                Xing{" "}
-                <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                  -&gt;
-                </span>
-              </h2>
-              <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-                Find in-depth information about me on Xing.
-              </p>
-            </a>
+                {/* Content */}
+                <div className="p-6">
+                  <div className="mb-4 flex items-center justify-between">
+                    <span className="inline-block bg-primary-100 text-primary-700 px-3 py-1 rounded-full text-xs font-semibold">
+                      {post.category}
+                    </span>
+                    <span className="text-sm text-secondary-500">{post.date}</span>
+                  </div>
 
-            <a
-              href="https://github.com/Tim-D-walter"
-              className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300
-                    hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-cyan-300"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <h2 className={`mb-3 text-2xl font-semibold`}>
-                Github{" "}
-                <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                  -&gt;
-                </span>
-              </h2>
-              <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-                Discover my source code for my public projects. &nbsp;
-              </p>
-            </a>
+                  <h2 className="text-lg font-bold text-secondary-900 mb-3 group-hover:text-primary-600 transition-colors line-clamp-2">
+                    {post.title}
+                  </h2>
 
+                  <p className="text-secondary-600 mb-4 text-sm leading-relaxed line-clamp-3">
+                    {post.description}
+                  </p>
+
+                  <div className="flex items-center text-primary-500 font-semibold text-sm group-hover:translate-x-1 transition-transform">
+                    Read on Medium
+                    <span className="ml-2">→</span>
+                  </div>
+                </div>
+              </motion.a>
+            ))}
+          </div>
+
+          {/* More Coming Section */}
+          <div className="bg-primary-50 border border-primary-200 rounded-lg p-8 text-center mb-12">
+            <h2 className="text-2xl font-bold text-primary-700 mb-3">
+              More Coming Soon
+            </h2>
+            <p className="text-secondary-600 mb-4 max-w-2xl mx-auto">
+              I&apos;m working on additional content covering topics like cloud
+              architecture, best practices in software development, and team
+              leadership. Stay tuned for more insights!
+            </p>
+          </div>
+
+          {/* CTA */}
+          <div className="text-center">
+            <p className="text-secondary-600 mb-4">
+              Want to stay updated with new articles?
+            </p>
             <a
               href="https://medium.com/@timwalter23"
-              className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300
-                    hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-cyan-300"
+              className="inline-block px-6 py-3 bg-primary-500 text-white rounded-lg hover:bg-primary-600 active:bg-primary-700 transition-all font-semibold shadow-lg hover:shadow-xl"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <h2 className={`mb-3 text-2xl font-semibold`}>
-                Medium{" "}
-                <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                  -&gt;
-                </span>
-              </h2>
-              <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-                Discover my projects on Medium. &nbsp;
-              </p>
-            </a>
-
-            <a
-              href="mailto:tim.d.walter@web.de"
-              className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-cyan-300"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <h2 className={`mb-3 text-2xl font-semibold`}>
-                Contact{" "}
-                <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                  -&gt;
-                </span>
-              </h2>
-              <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-                Contact me via email
-              </p>
+              Follow on Medium
             </a>
           </div>
         </div>
