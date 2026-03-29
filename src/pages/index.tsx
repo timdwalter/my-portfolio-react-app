@@ -59,7 +59,7 @@ const HomePage: NextPage = () => {
             </p>
             <a 
               href="https://www.linkedin.com/in/tim-d-walter/" 
-              className="btn inline-block px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+              className="btn inline-block px-6 py-3 bg-primary-500 text-white rounded-lg hover:bg-primary-600 active:bg-primary-700 transition-all font-semibold shadow-lg hover:shadow-xl"
               aria-label="Get in touch - Opens LinkedIn profile"
             >
               Get in touch

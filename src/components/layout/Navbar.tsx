@@ -14,9 +14,9 @@ const Navbar = (props: Props) => {
   return (
     <nav
       className={classNames({
-        "bg-white text-zinc-500": true, // colors
+        "bg-white text-secondary-900": true, // colors
         "flex items-center": true, // layout
-        "w-screen md:w-full sticky z-10 px-4 shadow-sm h-[73px] top-0 ": true, //positioning & styling
+        "w-screen md:w-full sticky z-10 px-4 shadow-md h-[73px] top-0 ": true, //positioning & styling
           "navbar":true,
       })}
     >
@@ -31,7 +31,7 @@ const Navbar = (props: Props) => {
       </div>
       <div className="flex-grow"></div>
       <button 
-        className="md:hidden p-2 hover:bg-zinc-100 rounded-lg transition-colors"
+        className="md:hidden p-2 hover:bg-primary-100 rounded-lg transition-colors text-primary-600"
         onClick={props.onMenuButtonClick}
         aria-label="Toggle navigation menu"
         aria-expanded="false"

@@ -29,7 +29,7 @@ const Sidebar = ({
   return (
     <div
       className={classNames({
-        "bg-slate-900 text-zinc-50 fixed md:static md:translate-x-0 z-20": true,
+        "bg-primary-950 text-white fixed md:static md:translate-x-0 z-20": true,
         "transition-all duration-300 ease-in-out": true,
         "w-[300px]": !collapsed,
         "w-16": collapsed,
@@ -45,14 +45,14 @@ const Sidebar = ({
         {/* logo and collapse button */}
         <div
           className={classNames({
-            "flex items-center border-b border-b-sky-400 transition-none": true,
+            "flex items-center border-b border-b-primary-500 transition-none": true,
             "p-4 justify-between": !collapsed,
             "py-4 justify-center": collapsed,
           })}
         >
           {!collapsed && <span className="whitespace-nowrap">Navigation</span>}
           <button
-            className="grid place-content-center hover:sky w-10 h-10 rounded-full opacity-0 md:opacity-100"
+            className="grid place-content-center hover:bg-primary-800 w-10 h-10 rounded-full opacity-0 md:opacity-100 transition-colors"
             onClick={() => setCollapsed(!collapsed)}
           >
             <Icon className="w-5 h-5" />
@@ -69,7 +69,7 @@ const Sidebar = ({
                 <li
                   key={index}
                   className={classNames({
-                    "text-sky-100 hover:bg-sky-900 flex": true, //colors
+                    "text-primary-100 hover:bg-primary-800 flex": true, //colors
                     "transition-colors duration-300": true, //animation
                     "rounded-md p-2 mx-3 gap-4 ": !collapsed,
                     "rounded-full p-2 mx-3 w-10 h-10": collapsed,
