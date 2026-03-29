@@ -23,8 +23,8 @@ const NotFoundPage: NextPage = () => {
           Oops! Page Not Found
         </p>
         <p className="text-lg text-secondary-700 mb-8 max-w-md">
-          The page you're looking for doesn't exist or has been moved. Let's get
-          you back on track.
+          The page you&apos;re looking for doesn&apos;t exist or has been
+          moved. Let&apos;s get you back on track.
         </p>
 
         <Link
