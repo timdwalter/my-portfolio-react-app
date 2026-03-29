@@ -6,7 +6,6 @@ First, run the development server:
 
 ```bash
 npm install
-npm run huild
 npm run dev
 # or
 yarn dev
