@@ -33,7 +33,7 @@ const Layout = (props: PropsWithChildren) => {
   return (
     <div
       className={classNames({
-        "grid bg-zinc-100 min-h-screen": true,
+        "grid bg-secondary-50 min-h-screen": true,
         "grid-cols-sidebar": !collapsed && !showSidebar && !isMobile,
         "grid-cols-sidebar-collapsed": collapsed && !showSidebar && !isMobile,
         "transition-[grid-template-columns] duration-300 ease-in-out": true,
