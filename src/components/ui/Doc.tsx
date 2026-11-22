@@ -113,7 +113,7 @@ export function ArticleRows({ articles }: { articles: Article[] }) {
               </div>
               <div className="sm:col-span-6">
                 <h3 className="text-[1.375rem] leading-snug transition-colors group-hover:text-accent">
-                  {a.title}
+                  {nb(a.title)}
                   <span className="sr-only"> – {t.blog.read}</span>
                 </h3>
                 <p className="mt-xs max-w-[62ch] text-[0.9375rem] leading-relaxed text-muted">{nb(a.summary[locale])}</p>
