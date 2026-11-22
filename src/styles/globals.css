@@ -40,10 +40,16 @@
 }
 
 @layer components {
+  /* Page container: max 1280px content, gutter 16 / 24 / 48px */
+  .container {
+    @apply mx-auto w-full px-md md:px-lg lg:px-xl;
+    max-width: calc(1280px + 6rem);
+  }
+
   /* ---------- 12-column page grid ----------
      Mobile: one column. From lg: meta column 1–3, column 4 stays empty as air, main 5–12 (8 cols). */
   .grid-12 {
-    @apply grid grid-cols-12 gap-x-6;
+    @apply grid grid-cols-12 gap-x-lg;
   }
   .col-meta,
   .col-main,
@@ -131,6 +137,13 @@
 }
 .stagger > *:nth-child(4) {
   animation-delay: 0.24s;
+}
+/* second group continues the same sequence instead of starting in parallel */
+.stagger-late > *:nth-child(1) {
+  animation-delay: 0.24s;
+}
+.stagger-late > *:nth-child(2) {
+  animation-delay: 0.32s;
 }
 
 /* Reduced motion: content simply appears; colour/state transitions on controls stay. */

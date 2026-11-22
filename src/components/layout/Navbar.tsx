@@ -96,7 +96,7 @@ export default function Navbar() {
           <LanguageSwitch />
           <Link
             href="/#contact"
-            className="rounded-lg bg-heading px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-400"
+            className="border border-ink px-4 py-2 text-sm font-medium text-ink transition-colors hover:bg-ink hover:text-paper"
           >
             {t.nav.contact}
           </Link>
@@ -135,7 +135,7 @@ export default function Navbar() {
             <LanguageSwitch />
             <Link
               href="/#contact"
-              className="rounded-lg bg-heading px-4 py-2 text-sm font-semibold text-white"
+              className="border border-ink px-4 py-2 text-sm font-medium text-ink"
               onClick={() => setOpen(false)}
             >
               {t.nav.contact}

@@ -141,85 +141,179 @@ export const articles: Article[] = [
   },
 ];
 
-export type SkillGroup = { title: L; items: string[] };
+/** What Tim can do (abilities). Items are localised. */
+export type SkillGroup = { title: L; items: L[] };
 
 export const skillGroups: SkillGroup[] = [
   {
+    title: { en: "Leadership & Product", de: "Leadership & Produkt" },
+    items: [
+      { en: "Tech Leadership", de: "Tech Leadership" },
+      { en: "Product Ownership", de: "Product Ownership" },
+      { en: "Mentoring", de: "Mentoring" },
+      { en: "Client communication", de: "Kundenkommunikation" },
+      { en: "Writing proposals", de: "Angebote schreiben" },
+      { en: "Schedule and budget planning", de: "Zeit- und Budgetplanung" },
+    ],
+  },
+  {
+    title: { en: "Architecture & Development", de: "Architektur & Entwicklung" },
+    items: [
+      { en: "Architecture decisions", de: "Architekturentscheidungen" },
+      { en: "Full-stack development", de: "Fullstack-Entwicklung" },
+      { en: "Microservices architecture", de: "Microservices-Architektur" },
+      { en: "Monolithic systems", de: "Monolithische Systeme" },
+      { en: "Client-server", de: "Client-Server" },
+      { en: "P2P architecture", de: "P2P-Architektur" },
+      { en: "Cloud-native design", de: "Cloud-native Design" },
+    ],
+  },
+  {
+    title: { en: "AI & Agentic Development", de: "KI & Agentic Development" },
+    items: [
+      { en: "Agentic development", de: "Agentic Development" },
+      { en: "Spec-driven development", de: "Spec-Driven Development" },
+      { en: "Local LLMs", de: "Lokale LLMs" },
+      { en: "LLM tracing", de: "LLM-Tracing" },
+    ],
+  },
+  {
+    title: { en: "Methods", de: "Methoden" },
+    items: [
+      { en: "Scrum", de: "Scrum" },
+      { en: "Kanban", de: "Kanban" },
+      { en: "SAFe", de: "SAFe" },
+      { en: "Process mining", de: "Process Mining" },
+    ],
+  },
+];
+
+/** What Tim works with (technologies). Product names are not translated. */
+export type StackGroup = { title: L; items: string[] };
+
+export const techStack: StackGroup[] = [
+  {
+    title: { en: "Languages", de: "Sprachen" },
+    items: ["Java", "Python", "C++", "C", "JavaScript", "TypeScript", "MicroPython"],
+  },
+  {
     title: { en: "Backend", de: "Backend" },
-    items: ["Java", "Spring Boot", "Quarkus", "Node.js", "REST", "Microservices", "Hibernate", "Flyway"],
+    items: ["Spring Boot", "Quarkus", "Node.js", "REST APIs", "Microservices", "Hibernate ORM", "Flyway Migrations"],
   },
   {
-    title: { en: "Cloud & DevOps", de: "Cloud & DevOps" },
-    items: ["AWS", "Azure", "OpenShift", "Kubernetes", "Docker", "Helm", "ArgoCD", "Tekton", "GitLab CI", "Azure DevOps"],
+    title: { en: "Frontend", de: "Frontend" },
+    items: ["Angular", "React", "Next.js", "HTML5", "CSS", "AJAX", "JSON"],
   },
   {
-    title: { en: "Data & Security", de: "Daten & Security" },
-    items: ["PostgreSQL", "MySQL / MariaDB", "Azure SQL", "Multi-Tenancy", "Keycloak", "OAuth2 / OIDC", "Spring Security"],
+    title: { en: "Cloud & Platforms", de: "Cloud & Plattformen" },
+    items: ["AWS", "Azure", "OpenShift", "Kubernetes", "Docker", "Helm Charts", "Infrastructure as Code", "Cloud Systems"],
+  },
+  {
+    title: { en: "DevOps & CI/CD", de: "DevOps & CI/CD" },
+    items: ["Jenkins", "Tekton", "ArgoCD", "OpenShift Pipelines", "Azure DevOps", "GitLab CI", "Maven", "Gradle", "Git", "GitLab", "Gitbucket"],
+  },
+  {
+    title: { en: "Databases", de: "Datenbanken" },
+    items: ["PostgreSQL", "MySQL", "MariaDB", "Azure SQL", "Schema-based Multi-Tenancy", "MySQL Workbench", "Sequel Pro"],
+  },
+  {
+    title: { en: "Security & Authentication", de: "Security & Authentifizierung" },
+    items: ["Spring Security", "Apache Shiro", "Keycloak", "OAuth2 / OIDC", "JWT"],
   },
   {
     title: { en: "AI & Process Mining", de: "KI & Process Mining" },
-    items: ["Ollama", "LM Studio", "Gemma 3", "Local LLMs", "LLM Tracing", "Celonis", "Process Mining"],
+    items: ["Ollama", "LM Studio", "Gemma 3", "Celonis"],
   },
   {
-    title: { en: "Agentic Development", de: "Agentic Development" },
+    title: { en: "Agentic Tools", de: "Agentic-Tools" },
     items: [
-      "Spec-Driven Development",
-      "GitHub Spec Kit",
-      "OpenSpec",
-      "Superpowers",
-      "Ponytail",
       "Claude Code",
       "Claude Desktop (Chat & Cowork)",
       "GitHub Copilot",
       "Microsoft 365 Copilot",
+      "GitHub Spec Kit",
+      "OpenSpec",
+      "Superpowers",
+      "Ponytail",
     ],
   },
   {
     title: { en: "IoT & Embedded", de: "IoT & Embedded" },
-    items: ["MQTT", "OPC UA", "MicroPython", "Arduino", "MATLAB / Simulink", "LabVIEW"],
+    items: ["Arduino IDE", "MicroPython", "MATLAB / Simulink", "LabVIEW", "OPC UA", "MQTT", "M2M Protocols"],
   },
   {
-    title: { en: "Frontend", de: "Frontend" },
-    items: ["TypeScript", "React", "Next.js", "Angular"],
+    title: { en: "Tools & IDEs", de: "Tools & IDEs" },
+    items: ["IntelliJ IDEA (Ultimate & Community)", "Android Studio", "Eclipse", "Visual Studio CE", "Xcode", "ATOM", "StarUML"],
   },
   {
-    title: { en: "Ways of Working", de: "Arbeitsweise" },
-    items: ["Product Ownership", "Scrum", "Kanban", "Architecture Decisions", "Mentoring", "Technical Leadership"],
+    title: { en: "Operating Systems", de: "Betriebssysteme" },
+    items: ["macOS", "Windows 7/8/10", "Ubuntu", "Raspbian Stretch"],
   },
 ];
 
-export type Industry = { id: string; icon: "imaging" | "campus" | "aviation"; title: L; meta: L; text: L };
+export type Industry = {
+  id: string;
+  title: L;
+  meta?: L;
+  text?: L;
+};
 
 export const industries: Industry[] = [
   {
     id: "imaging",
-    icon: "imaging",
     title: { en: "Medical Imaging", de: "Medizinische Bildgebung" },
-    meta: { en: "MRI · CT · India & China", de: "MRT · CT · Indien & China" },
+    meta: { en: "MRI and CT, India and China", de: "MRT und CT, Indien und China" },
     text: {
-      en: "Prototypes and training software for MRI and CT systems in the Indian and Chinese markets – where precision and reliability are non-negotiable.",
-      de: "Prototypen und Trainingssoftware für MRT- und CT-Systeme im indischen und chinesischen Markt – wo Präzision und Zuverlässigkeit nicht verhandelbar sind.",
+      en: "Prototypes and training software for MRI and CT systems in the Indian and Chinese markets.",
+      de: "Prototypen und Trainingssoftware für MRT- und CT-Systeme im indischen und chinesischen Markt.",
     },
   },
   {
+    id: "aviation",
+    title: { en: "Aviation", de: "Luftfahrt" },
+    meta: { en: "CMS, Product Owner, 2 years", de: "CMS, Product Owner, 2 Jahre" },
+    text: {
+      en: "Product Owner for a content management system in aviation, in contact with all airlines of the Lufthansa Group.",
+      de: "Product Owner für ein Content-Management-System in der Luftfahrt, im Kontakt mit allen Airlines der Lufthansa Group.",
+    },
+  },
+  {
+    id: "airline-process-mining",
+    title: { en: "Process Mining for Airlines", de: "Process Mining bei Airlines" },
+    meta: { en: "Aviation, Process Mining", de: "Luftfahrt, Process Mining" },
+  },
+  {
+    id: "maritime",
+    title: { en: "Maritime", de: "Maritime Wirtschaft" },
+    meta: { en: "Port of Lübeck", de: "Lübecker Hafen" },
+  },
+  {
+    id: "logistics",
+    title: { en: "Logistics", de: "Logistik" },
+  },
+  {
+    id: "bus",
+    title: { en: "Bus Network Planning", de: "Bus-Verkehrsplanung" },
+    meta: { en: "Public transport", de: "ÖPNV" },
+  },
+  {
     id: "campus",
-    icon: "campus",
     title: { en: "Smart Campus Planning", de: "Smart-Campus-Planung" },
-    meta: { en: "ESG · IoT", de: "ESG · IoT" },
+    meta: { en: "ESG, IoT", de: "ESG, IoT" },
     text: {
       en: "Use cases for a smart campus: building data, ESG and on-site digital services.",
       de: "Use Cases für einen Smart Campus: Gebäudedaten, ESG und digitale Services vor Ort.",
     },
   },
   {
-    id: "aviation",
-    icon: "aviation",
-    title: { en: "Aviation", de: "Luftfahrt" },
-    meta: { en: "CMS · Product Owner, 2 years", de: "CMS · Product Owner, 2 Jahre" },
-    text: {
-      en: "Product Owner for a content management system in aviation – bridging business, users and engineering.",
-      de: "Product Owner für ein Content-Management-System in der Luftfahrt – Brücke zwischen Fachbereich, Nutzern und Entwicklung.",
-    },
+    id: "esg",
+    title: { en: "ESG Reporting", de: "ESG-Reporting" },
+    meta: { en: "Sustainability", de: "Nachhaltigkeit" },
+  },
+  {
+    id: "talent",
+    title: { en: "Corporate Talent Management", de: "Corporate Talent Management" },
+    meta: { en: "Enterprise tool", de: "Unternehmens-Tool" },
   },
 ];
 
@@ -228,10 +322,10 @@ export type Station = { company: string; role?: L; current?: boolean };
 /** Newest first. */
 export const career: Station[] = [
   {
-    company: "Lufthansa Industry Solutions",
+    company: "Lufthansa\u00a0Industry\u00a0Solutions",
     role: { en: "Technical Project Lead", de: "Technical Project Lead" },
     current: true,
   },
-  { company: "Fraunhofer" },
-  { company: "Siemens Healthcare" },
+  { company: "Fraunhofer IAPT" },
+  { company: "Siemens\u00a0Healthcare" },
 ];

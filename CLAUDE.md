@@ -23,7 +23,9 @@ Persönliche Portfolio-Website (Next.js 13, Pages Router, Tailwind, TypeScript),
 **Raster:**
 - 12-Spalten-Grid, bewusst asymmetrisch: Label-/Meta-Spalte links (3 Spalten), Inhalt rechts (7–8 Spalten).
 - Linksbündig. Zentrierter Text nur in begründeten Ausnahmen.
-- Abstandsskala: 4 / 8 / 16 / 24 / 48 / 96 px.
+- Abstandsskala: 4 / 8 / 16 / 24 / 48 / 96 px – als Tailwind-Tokens `xs, sm, md, lg, xl, 2xl` (z. B. `pt-2xl`, `gap-x-lg`). In neu gestalteten Abschnitten nur diese verwenden; numerische Stufen stammen aus noch nicht überarbeiteten Abschnitten.
+- Container: max. 1280px Inhalt, Rand 16 / 24 / 48px (`.container` in `globals.css`).
+- Desktop-Raster: Meta-Spalte 1–3, Spalte 4 bleibt frei, Inhalt 5–12 (`.col-meta`, `.col-main`).
 - Auf Mobile bricht das Raster sauber in eine Spalte um.
 
 **Farben** (Tailwind `theme.colors` wird komplett überschrieben, nicht erweitert – Standardfarben wie `indigo-*` oder `purple-*` dürfen nicht verfügbar sein):

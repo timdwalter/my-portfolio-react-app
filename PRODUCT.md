@@ -26,6 +26,13 @@ Personal portfolio of M.Eng. Tim D. Walter (brand: TimTech Solutions). It shows 
 
 Technical Project Lead at Lufthansa Industry Solutions who still writes code: Java/cloud backend, AI engineering and agentic development – with experience in medical imaging, aviation and smart campus planning. (Confirmed by Tim.)
 
+Refined by Tim:
+- Primarily a **tech lead**, not a backend specialist.
+- Works **full-stack** – these days everyone is, because coding is agentic.
+- High standards; **selective about what is good enough**.
+- Still knows what **real development** takes.
+- Can **talk to clients, write proposals, and draw up schedules and budget plans**.
+
 ## Operating Context
 
 - Bilingual: English (default) and German (`/de`).
@@ -48,10 +55,11 @@ Technical Project Lead at Lufthansa Industry Solutions who still writes code: Ja
 ## Evidence on Hand
 
 - Professional photo: `public/TDW-Profil.jpg`.
-- Career: Lufthansa Industry Solutions (current, Technical Project Lead); earlier Fraunhofer and Siemens Healthcare – shown by name only, without roles (Tim's request).
+- Career: Lufthansa Industry Solutions (current, Technical Project Lead); earlier Fraunhofer IAPT (Institute for Additive Production Technologies) and Siemens Healthcare – shown by name only, without roles (Tim's request).
 - 9+ years of experience; 2 years as Product Owner (aviation CMS).
-- Industries: MRI/CT prototypes and training software for the Indian and Chinese markets; smart-campus use cases; aviation CMS.
-- Certifications: PSPO, PSM, SAFe POPM, EU drone pilot certificate A1/A3. AWS and Celonis are practical experience, not certifications.
+- Industries: MRI/CT prototypes and training software for the Indian and Chinese markets; aviation CMS (Product Owner, in contact with all airlines of the Lufthansa Group); process mining for airlines; maritime (Port of Lübeck); logistics; bus network planning (public transport); smart-campus use cases (project still running – keep it vague: no client, no number of use cases, no specific features); ESG reporting; a corporate talent management tool. Most of these have no further detail yet – do not invent any.
+- Certifications: PSPO, PSM, SAFe POPM, CKAD, EU drone pilot certificate A1/A3.
+- Skills (abilities) and tech stack are shown separately; the tech stack keeps every item of Tim's original list (`src/content/data.ts`) – do not prune it. AWS and Celonis are practical experience, not certifications.
 - 7 Medium articles (listed in `src/content/data.ts`).
 - Projects: 3D Playground (live demo), SH-Beach, Digital Aristoteles, LH-Leap – the last three have only short or placeholder descriptions.
 - **Absent – must not be fabricated:** testimonials, client logos, metrics beyond those above, project outcomes.

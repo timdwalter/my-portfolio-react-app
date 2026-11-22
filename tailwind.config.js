@@ -56,12 +56,9 @@ module.exports = {
       full: "9999px",
     },
     boxShadow: { none: "none" },
-    container: {
-      center: true,
-      padding: { DEFAULT: "1rem", md: "1.5rem", lg: "3rem" },
-      screens: { "2xl": "1280px" },
-    },
     extend: {
+      // Spacing scale (CLAUDE.md): use these names for new and redesigned sections.
+      spacing: { xs: "4px", sm: "8px", md: "16px", lg: "24px", xl: "48px", "2xl": "96px" },
       keyframes: {
         pulseDot: {
           "0%, 100%": { opacity: "1" },
@@ -73,5 +70,7 @@ module.exports = {
       },
     },
   },
+  // .container is defined in globals.css (fixed max width + responsive gutter on the spacing scale)
+  corePlugins: { container: false },
   plugins: [],
 };

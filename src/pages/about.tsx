@@ -6,7 +6,7 @@ import HexBackground from "@/components/ui/HexBackground";
 import { Arrow } from "@/components/ui/Button";
 import { Reveal, Section, SectionHeader } from "@/components/ui/Section";
 import ContactSection from "@/components/ContactSection";
-import { career, skillGroups } from "@/content/data";
+import { career, skillGroups, techStack } from "@/content/data";
 import { site } from "@/content/site";
 import { useLocale, useT } from "@/lib/i18n";
 
@@ -40,7 +40,8 @@ export default function AboutPage() {
                 alt={site.fullName}
                 fill
                 priority
-                sizes="(min-width: 768px) 384px, 100vw"
+                sizes="(min-width: 768px) 480px, 100vw"
+                quality={90}
                 className="object-cover object-[50%_20%]"
               />
             </div>
@@ -106,16 +107,28 @@ export default function AboutPage() {
           {skillGroups.map((group, i) => (
             <Reveal key={group.title.en} delay={(i % 4) * 0.05}>
               <div className="card h-full p-6">
-                <h3 className="mb-4 flex items-center gap-3 text-base font-semibold">
-                  <span className="font-mono text-xs text-brand-400">0{i + 1}</span>
-                  {group.title[locale]}
-                </h3>
+                <h3 className="mb-4 text-base font-semibold">{group.title[locale]}</h3>
+                <ul className="space-y-1.5 text-[0.9375rem] text-body">
+                  {group.items.map((item) => (
+                    <li key={item.en}>{item[locale]}</li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </Section>
+
+      <Section id="stack">
+        <SectionHeader eyebrow={t.about.stackEyebrow} title={t.about.stackTitle} />
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {techStack.map((group, i) => (
+            <Reveal key={group.title.en} delay={(i % 3) * 0.05}>
+              <div className="card h-full p-6">
+                <h3 className="mb-4 text-base font-semibold">{group.title[locale]}</h3>
                 <div className="flex flex-wrap gap-2">
                   {group.items.map((item) => (
-                    <span
-                      key={item}
-                      className="rounded-md border border-line bg-subtle px-2.5 py-1 text-sm text-body"
-                    >
+                    <span key={item} className="rounded-md border border-line bg-subtle px-2.5 py-1 text-sm text-body">
                       {item}
                     </span>
                   ))}
