@@ -32,6 +32,9 @@ Refined by Tim:
 - High standards; **selective about what is good enough**.
 - Still knows what **real development** takes.
 - Can **talk to clients, write proposals, and draw up schedules and budget plans**.
+- Relies on **critical thinking**: asks critical questions about requirements, estimates and architecture; reviews AI-generated code as critically as everything else.
+- Still builds a good part himself; **high quality matters more than fast output**.
+- Home hero copy is Tim's own wording (EN); keep it.
 
 ## Operating Context
 

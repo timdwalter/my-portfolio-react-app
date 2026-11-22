@@ -4,8 +4,9 @@ import type { ReactNode } from "react";
 import type { Article, Project } from "@/content/data";
 import { useLocale, useT } from "@/lib/i18n";
 
-/** Binds a spaced dash to the preceding word so a line never starts with "–". */
-export const nb = (text: string) => text.replace(/ – /g, "\u00a0– ");
+/** Keeps a line from starting with "–" and from ending on a one-letter word like "I" or "a". */
+export const nb = (text: string) =>
+  text.replace(/ – /g, "\u00a0– ").replace(/(^|\s)([IAa]) /g, "$1$2\u00a0");
 
 /**
  * Page section in the documentation layout: heading (and optional intro/aside) in the

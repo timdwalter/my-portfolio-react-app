@@ -22,9 +22,9 @@ export const de: Dictionary = {
     rights: "Alle Rechte vorbehalten.",
   },
   hero: {
-    headline: "Ich leite Softwareprojekte und schreibe den Code noch selbst.",
+    headline: "Softwareprojekte leiten und selbst mitbauen.",
     intro:
-      "Ich bin vor allem Tech Lead. Ich entwickle Fullstack, heute meist agentisch, und bin wählerisch, was gut genug ist. Weil ich weiß, was echte Entwicklung braucht, spreche ich mit Kunden, schreibe Angebote und plane Zeit und Budget.",
+      "Seit über neun Jahren zwischen Entwicklung und Kunde, als Tech Lead und als Product Owner. Ich setze auf kritisches Denken: Ich stelle kritische Fragen zu Anforderungen, Schätzungen und Architektur, und ich prüfe KI-generierten Code genauso kritisch wie alles andere. Einen guten Teil baue ich noch selbst. Hohe Qualität ist mir wichtiger als schneller Output.",
     linkedin: "Auf LinkedIn vernetzen",
     email: "oder E-Mail schreiben",
     factsLabel: "Über Tim",

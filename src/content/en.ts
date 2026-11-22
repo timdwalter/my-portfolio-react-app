@@ -20,9 +20,9 @@ export const en = {
     rights: "All rights reserved.",
   },
   hero: {
-    headline: "I lead software projects and still write the code myself.",
+    headline: "Managing software projects and building them, too.",
     intro:
-      "I'm a tech lead first. I build full-stack, these days mostly with AI agents, and I'm selective about what counts as good enough. Because I know what real development takes, I talk to clients, write proposals, and plan schedules and budgets.",
+      "More than nine years between development and the client, as a tech lead and as a product owner. I rely on critical thinking: I ask critical questions about requirements, estimates and architecture, and I review AI-generated code just as critically as everything else. I still build a good part myself. High quality matters to me more than fast output.",
     linkedin: "Connect on LinkedIn",
     email: "or send an email",
     factsLabel: "About Tim",

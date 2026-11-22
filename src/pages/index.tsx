@@ -28,7 +28,7 @@ function Hero() {
               {t.hero.headline}
             </h1>
             <p className="mt-lg max-w-[52ch] text-lg leading-relaxed text-ink lg:text-xl lg:leading-relaxed">
-              {t.hero.intro}
+              {nb(t.hero.intro)}
             </p>
             <div className="mt-xl flex flex-wrap items-center gap-x-lg gap-y-md">
               <a href={site.socials.linkedin} target="_blank" rel="noopener noreferrer" className="action">
