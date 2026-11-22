@@ -19,7 +19,7 @@ Persönliche Portfolio-Website (Next.js 16, Pages Router, React 18, Tailwind 3, 
 - `src/components/ui/Doc.tsx`: `PageIntro` (Seitentitel + Randspalte), `DocSection` (Überschrift links, Inhalt rechts), `RuledRows` (Zeilen mit Trennlinien), `ProjectRows`, `ArticleRows`, `MainColumn`, `TextLink`, `nb()` (verhindert Gedankenstrich am Zeilenanfang)
 - `src/components/ContactSection.tsx`: der einzige dunkle Block, LinkedIn als Hauptaktion
 - CSS-Klassen in `globals.css`: `.container`, `.grid-12`, `.col-meta`, `.col-main`, `.col-wide`, `.meta`, `.link`, `.action`, `.stagger` (einzige Lade-Animation)
-- Farben nur aus dem Theme: `paper`, `ink`, `muted`, `rule`, `accent`, `accent-dark`, `logo` – es gibt keine anderen
+- Farben nur aus dem Theme: `paper`, `ink`, `muted`, `rule`, `accent`, `accent-dark`, `accent-light` (nur Logo) – es gibt keine anderen
 
 ## Design-System (verbindlich)
 
@@ -43,7 +43,7 @@ Persönliche Portfolio-Website (Next.js 16, Pages Router, React 18, Tailwind 3, 
 | Haupttext | `#111111` |
 | Sekundärtext | `#555555` |
 | Linien | `#D9D6CF` |
-| Akzent (genau einer, sparsam: Links, aktiver Zustand, ein Highlight pro Abschnitt) | `#0E6F86` – Logo-Cyan, abgedunkelt; 5,4:1 auf dem Hintergrund (AA). Das helle Logo-Cyan `#3DD8F5` nur im Logo, nie für Text. |
+| Akzent (genau einer, sparsam: Links, aktiver Zustand, ein Highlight pro Abschnitt) | `#0E6F86` – 5,4:1 auf dem Hintergrund (AA); `accent-dark` `#0A5C70` für Hover. Das Logo nutzt dieselbe Farbe: Würfel in `accent-light` `#8FBAC3` (nur Logo, nie Text), `accent` und `accent-dark`. Das alte helle Logo-Cyan `#3DD8F5` wird nicht mehr verwendet. |
 
 **Typografie:**
 - Überschriften: `Fraunces` (alternativ `Newsreader`)

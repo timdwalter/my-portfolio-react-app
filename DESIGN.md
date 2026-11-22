@@ -8,7 +8,7 @@ colors:
   rule: "#D9D6CF"
   accent: "#0E6F86"
   accent-dark: "#0A5C70"
-  logo: "#3DD8F5"
+  accent-light: "#8FBAC3"
 typography:
   display:
     fontFamily: "Fraunces, serif"
@@ -121,7 +121,7 @@ Density is generous: sections breathe on a 48/96px rhythm, body text stays under
 
 ## Colors
 
-A near-monochrome paper-and-ink palette with a single deep teal-cyan accent taken from the logo.
+A near-monochrome paper-and-ink palette with a single deep teal-cyan accent that also colours the logo.
 
 ### Primary
 - **Logbook Teal** (accent): links, the active navigation underline, the availability/current-role square marker, text selection, the focus outline, and the hover colour of article titles. One highlight per section at most. 5.39:1 on paper (AA).
@@ -134,10 +134,10 @@ A near-monochrome paper-and-ink palette with a single deep teal-cyan accent take
 - **Hairline Stone** (rule): every 1px divider and section rule, the scrolled header border, and the placeholder ground behind images.
 
 ### Brand-only
-- **Logo Cyan** (logo): belongs to the hexagon-and-cube logo mark only. Never text, never a fill or highlight on paper (it fails contrast).
+- **Accent Light** (accent-light, #8FBAC3): a 55% paper tint of the accent, used only for the top face of the logo cube. Never text. The cube's other faces are accent and accent-dark, so logo, wordmark ("TECH") and links share one colour.
 
 ### Named Rules
-**The Closed Palette Rule.** Tailwind's colour palette is replaced, not extended: paper, ink, muted, rule, accent, accent-dark and logo are the only colours that exist. Opacity variants of these (paper at 70%, accent at 40% for link underlines) are the only derivations.
+**The Closed Palette Rule.** Tailwind's colour palette is replaced, not extended: paper, ink, muted, rule, accent, accent-dark and accent-light are the only colours that exist. Opacity variants of these (paper at 70%, accent at 40% for link underlines) are the only derivations.
 
 **The One Accent Rule.** The accent marks something actionable or current – a link, the active page, a status – and appears at most once as a highlight per section. It is never a background panel, never decoration.
 
@@ -234,7 +234,7 @@ One orchestrated moment: on load, the PageIntro/hero children rise 10px and fade
 - **Do** build new sections from the existing blocks: DocSection, PageIntro, RuledRows, ProjectRows, ArticleRows, MainColumn, TextLink and the contact block.
 - **Do** keep headings and classification in the margin column (1–3) and content in the main column (5–12), leaving column 4 empty on desktop.
 - **Do** separate items with 1px stone rules and keep lists as ruled rows.
-- **Do** use only paper, ink, muted, rule, accent, accent-dark and logo, and only the 4 / 8 / 16 / 24 / 48 / 96px spacing names.
+- **Do** use only paper, ink, muted, rule, accent, accent-dark and accent-light, and only the 4 / 8 / 16 / 24 / 48 / 96px spacing names.
 - **Do** keep the h1 at least 3× body size on desktop; the mobile 42/18px ratio is the one recorded exception.
 - **Do** cap running text at 52ch and bind spaced dashes to the preceding word so no line starts with a dash.
 - **Do** keep WCAG AA contrast, the visible 2px accent focus outline, unbroken heading levels and no functional text below 11px.

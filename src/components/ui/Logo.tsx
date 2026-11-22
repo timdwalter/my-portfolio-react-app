@@ -8,10 +8,10 @@ export function HexMark({ className = "h-7 w-7" }: { className?: string }) {
         className="stroke-muted"
         strokeWidth="1.5"
       />
-      {/* cube – same mark as the favicon */}
-      <path d="M16 8.6 22.6 12.4 16 16.2 9.4 12.4Z" fill="#a5f3fc" />
-      <path d="M9.4 12.4 16 16.2v7.2l-6.6-3.8Z" fill="#3dd8f5" />
-      <path d="M22.6 12.4v7.2L16 23.4v-7.2Z" fill="#0e9fc0" />
+      {/* cube in the accent's three tones – same mark as the favicon */}
+      <path d="M16 8.6 22.6 12.4 16 16.2 9.4 12.4Z" className="fill-accent-light" />
+      <path d="M9.4 12.4 16 16.2v7.2l-6.6-3.8Z" className="fill-accent" />
+      <path d="M22.6 12.4v7.2L16 23.4v-7.2Z" className="fill-accent-dark" />
     </svg>
   );
 }

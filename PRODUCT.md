@@ -51,7 +51,7 @@ Refined by Tim:
 
 ## Brand Commitments
 
-- Name shown as **M.Eng. Tim D. Walter**; brand **TimTech Solutions**; logo is a hexagon with a cube in the logo cyan `#3DD8F5`.
+- Name shown as **M.Eng. Tim D. Walter**; brand **TimTech Solutions**; logo is a hexagon with a cube in three tones of the site accent (#8FBAC3, #0E6F86, #0A5C70); the earlier bright logo cyan #3DD8F5 is retired (Tim's decision).
 - Voice: direct, sober, first person, short active sentences, no superlatives or marketing phrases.
 - Goal stated by Tim: the site must not look like an AI-generated template. Binding design rules live in `CLAUDE.md`.
 

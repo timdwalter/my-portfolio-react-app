@@ -6,9 +6,9 @@ const paper = "#F8F7F4"; // background
 const ink = "#111111"; // main text
 const muted = "#555555"; // secondary text (6.96:1 on paper)
 const rule = "#D9D6CF"; // 1px lines
-const accent = "#0E6F86"; // logo cyan, darkened for AA (5.39:1 on paper)
+const accent = "#0E6F86"; // the one accent (5.39:1 on paper); links, active state, logo
 const accentDark = "#0A5C70"; // accent hover / pressed
-const logoCyan = "#3DD8F5"; // logo only, never text on paper
+const accentLight = "#8FBAC3"; // 55% paper tint of the accent – logo cube top face only, never text
 
 module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
@@ -20,8 +20,7 @@ module.exports = {
       ink,
       muted,
       rule,
-      accent: { DEFAULT: accent, dark: accentDark },
-      logo: logoCyan,
+      accent: { DEFAULT: accent, dark: accentDark, light: accentLight },
 
     },
     fontFamily: {

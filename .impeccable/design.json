@@ -10,7 +10,7 @@
       "rule": { "role": "neutral", "displayName": "Hairline Stone", "canonical": "#D9D6CF", "tonalRamp": ["#2E2C28", "#4D4A44", "#706C64", "#958F85", "#B7B2A8", "#D9D6CF", "#E9E7E2", "#F6F5F2"] },
       "accent": { "role": "primary", "displayName": "Logbook Teal", "canonical": "#0E6F86", "tonalRamp": ["#05262E", "#083D4A", "#0A5C70", "#0E6F86", "#3A8DA1", "#71AFBE", "#A9D0DA", "#DDEEF2"] },
       "accent-dark": { "role": "primary", "displayName": "Deep Logbook Teal", "canonical": "#0A5C70", "tonalRamp": ["#041E25", "#07323D", "#0A5C70", "#2C7486", "#5C95A3", "#8FB8C2", "#BFD8DE", "#E7F1F3"] },
-      "logo": { "role": "tertiary", "displayName": "Logo Cyan (logo mark only)", "canonical": "#3DD8F5", "tonalRamp": ["#0A3D47", "#0E6F86", "#0E9FC0", "#3DD8F5", "#6FE2F7", "#A5F3FC", "#CFF8FD", "#ECFDFF"] }
+      "logo": { "role": "tertiary", "displayName": "Logo Cyan (logo mark only)", "canonical": "#8FBAC3", "tonalRamp": ["#0A3D47", "#0E6F86", "#0E9FC0", "#8FBAC3", "#6FE2F7", "#A5F3FC", "#CFF8FD", "#ECFDFF"] }
     },
     "typographyMeta": {
       "display": { "displayName": "Display", "purpose": "The single h1 per page (hero statement, PageIntro titles). 68px desktop, 52px from sm, 42px mobile." },
