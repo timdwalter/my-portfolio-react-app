@@ -55,6 +55,7 @@ export const en = {
       "More than nine years between development and the client, as a tech lead and as a product owner. I rely on critical thinking: I ask critical questions about requirements, estimates and architecture, and I review AI-generated code just as critically as everything else. I still build a good part myself. High quality matters to me more than fast output.",
     linkedin: "Connect on LinkedIn",
     email: "or send an email",
+    onThisPage: "On this page",
     factsLabel: "About Tim",
     role: "Role",
     roleValue: "Senior\u00a0Consultant and Technical\u00a0Project\u00a0Lead at Lufthansa\u00a0Industry\u00a0Solutions",

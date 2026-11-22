@@ -57,6 +57,7 @@ export const de: Dictionary = {
       "Seit über neun Jahren arbeite ich an der Schnittstelle zwischen Entwicklung und Kunden, als Tech Lead und als Product Owner. Bevor etwas gebaut wird, hinterfrage ich Anforderungen, Schätzungen und Architektur. KI-generierten Code prüfe ich genauso gründlich wie jeden anderen. Einen guten Teil der Entwicklung mache ich nach wie vor selbst, und Qualität ist mir dabei wichtiger als Tempo.",
     linkedin: "Auf LinkedIn vernetzen",
     email: "oder E-Mail schreiben",
+    onThisPage: "Auf dieser Seite",
     factsLabel: "Über Tim",
     role: "Rolle",
     roleValue: "Senior\u00a0Consultant und Technical\u00a0Project\u00a0Lead bei Lufthansa\u00a0Industry\u00a0Solutions",

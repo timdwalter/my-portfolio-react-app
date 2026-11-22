@@ -38,6 +38,23 @@ function Hero() {
                 {t.hero.email}
               </a>
             </div>
+            {/* in-page shortcuts to the sections that are not in the main navigation */}
+            <nav aria-label={t.hero.onThisPage} className="mt-lg">
+              <p className="meta">{t.hero.onThisPage}</p>
+              <ul className="mt-xs flex flex-wrap gap-x-lg gap-y-xs">
+                {[
+                  { href: "#how-i-work", label: t.howIWork.title },
+                  { href: "#services", label: t.home.servicesEyebrow },
+                  { href: "#industries", label: t.home.industriesTitle },
+                ].map((l) => (
+                  <li key={l.href}>
+                    <a href={l.href} className="link text-[0.9375rem]">
+                      {l.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </div>
 
           {/* Margin column – portrait and facts */}
