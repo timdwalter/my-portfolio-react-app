@@ -33,7 +33,7 @@ export const en = {
     rows: [
       {
         title: "Work",
-        text: "Technical Project Lead at Lufthansa Industry Solutions. These days I write proposals with AI support, using Claude and Microsoft 365 Copilot.",
+        text: "Senior Consultant and Technical Project Lead at Lufthansa Industry Solutions. These days I write proposals with AI support, using Claude and Microsoft 365 Copilot.",
       },
       {
         title: "Building",
@@ -57,7 +57,7 @@ export const en = {
     email: "or send an email",
     factsLabel: "About Tim",
     role: "Role",
-    roleValue: "Technical Project Lead at Lufthansa\u00a0Industry\u00a0Solutions",
+    roleValue: "Senior\u00a0Consultant and Technical\u00a0Project\u00a0Lead at Lufthansa\u00a0Industry\u00a0Solutions",
     experience: "Experience",
     experienceValue: "9+ years",
     previously: "Previously",
@@ -71,23 +71,26 @@ export const en = {
   },
   howIWork: {
     title: "How I work",
-    lead: "Someone who understands the problem first, asks critical questions, estimates honestly, translates between business and technology, and can still deliver technically.",
     paragraphs: [
-      "I accompany projects from the first inquiry to the handover: understanding the situation, evaluating options, writing proposals, estimating effort, planning budget and schedule. Because I know the implementation side myself, my estimates hold up in the project. And if the best recommendation is not to build something, I say so.",
-      "As a tech lead I led teams technically; as a product owner I translated business goals into a backlog. Today I use both to mediate between the business side, management and development, so that everyone is talking about the same thing.",
+      "I take projects from the first inquiry to handover: understanding the situation, evaluating options, writing proposals, estimating effort, planning budget and schedule. Because I know the implementation side myself, my estimates hold up once the project starts. And if the best recommendation is not to build something, I say so.",
+      "As a tech lead I led teams technically; as a product owner I translated business goals into a backlog. Today I use both to work between the business side, management and development, so that everyone is talking about the same thing.",
     ],
     principles: [
       {
         title: "Understand the problem first",
-        text: "Before I propose a solution, I want to understand what is actually going wrong, what it costs and who it affects. Technology is a means, not an end.",
+        text: "Before I propose a solution, I want to understand what is actually going wrong, what it costs and who it affects. The right technology follows from that, not the other way round.",
+      },
+      {
+        title: "Ask critical questions",
+        text: "I question requirements, estimates and architecture before anything gets built. That's cheaper than rebuilding later, and it applies just as much to AI-generated code.",
       },
       {
         title: "Estimate honestly",
-        text: "A proposal that only wins because it is too optimistic helps no one. I estimate the way I would have to build it myself.",
+        text: "A proposal that only wins because it is too optimistic helps no one. I estimate as if I had to build it myself.",
       },
       {
         title: "Think about tomorrow",
-        text: "Who will run the system in two years? What will it cost as it grows? How do you get out again if a vendor changes? I settle these questions before contracts are signed.",
+        text: "Who will run the system in two years? What will it cost as it grows? How do you get out if a vendor changes its terms? I make sure these questions are answered before contracts are signed.",
       },
       {
         title: "Hand over instead of locking in",
@@ -177,7 +180,7 @@ export const en = {
     eyebrow: "About",
     title: "Hi, I'm Tim.",
     intro:
-      "I'm a Technical Project Lead at Lufthansa Industry Solutions – a software developer, cloud & AI engineer and tech leader with 9+ years of experience building scalable systems and mentoring development teams.",
+      "I'm a Senior Consultant and Technical Project Lead at Lufthansa Industry Solutions – a software developer, cloud & AI engineer and tech leader with 9+ years of experience building scalable systems and mentoring development teams.",
     mission:
       "My mission is to help organizations deliver software that matters – while building cultures where great people thrive.",
     storyTitle: "My story",

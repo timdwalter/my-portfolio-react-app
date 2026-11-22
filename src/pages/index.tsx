@@ -100,17 +100,15 @@ export default function HomePage() {
       <Hero />
 
       <DocSection id="how-i-work" title={t.howIWork.title}>
-        <p className="max-w-[30ch] font-display text-[1.75rem] leading-snug text-ink lg:text-[2rem]">
-          {nb(t.howIWork.lead)}
-        </p>
-        <div className="mt-xl max-w-[52ch] space-y-md text-lg leading-relaxed text-ink">
+        <div className="max-w-[52ch] space-y-md text-lg leading-relaxed text-ink">
           {t.howIWork.paragraphs.map((p) => (
             <p key={p.slice(0, 24)}>{nb(p)}</p>
           ))}
         </div>
         <div className="mt-2xl grid gap-x-lg gap-y-xl sm:grid-cols-2">
-          {t.howIWork.principles.map((p) => (
-            <div key={p.title} className="border-t border-ink pt-md">
+          {t.howIWork.principles.map((p, i) => (
+            // five principles: the first one runs across both columns
+            <div key={p.title} className={`border-t border-ink pt-md ${i === 0 ? "sm:col-span-2" : ""}`}>
               <h3 className="text-[1.375rem] leading-snug">{p.title}</h3>
               <p className="mt-sm max-w-[52ch] text-[0.9375rem] leading-relaxed text-ink">{nb(p.text)}</p>
             </div>

@@ -35,7 +35,7 @@ export const de: Dictionary = {
     rows: [
       {
         title: "Arbeit",
-        text: "Technical Project Lead bei Lufthansa Industry Solutions. Angebote schreibe ich inzwischen KI-gestützt mit Claude und Microsoft 365 Copilot.",
+        text: "Senior Consultant und Technical Project Lead bei Lufthansa Industry Solutions. Angebote schreibe ich inzwischen KI-gestützt mit Claude und Microsoft 365 Copilot.",
       },
       {
         title: "Bauen",
@@ -59,7 +59,7 @@ export const de: Dictionary = {
     email: "oder E-Mail schreiben",
     factsLabel: "Über Tim",
     role: "Rolle",
-    roleValue: "Technical Project Lead bei Lufthansa\u00a0Industry\u00a0Solutions",
+    roleValue: "Senior\u00a0Consultant und Technical\u00a0Project\u00a0Lead bei Lufthansa\u00a0Industry\u00a0Solutions",
     experience: "Erfahrung",
     experienceValue: "9+ Jahre",
     previously: "Zuvor",
@@ -73,27 +73,30 @@ export const de: Dictionary = {
   },
   howIWork: {
     title: "Wie ich arbeite",
-    lead: "Jemand, der erst das Problem versteht, kritisch hinterfragt, ehrlich schätzt, zwischen Business und Technik übersetzt und trotzdem selbst technisch liefern kann.",
     paragraphs: [
-      "Ich begleite Projekte von der ersten Anfrage bis zur Übergabe: Ausgangslage verstehen, Lösungsoptionen bewerten, Angebote schreiben, Aufwände schätzen, Budget und Zeitplan planen. Weil ich die Umsetzung selbst kenne, halten meine Schätzungen auch im Projekt. Und wenn die beste Empfehlung ist, etwas nicht zu bauen, sage ich das.",
-      "Als Tech Lead habe ich Teams technisch geführt, als Product Owner Geschäftsziele in ein Backlog übersetzt. Heute nutze ich beides, um zwischen Fachseite, Management und Entwicklung zu vermitteln, sodass alle über dasselbe reden.",
+      "Ich begleite Projekte von der ersten Anfrage bis zur Übergabe: Ausgangslage verstehen, Optionen bewerten, Angebote schreiben, Aufwände schätzen, Budget und Zeitplan aufstellen. Weil ich die Umsetzung selbst kenne, halten meine Schätzungen auch dann, wenn das Projekt läuft. Und wenn die beste Empfehlung ist, etwas nicht zu bauen, sage ich das.",
+      "Als Tech Lead habe ich Teams technisch geführt, als Product Owner Geschäftsziele in ein Backlog übersetzt. Heute bringe ich beides zusammen und arbeite zwischen Fachseite, Management und Entwicklung, damit am Ende alle vom Gleichen reden.",
     ],
     principles: [
       {
         title: "Erst das Problem verstehen",
-        text: "Bevor ich eine Lösung vorschlage, will ich verstehen, was eigentlich schiefläuft, was es kostet und wen es betrifft. Technologie ist Mittel, nicht Ziel.",
+        text: "Bevor ich eine Lösung vorschlage, will ich wissen, was eigentlich nicht funktioniert, was es kostet und wen es betrifft. Die passende Technologie ergibt sich daraus, nicht umgekehrt.",
+      },
+      {
+        title: "Kritisch nachfragen",
+        text: "Anforderungen, Schätzungen und Architektur hinterfrage ich, bevor gebaut wird. Das ist günstiger als ein späterer Umbau und gilt für KI-generierten Code genauso.",
       },
       {
         title: "Ehrlich schätzen",
-        text: "Ein Angebot, das nur gewinnt, weil es zu optimistisch ist, hilft niemandem. Ich schätze so, wie ich es selbst umsetzen müsste.",
+        text: "Ein Angebot, das nur gewinnt, weil es zu optimistisch ist, hilft niemandem. Ich schätze so, als müsste ich es selbst umsetzen.",
       },
       {
         title: "An morgen denken",
-        text: "Wer betreibt das System in zwei Jahren? Was kostet es, wenn es wächst? Wie kommt man wieder raus, wenn sich ein Anbieter ändert? Diese Fragen kläre ich, bevor Verträge unterschrieben sind.",
+        text: "Wer betreibt das System in zwei Jahren? Was kostet es, wenn es wächst? Wie kommt man wieder heraus, wenn ein Anbieter seine Konditionen ändert? Ich sorge dafür, dass diese Fragen beantwortet sind, bevor Verträge unterschrieben werden.",
       },
       {
         title: "Übergeben statt abhängig machen",
-        text: "Gute Dokumentation, saubere Übergaben und Wissenstransfer gehören für mich zum Projekt. Der Kunde soll danach selbst weiterkommen.",
+        text: "Gute Dokumentation, saubere Übergaben und Wissenstransfer gehören für mich zum Projekt. Danach soll der Kunde ohne mich weiterkommen.",
       },
     ],
   },
@@ -179,7 +182,7 @@ export const de: Dictionary = {
     eyebrow: "Über mich",
     title: "Hi, ich bin Tim.",
     intro:
-      "Ich bin Technical Project Lead bei Lufthansa Industry Solutions – Softwareentwickler, Cloud- & AI-Engineer und Tech Lead mit über 9 Jahren Erfahrung im Bau skalierbarer Systeme und in der Begleitung von Entwicklungsteams.",
+      "Ich bin Senior Consultant und Technical Project Lead bei Lufthansa Industry Solutions – Softwareentwickler, Cloud- & AI-Engineer und Tech Lead mit über 9 Jahren Erfahrung im Bau skalierbarer Systeme und in der Begleitung von Entwicklungsteams.",
     mission:
       "Mein Ziel: Organisationen helfen, Software zu liefern, die zählt – und dabei Kulturen zu schaffen, in denen gute Leute aufblühen.",
     storyTitle: "Mein Weg",

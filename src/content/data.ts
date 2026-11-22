@@ -377,7 +377,7 @@ export type Station = { company: string; role?: L; current?: boolean };
 export const career: Station[] = [
   {
     company: "Lufthansa\u00a0Industry\u00a0Solutions",
-    role: { en: "Technical Project Lead", de: "Technical Project Lead" },
+    role: { en: "Senior Consultant and Technical Project Lead", de: "Senior Consultant und Technical Project Lead" },
     current: true,
   },
   { company: "Fraunhofer IAPT" },

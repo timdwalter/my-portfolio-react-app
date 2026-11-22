@@ -24,7 +24,7 @@ Personal portfolio of M.Eng. Tim D. Walter (brand: TimTech Solutions). It shows 
 
 ## Positioning
 
-Technical Project Lead at Lufthansa Industry Solutions who still writes code: Java/cloud backend, AI engineering and agentic development – with experience in medical imaging, aviation and smart campus planning. (Confirmed by Tim.)
+Senior Consultant and Technical Project Lead at Lufthansa Industry Solutions who still writes code: Java/cloud backend, AI engineering and agentic development – with experience in medical imaging, aviation and smart campus planning. (Confirmed by Tim.)
 
 Refined by Tim:
 - Primarily a **tech lead**, not a backend specialist.
@@ -36,7 +36,7 @@ Refined by Tim:
 - Still builds a good part himself; **high quality matters more than fast output**.
 - Home hero copy is Tim's own wording (EN); keep it.
 - **Technology consultant, not only a developer.** One-line positioning (Tim's words): "Technologieberatung, Projektleitung und Umsetzung für Software-, Cloud- und IoT-Systeme." Used in the footer and the home SEO description.
-- "Wie ich arbeite" (directly under the hero) is Tim's own text: understand the problem first, question critically, estimate honestly, translate between business and technology, still deliver; first inquiry to handover; says so when the best advice is not to build; think about operation/cost/exit before contracts; hand over instead of creating dependency.
+- "Wie ich arbeite" / "How I work" (directly under the hero) is Tim's own text in both languages – keep it verbatim: understand the problem first, question critically, estimate honestly, translate between business and technology, still deliver; first inquiry to handover; says so when the best advice is not to build; think about operation/cost/exit before contracts; hand over instead of creating dependency.
 
 ## Operating Context
 
@@ -61,7 +61,7 @@ Refined by Tim:
 
 - Professional photo: `public/TDW-Profil.jpg`.
 - Project images in `public/` are AI-generated; Tim explicitly keeps them (he likes them and will not make better ones).
-- Career: Lufthansa Industry Solutions (current, Technical Project Lead); earlier Fraunhofer IAPT (Institute for Additive Production Technologies) and Siemens Healthcare – shown by name only, without roles (Tim's request).
+- Career: Lufthansa Industry Solutions (current, Senior Consultant and Technical Project Lead); earlier Fraunhofer IAPT (Institute for Additive Production Technologies) and Siemens Healthcare – shown by name only, without roles (Tim's request).
 - 9+ years of experience; 2 years as Product Owner (aviation CMS).
 - Industries: MRI/CT prototypes and training software for the Indian and Chinese markets; aviation CMS (Product Owner, in contact with all airlines of the Lufthansa Group); process mining for airlines; maritime (Port of Lübeck); logistics; tourism (Germany); bus network planning (public transport); smart-campus use cases (project still running – keep it vague: no client, no number of use cases, no specific features); ESG reporting; a corporate talent management tool. Most of these have no further detail yet – do not invent any.
 - Certifications: PSPO, PSM, SAFe POPM, CKAD, EU drone pilot certificate A1/A3.
