@@ -20,9 +20,9 @@ export default function Logo() {
   return (
     <Link href="/" className="group flex items-center gap-2.5" aria-label="TimTech Solutions – Home">
       <HexMark className="h-8 w-8 transition-transform duration-500 group-hover:rotate-[60deg]" />
-      <span className="font-display text-[15px] font-semibold leading-none tracking-wide text-heading">
+      <span className="font-sans text-[15px] font-semibold leading-none tracking-[0.04em] text-ink">
         TIM<span className="text-brand-400">TECH</span>
-        <span className="mt-1 block font-mono text-[9px] font-normal tracking-[0.3em] text-muted">
+        <span className="mt-1 block font-sans text-[11px] font-medium tracking-[0.18em] text-muted">
           SOLUTIONS
         </span>
       </span>

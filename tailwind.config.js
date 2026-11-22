@@ -1,58 +1,75 @@
 /** @type {import('tailwindcss').Config} */
+
+// Design system: see CLAUDE.md. theme.colors is REPLACED (not extended) so that
+// Tailwind's default palette (indigo-*, purple-*, …) does not exist in this project.
+const paper = "#F8F7F4"; // background
+const ink = "#111111"; // main text
+const muted = "#555555"; // secondary text (6.96:1 on paper)
+const rule = "#D9D6CF"; // 1px lines
+const accent = "#0E6F86"; // logo cyan, darkened for AA (5.39:1 on paper)
+const accentDark = "#0A5C70"; // accent hover / pressed
+const logoCyan = "#3DD8F5"; // logo only, never text on paper
+
 module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
+    colors: {
+      transparent: "transparent",
+      current: "currentColor",
+      paper,
+      ink,
+      muted,
+      rule,
+      accent: { DEFAULT: accent, dark: accentDark },
+      logo: logoCyan,
+
+      // Legacy aliases – mapped onto the palette above so sections that are not
+      // redesigned yet keep rendering. Remove each alias once no section uses it.
+      canvas: paper,
+      subtle: paper,
+      surface: { DEFAULT: paper, hover: paper },
+      line: { DEFAULT: rule, strong: rule },
+      heading: ink,
+      body: ink,
+      faint: muted,
+      white: paper,
+      black: ink,
+      night: { DEFAULT: ink, soft: ink, line: muted },
+      brand: { 50: paper, 100: rule, 200: rule, 300: accentDark, 400: accent, 500: accent, 600: logoCyan },
+      emerald: { 50: paper, 200: rule, 500: accent, 800: ink },
+    },
+    fontFamily: {
+      sans: ["var(--font-sans)", "sans-serif"],
+      display: ["var(--font-display)", "serif"],
+      mono: ["var(--font-mono)", "monospace"],
+    },
+    // Square corners (0–4px). `full` stays for genuinely round things (dots).
+    borderRadius: {
+      none: "0",
+      sm: "2px",
+      DEFAULT: "2px",
+      md: "4px",
+      lg: "4px",
+      xl: "4px",
+      "2xl": "4px",
+      "3xl": "4px",
+      full: "9999px",
+    },
+    boxShadow: { none: "none" },
     container: {
       center: true,
-      padding: { DEFAULT: "1.25rem", md: "2rem" },
-      screens: { "2xl": "1200px" },
+      padding: { DEFAULT: "1rem", md: "1.5rem", lg: "3rem" },
+      screens: { "2xl": "1280px" },
     },
     extend: {
-      colors: {
-        // Surfaces – light editorial theme
-        canvas: "#ffffff", // page background
-        subtle: "#f4f6f9", // alternating sections, inputs
-        surface: { DEFAULT: "#ffffff", hover: "#fbfcfd" }, // cards
-        line: { DEFAULT: "#e4e8ee", strong: "#cdd4de" }, // borders
-        // Text
-        heading: "#0b1220",
-        body: "#334155",
-        muted: "#5b6678",
-        faint: "#8a94a6",
-        // Dark block (contact section, footer accents)
-        night: { DEFAULT: "#0b1220", soft: "#131c2e", line: "#24304a" },
-        // Brand cyan (from the TimTech logo); 400+ is dark enough for text on white
-        brand: {
-          50: "#ecfeff",
-          100: "#cffafe",
-          200: "#a5f3fc",
-          300: "#155e75",
-          400: "#0e7490",
-          500: "#06b6d4",
-          600: "#3dd8f5",
-        },
-      },
-      fontFamily: {
-        sans: ["var(--font-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
-        display: ["var(--font-display)", "var(--font-sans)", "sans-serif"],
-        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
-      },
-      boxShadow: {
-        soft: "0 1px 2px rgba(11,18,32,0.04), 0 12px 32px -12px rgba(11,18,32,0.14)",
-      },
       keyframes: {
         pulseDot: {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0.35" },
         },
-        flow: {
-          from: { backgroundPosition: "0 -80px" },
-          to: { backgroundPosition: "0 80px" },
-        },
       },
       animation: {
         "pulse-dot": "pulseDot 2s ease-in-out infinite",
-        flow: "flow 1.6s linear infinite",
       },
     },
   },

@@ -1,7 +1,5 @@
 import Image from "next/image";
-import { motion } from "framer-motion";
 import Seo from "@/components/ui/Seo";
-import HexBackground from "@/components/ui/HexBackground";
 import Button, { Arrow } from "@/components/ui/Button";
 import { Reveal, Section, SectionHeader } from "@/components/ui/Section";
 import { ArticleGrid, ProjectCard, ServiceIcon } from "@/components/ui/Cards";
@@ -13,82 +11,82 @@ import { BuildingOffice2Icon, PaperAirplaneIcon, ViewfinderCircleIcon } from "@h
 
 const industryIcons = { imaging: ViewfinderCircleIcon, campus: BuildingOffice2Icon, aviation: PaperAirplaneIcon };
 
-const ease = [0.21, 0.47, 0.32, 0.98];
-
 function Hero() {
   const t = useT();
+  const earlier = career.slice(1);
+  const facts = [
+    { label: t.hero.role, value: t.hero.roleValue },
+    { label: t.hero.experience, value: t.hero.experienceValue },
+    { label: t.hero.previously, value: earlier.map((c) => c.company).join(", ") },
+  ];
+
   return (
-    <section className="relative overflow-hidden pb-16 pt-28 md:pb-24 md:pt-36">
-      <HexBackground />
-      <div className="container relative grid items-center gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
-        <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease }}>
-          {site.available && (
-            <p className="mb-8 inline-flex items-center gap-2.5 rounded-full border border-emerald-200 bg-emerald-50 px-3.5 py-1.5 text-xs font-medium text-emerald-800">
-              <span className="h-1.5 w-1.5 animate-pulse-dot rounded-full bg-emerald-500" />
-              {t.home.available}
+    <section aria-labelledby="hero-title" className="pb-12 pt-28 lg:pb-24 lg:pt-44">
+      <div className="container">
+        <div className="grid-12 gap-y-12">
+          {/* Statement – first on mobile, columns 4–11 on desktop */}
+          <div className="stagger col-main lg:row-start-1">
+            <h1
+              id="hero-title"
+              className="text-[2.625rem] leading-[1.06] sm:text-[3.25rem] lg:text-[4.25rem] lg:leading-[1.04]"
+            >
+              {t.hero.headline}
+            </h1>
+            <p className="mt-8 max-w-[62ch] text-lg leading-relaxed text-ink lg:text-xl lg:leading-relaxed">
+              {t.hero.intro}
             </p>
-          )}
-          <p className="mb-4 font-display text-lg font-medium text-muted">{site.displayName} —</p>
-          <h1 className="text-[2.6rem] font-semibold leading-[1.04] sm:text-6xl lg:text-[4.5rem]">
-            {t.home.headline1}
-            <br />
-            <span className="text-gradient">{t.home.headline2}</span>
-          </h1>
-          <p className="mt-7 max-w-xl text-lg leading-relaxed text-body md:text-xl">{t.home.intro}</p>
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <Button href={mailto(t.contact.subject)}>
-              {t.home.ctaPrimary} <Arrow />
-            </Button>
-            <Button href="/projects" variant="secondary">
-              {t.home.ctaSecondary}
-            </Button>
+            <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4">
+              <a href={site.socials.linkedin} target="_blank" rel="noopener noreferrer" className="action">
+                {t.hero.linkedin}
+              </a>
+              <a href={mailto(t.contact.subject)} className="link text-[0.9375rem]">
+                {t.hero.email}
+              </a>
+            </div>
           </div>
-        </motion.div>
 
-        <motion.div
-          className="relative mx-auto w-full max-w-[300px] sm:max-w-[340px] lg:order-first lg:ml-0 lg:max-w-[360px]"
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.15, ease }}
-        >
-          <div className="relative aspect-[4/5] overflow-hidden rounded-[1.75rem] bg-[#c9ced4]">
-            <Image
-              src="/TDW-Profil.jpg"
-              alt={site.fullName}
-              fill
-              priority
-              sizes="(min-width: 1024px) 360px, 340px"
-              className="object-cover object-[50%_20%]"
-            />
-          </div>
-          {/* floating cards */}
-          <div className="absolute -bottom-6 -right-4 rounded-2xl border border-line bg-white/95 px-5 py-4 shadow-soft backdrop-blur sm:-right-8">
-            <p className="font-display text-3xl font-semibold text-heading">{site.yearsExperience}+</p>
-            <p className="font-mono text-[11px] uppercase tracking-wider text-muted">{t.about.yearsLabel}</p>
-          </div>
-          <div className="absolute -left-3 top-8 hidden rounded-xl border border-line bg-white/95 px-4 py-2.5 shadow-soft backdrop-blur sm:block">
-            <p className="font-mono text-[11px] text-muted">Software · Cloud · AI · IoT</p>
-          </div>
-        </motion.div>
-      </div>
-
-      {/* career + stack strips */}
-      <div className="container relative mt-20 md:mt-24">
-        <div className="flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-line pt-8">
-          <span className="font-mono text-xs uppercase tracking-[0.2em] text-faint">{t.home.careerLabel}</span>
-          {career.map((c) => (
-            <span key={c.company} className="font-display text-lg font-semibold text-heading">
-              {c.company}
-            </span>
-          ))}
+          {/* Margin column – portrait and facts */}
+          <aside
+            aria-label={t.hero.factsLabel}
+            className="stagger col-meta grid grid-cols-[7rem_1fr] gap-x-6 border-t border-rule pt-6 sm:grid-cols-[9rem_1fr] lg:row-start-1 lg:block lg:border-0 lg:pt-3"
+          >
+            <div className="relative aspect-[4/5] w-full overflow-hidden bg-rule">
+              <Image
+                src="/TDW-Profil.jpg"
+                alt={site.fullName}
+                fill
+                priority
+                sizes="(min-width: 1024px) 270px, 144px"
+                className="object-cover object-[50%_18%]"
+              />
+            </div>
+            <div className="lg:mt-6">
+              <p className="font-medium leading-snug text-ink">{site.displayName}</p>
+              <dl className="mt-4 space-y-3">
+                {facts.map((f) => (
+                  <div key={f.label}>
+                    <dt className="meta">{f.label}</dt>
+                    <dd className="text-[0.9375rem] leading-snug text-ink">{f.value}</dd>
+                  </div>
+                ))}
+                {site.available && (
+                  <div>
+                    <dt className="meta">{t.hero.status}</dt>
+                    <dd className="flex items-baseline gap-2 text-[0.9375rem] leading-snug text-ink">
+                      <span aria-hidden="true" className="inline-block h-2 w-2 shrink-0 translate-y-[-1px] bg-accent" />
+                      {t.hero.statusValue}
+                    </dd>
+                  </div>
+                )}
+              </dl>
+            </div>
+          </aside>
         </div>
-        <div className="mt-6 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-line pt-6">
-          <span className="font-mono text-xs uppercase tracking-[0.2em] text-faint">Stack</span>
-          {site.stack.map((s) => (
-            <span key={s} className="font-display text-base font-medium text-muted">
-              {s}
-            </span>
-          ))}
+
+        {/* Stack – plain metadata row closing the hero */}
+        <div className="grid-12 mt-16 gap-y-1 border-t border-rule pt-5 lg:mt-24">
+          <p className="meta col-meta">{t.hero.stack}</p>
+          <p className="col-main font-mono text-[0.8125rem] leading-6 text-ink">{site.stack.join(", ")}</p>
         </div>
       </div>
     </section>

@@ -18,17 +18,26 @@ export const en = {
     privacy: "Privacy",
     rights: "All rights reserved.",
   },
+  hero: {
+    headline: "I lead software projects and still write the code myself.",
+    intro:
+      "I design and build software systems, cloud platforms, and AI and IoT solutions. I also lead the teams that run them.",
+    linkedin: "Connect on LinkedIn",
+    email: "or send an email",
+    factsLabel: "About Tim",
+    role: "Role",
+    roleValue: "Technical Project Lead at Lufthansa Industry Solutions",
+    experience: "Experience",
+    experienceValue: "9+ years",
+    previously: "Previously",
+    status: "Status",
+    statusValue: "Open to selected side projects",
+    stack: "Stack",
+  },
   home: {
     seoTitle: "Software, Cloud & IoT Architect",
     seoDescription:
       "Tim D. Walter – software developer, cloud & AI engineer and tech lead. I design and build scalable software, cloud platforms, AI and IoT solutions.",
-    available: "Open to selected side projects",
-    headline1: "Software, cloud & AI",
-    headline2: "that ships.",
-    intro:
-      "I help companies architect and build robust software systems, cloud platforms, AI and IoT solutions – and lead the teams that run them.",
-    ctaPrimary: "Start a project",
-    ctaSecondary: "View work",
     servicesEyebrow: "What I do",
     servicesTitle: "From the device to the cloud to the model – and the team in between.",
     services: [
@@ -71,7 +80,6 @@ export const en = {
     workEyebrow: "Selected work",
     workTitle: "Projects",
     workAll: "All projects",
-    careerLabel: "Career",
     principlesEyebrow: "How I work",
     principlesTitle: "Clear thinking, solid architecture, strong teams.",
     principles: [

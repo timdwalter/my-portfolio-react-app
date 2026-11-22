@@ -20,17 +20,26 @@ export const de: Dictionary = {
     privacy: "Datenschutz",
     rights: "Alle Rechte vorbehalten.",
   },
+  hero: {
+    headline: "Ich leite Softwareprojekte und schreibe den Code noch selbst.",
+    intro:
+      "Ich entwerfe und baue Softwaresysteme, Cloud-Plattformen sowie KI- und IoT-Lösungen. Und ich führe die Teams, die sie betreiben.",
+    linkedin: "Auf LinkedIn vernetzen",
+    email: "oder E-Mail schreiben",
+    factsLabel: "Über Tim",
+    role: "Rolle",
+    roleValue: "Technical Project Lead bei Lufthansa Industry Solutions",
+    experience: "Erfahrung",
+    experienceValue: "9+ Jahre",
+    previously: "Zuvor",
+    status: "Status",
+    statusValue: "Offen für ausgewählte Projekte",
+    stack: "Stack",
+  },
   home: {
     seoTitle: "Software-, Cloud- & IoT-Architekt",
     seoDescription:
       "Tim D. Walter – Softwareentwickler, Cloud- & AI-Engineer und Tech Lead. Ich entwerfe und baue skalierbare Software, Cloud-Plattformen, KI- und IoT-Lösungen.",
-    available: "Offen für ausgewählte Projekte",
-    headline1: "Software, Cloud & KI,",
-    headline2: "die läuft.",
-    intro:
-      "Ich unterstütze Unternehmen dabei, robuste Softwaresysteme, Cloud-Plattformen, KI- und IoT-Lösungen zu entwerfen und umzusetzen – und führe die Teams, die sie betreiben.",
-    ctaPrimary: "Projekt anfragen",
-    ctaSecondary: "Projekte ansehen",
     servicesEyebrow: "Was ich mache",
     servicesTitle: "Vom Gerät über die Cloud bis zum Modell – und das Team dazwischen.",
     services: [
@@ -73,7 +82,6 @@ export const de: Dictionary = {
     workEyebrow: "Ausgewählte Arbeiten",
     workTitle: "Projekte",
     workAll: "Alle Projekte",
-    careerLabel: "Stationen",
     principlesEyebrow: "Wie ich arbeite",
     principlesTitle: "Klares Denken, solide Architektur, starke Teams.",
     principles: [
