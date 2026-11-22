@@ -3,6 +3,7 @@ export const en = {
     industries: "Industries",
     projects: "Projects",
     skills: "Skills",
+    stack: "Tech stack",
     about: "About",
     blog: "Writing",
     contact: "Contact",
@@ -33,6 +34,10 @@ export const en = {
     status: "Status",
     statusValue: "Open to selected side projects",
     stack: "Stack",
+  },
+  github: {
+    note: "I can't make all of my projects public at the moment, so GitHub only shows a small, limited selection.",
+    link: "View on GitHub",
   },
   home: {
     seoTitle: "Software, Cloud & IoT Architect",

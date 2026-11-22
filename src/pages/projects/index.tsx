@@ -5,6 +5,7 @@ import { ProjectCard } from "@/components/ui/Cards";
 import ContactSection from "@/components/ContactSection";
 import { projects } from "@/content/data";
 import { useT } from "@/lib/i18n";
+import { site } from "@/content/site";
 
 export default function ProjectsPage() {
   const t = useT();
@@ -13,6 +14,14 @@ export default function ProjectsPage() {
       <Seo title={t.projects.seoTitle} description={t.projects.seoDescription} />
       <PageHeader eyebrow={t.projects.eyebrow} title={t.projects.title}>
         {t.projects.intro}
+        {site.showGithub && (
+          <span className="mt-md block text-base text-muted">
+            {t.github.note}{" "}
+            <a href={site.socials.github} target="_blank" rel="noopener noreferrer" className="link">
+              {t.github.link}
+            </a>
+          </span>
+        )}
       </PageHeader>
       <section className="pb-8">
         <div className="container grid gap-6 md:grid-cols-2">

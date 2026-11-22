@@ -5,6 +5,7 @@ export const de: Dictionary = {
     industries: "Branchen",
     projects: "Projekte",
     skills: "Skills",
+    stack: "Tech-Stack",
     about: "Über mich",
     blog: "Artikel",
     contact: "Kontakt",
@@ -35,6 +36,10 @@ export const de: Dictionary = {
     status: "Status",
     statusValue: "Offen für ausgewählte Projekte",
     stack: "Stack",
+  },
+  github: {
+    note: "Leider kann ich aktuell nicht alle Projekte öffentlich machen. Auf GitHub liegt deshalb nur eine kleine, begrenzte Auswahl.",
+    link: "Zu GitHub",
   },
   home: {
     seoTitle: "Software-, Cloud- & IoT-Architekt",

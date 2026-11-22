@@ -41,6 +41,7 @@ export default function Navbar() {
     { href: "/#industries", label: t.nav.industries },
     { href: "/projects", label: t.nav.projects },
     { href: "/about#skills", label: t.nav.skills },
+    { href: "/about#stack", label: t.nav.stack },
     { href: "/about", label: t.nav.about },
     { href: "/blog", label: t.nav.blog },
   ];

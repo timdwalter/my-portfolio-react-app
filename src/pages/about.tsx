@@ -161,7 +161,7 @@ export default function AboutPage() {
         <Reveal>
           <h2 className="mb-8 text-2xl font-semibold">{t.about.connectTitle}</h2>
         </Reveal>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {profiles.map((p) => (
             <a
               key={p.label}
@@ -175,6 +175,7 @@ export default function AboutPage() {
             </a>
           ))}
         </div>
+        {site.showGithub && <p className="mt-md max-w-[60ch] text-[0.9375rem] text-muted">{t.github.note}</p>}
       </Section>
 
       <ContactSection />

@@ -22,8 +22,8 @@ export const site = {
     github: "https://github.com/timdwalter",
     medium: "https://medium.com/@timwalter23",
   },
-  /** GitHub profile is still under construction – set to true to show the link. */
-  showGithub: false,
+  /** Show the GitHub link (profile holds only a small public selection of projects). */
+  showGithub: true,
   stack: ["Java", "Spring Boot", "Kubernetes", "AWS", "Azure", "Ollama", "Claude Code", "Celonis", "MQTT"],
 };
 
