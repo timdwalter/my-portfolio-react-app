@@ -35,6 +35,8 @@ Refined by Tim:
 - Relies on **critical thinking**: asks critical questions about requirements, estimates and architecture; reviews AI-generated code as critically as everything else.
 - Still builds a good part himself; **high quality matters more than fast output**.
 - Home hero copy is Tim's own wording (EN); keep it.
+- **Technology consultant, not only a developer.** One-line positioning (Tim's words): "Technologieberatung, Projektleitung und Umsetzung für Software-, Cloud- und IoT-Systeme." Used in the footer and the home SEO description.
+- "Wie ich arbeite" (directly under the hero) is Tim's own text: understand the problem first, question critically, estimate honestly, translate between business and technology, still deliver; first inquiry to handover; says so when the best advice is not to build; think about operation/cost/exit before contracts; hand over instead of creating dependency.
 
 ## Operating Context
 

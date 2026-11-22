@@ -14,7 +14,7 @@ export const de: Dictionary = {
     language: "Sprache",
   },
   footer: {
-    tagline: "Software-, Cloud- & IoT-Systeme – und die Teams, die sie bauen.",
+    tagline: "Technologieberatung, Projektleitung und Umsetzung für Software-, Cloud- und IoT-Systeme.",
     sitemap: "Seiten",
     connect: "Profile",
     legal: "Rechtliches",
@@ -71,10 +71,36 @@ export const de: Dictionary = {
     note: "Leider kann ich aktuell nicht alle Projekte öffentlich machen. Auf GitHub liegt deshalb nur eine kleine, begrenzte Auswahl.",
     link: "Zu GitHub",
   },
+  howIWork: {
+    title: "Wie ich arbeite",
+    lead: "Jemand, der erst das Problem versteht, kritisch hinterfragt, ehrlich schätzt, zwischen Business und Technik übersetzt und trotzdem selbst technisch liefern kann.",
+    paragraphs: [
+      "Ich begleite Projekte von der ersten Anfrage bis zur Übergabe: Ausgangslage verstehen, Lösungsoptionen bewerten, Angebote schreiben, Aufwände schätzen, Budget und Zeitplan planen. Weil ich die Umsetzung selbst kenne, halten meine Schätzungen auch im Projekt. Und wenn die beste Empfehlung ist, etwas nicht zu bauen, sage ich das.",
+      "Als Tech Lead habe ich Teams technisch geführt, als Product Owner Geschäftsziele in ein Backlog übersetzt. Heute nutze ich beides, um zwischen Fachseite, Management und Entwicklung zu vermitteln, sodass alle über dasselbe reden.",
+    ],
+    principles: [
+      {
+        title: "Erst das Problem verstehen",
+        text: "Bevor ich eine Lösung vorschlage, will ich verstehen, was eigentlich schiefläuft, was es kostet und wen es betrifft. Technologie ist Mittel, nicht Ziel.",
+      },
+      {
+        title: "Ehrlich schätzen",
+        text: "Ein Angebot, das nur gewinnt, weil es zu optimistisch ist, hilft niemandem. Ich schätze so, wie ich es selbst umsetzen müsste.",
+      },
+      {
+        title: "An morgen denken",
+        text: "Wer betreibt das System in zwei Jahren? Was kostet es, wenn es wächst? Wie kommt man wieder raus, wenn sich ein Anbieter ändert? Diese Fragen kläre ich, bevor Verträge unterschrieben sind.",
+      },
+      {
+        title: "Übergeben statt abhängig machen",
+        text: "Gute Dokumentation, saubere Übergaben und Wissenstransfer gehören für mich zum Projekt. Der Kunde soll danach selbst weiterkommen.",
+      },
+    ],
+  },
   home: {
     seoTitle: "Software-, Cloud- & IoT-Architekt",
     seoDescription:
-      "Tim D. Walter – Softwareentwickler, Cloud- & AI-Engineer und Tech Lead. Ich entwerfe und baue skalierbare Software, Cloud-Plattformen, KI- und IoT-Lösungen.",
+      "Tim D. Walter – Technologieberatung, Projektleitung und Umsetzung für Software-, Cloud- und IoT-Systeme.",
     servicesEyebrow: "Was ich mache",
     servicesTitle: "Vom Gerät über die Cloud bis zum Modell – und das Team dazwischen.",
     services: [
@@ -117,23 +143,6 @@ export const de: Dictionary = {
     workEyebrow: "Ausgewählte Arbeiten",
     workTitle: "Projekte",
     workAll: "Alle Projekte",
-    principlesEyebrow: "Wie ich arbeite",
-    principlesTitle: "Klares Denken, solide Architektur, starke Teams.",
-    principles: [
-      {
-        title: "Architektur zuerst",
-        text: "Entscheidungen, die dokumentiert, verstanden und auf Dauer gebaut sind – nicht nur für den nächsten Sprint.",
-      },
-      {
-        title: "Menschen machen Software",
-        text: "Gute Systeme entstehen aus guter Zusammenarbeit. Ich investiere in Kommunikation, Vertrauen und ein gemeinsames Ziel.",
-      },
-      {
-        title: "Pragmatisch liefern",
-        text: "Die einfachste Lösung für das echte Problem – früh ausgeliefert und kontinuierlich verbessert.",
-      },
-    ],
-    principlesLink: "Mehr über mich",
     industriesTitle: "Branchen",
     industriesIntro: "Hier habe ich bisher gearbeitet.",
     writingEyebrow: "Artikel",

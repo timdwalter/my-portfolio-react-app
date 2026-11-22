@@ -12,7 +12,7 @@ export const en = {
     language: "Language",
   },
   footer: {
-    tagline: "Software, cloud & IoT systems – and the teams that build them.",
+    tagline: "Technology consulting, project leadership and delivery for software, cloud and IoT systems.",
     sitemap: "Site",
     connect: "Connect",
     legal: "Legal",
@@ -69,10 +69,36 @@ export const en = {
     note: "I can't make all of my projects public at the moment, so GitHub only shows a small, limited selection.",
     link: "View on GitHub",
   },
+  howIWork: {
+    title: "How I work",
+    lead: "Someone who understands the problem first, asks critical questions, estimates honestly, translates between business and technology, and can still deliver technically.",
+    paragraphs: [
+      "I accompany projects from the first inquiry to the handover: understanding the situation, evaluating options, writing proposals, estimating effort, planning budget and schedule. Because I know the implementation side myself, my estimates hold up in the project. And if the best recommendation is not to build something, I say so.",
+      "As a tech lead I led teams technically; as a product owner I translated business goals into a backlog. Today I use both to mediate between the business side, management and development, so that everyone is talking about the same thing.",
+    ],
+    principles: [
+      {
+        title: "Understand the problem first",
+        text: "Before I propose a solution, I want to understand what is actually going wrong, what it costs and who it affects. Technology is a means, not an end.",
+      },
+      {
+        title: "Estimate honestly",
+        text: "A proposal that only wins because it is too optimistic helps no one. I estimate the way I would have to build it myself.",
+      },
+      {
+        title: "Think about tomorrow",
+        text: "Who will run the system in two years? What will it cost as it grows? How do you get out again if a vendor changes? I settle these questions before contracts are signed.",
+      },
+      {
+        title: "Hand over instead of locking in",
+        text: "Good documentation, clean handovers and knowledge transfer are part of the project for me. Afterwards, the client should be able to carry on without me.",
+      },
+    ],
+  },
   home: {
     seoTitle: "Software, Cloud & IoT Architect",
     seoDescription:
-      "Tim D. Walter – software developer, cloud & AI engineer and tech lead. I design and build scalable software, cloud platforms, AI and IoT solutions.",
+      "Tim D. Walter – Technology consulting, project leadership and delivery for software, cloud and IoT systems.",
     servicesEyebrow: "What I do",
     servicesTitle: "From the device to the cloud to the model – and the team in between.",
     services: [
@@ -115,23 +141,6 @@ export const en = {
     workEyebrow: "Selected work",
     workTitle: "Projects",
     workAll: "All projects",
-    principlesEyebrow: "How I work",
-    principlesTitle: "Clear thinking, solid architecture, strong teams.",
-    principles: [
-      {
-        title: "Architecture first",
-        text: "Decisions that are documented, understood and built to last – not just to pass the next sprint.",
-      },
-      {
-        title: "People make software",
-        text: "Great systems come from great collaboration. I invest in communication, trust and shared purpose.",
-      },
-      {
-        title: "Pragmatic delivery",
-        text: "The simplest thing that solves the real problem, shipped early and improved continuously.",
-      },
-    ],
-    principlesLink: "More about me",
     industriesTitle: "Industries",
     industriesIntro: "Where I have worked so far.",
     writingEyebrow: "Writing",

@@ -99,6 +99,25 @@ export default function HomePage() {
       <Seo title={t.home.seoTitle} description={t.home.seoDescription} />
       <Hero />
 
+      <DocSection id="how-i-work" title={t.howIWork.title}>
+        <p className="max-w-[30ch] font-display text-[1.75rem] leading-snug text-ink lg:text-[2rem]">
+          {nb(t.howIWork.lead)}
+        </p>
+        <div className="mt-xl max-w-[52ch] space-y-md text-lg leading-relaxed text-ink">
+          {t.howIWork.paragraphs.map((p) => (
+            <p key={p.slice(0, 24)}>{nb(p)}</p>
+          ))}
+        </div>
+        <div className="mt-2xl grid gap-x-lg gap-y-xl sm:grid-cols-2">
+          {t.howIWork.principles.map((p) => (
+            <div key={p.title} className="border-t border-ink pt-md">
+              <h3 className="text-[1.375rem] leading-snug">{p.title}</h3>
+              <p className="mt-sm max-w-[52ch] text-[0.9375rem] leading-relaxed text-ink">{nb(p.text)}</p>
+            </div>
+          ))}
+        </div>
+      </DocSection>
+
       <DocSection id="services" title={t.home.servicesEyebrow} intro={nb(t.home.servicesTitle)}>
         <div className="grid gap-x-lg gap-y-xl sm:grid-cols-2">
           {/* Tech leadership is Tim's primary role: first, across both columns */}
@@ -131,22 +150,6 @@ export default function HomePage() {
         aside={<TextLink href="/projects">{t.home.workAll}</TextLink>}
       >
         <ProjectRows projects={projects} />
-      </DocSection>
-
-      <DocSection
-        id="principles"
-        title={t.home.principlesEyebrow}
-        intro={t.home.principlesTitle}
-        aside={<TextLink href="/about">{t.home.principlesLink}</TextLink>}
-      >
-        <div className="grid gap-x-lg gap-y-xl sm:grid-cols-3">
-          {t.home.principles.map((p) => (
-            <div key={p.title} className="border-t border-ink pt-md">
-              <h3 className="text-[1.375rem] leading-snug">{p.title}</h3>
-              <p className="mt-sm text-[0.9375rem] leading-relaxed text-ink">{nb(p.text)}</p>
-            </div>
-          ))}
-        </div>
       </DocSection>
 
       <DocSection
