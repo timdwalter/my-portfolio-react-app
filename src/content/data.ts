@@ -100,6 +100,8 @@ export const projects: Project[] = [
 
 export type Article = {
   title: string;
+  /** Preview image from the Medium article, downloaded once and self-hosted (no request to Medium). */
+  image?: { src: string; width: number; height: number };
   /** ISO date of publication */
   date: string;
   category: L;
@@ -114,6 +116,7 @@ export const articles: Article[] = [
     date: "2026-10-18",
     category: { en: "AI, Satire", de: "KI, Satire" },
     url: "https://medium.com/@timwalter23/a-guide-to-unhappiness-with-artificial-intelligence-f062d9b82107",
+    image: { src: "/articles/unhappiness-ai.webp", width: 1024, height: 576 },
     summary: {
       en: "Paul Watzlawick wrote a guide to making yourself unhappy. Here is the AI edition: how to lose control entirely with AI agents.",
       de: "Paul Watzlawick schrieb eine Anleitung zum Unglücklichsein. Hier die KI-Edition: wie man mit KI-Agenten die Kontrolle komplett verliert.",
@@ -124,6 +127,7 @@ export const articles: Article[] = [
     date: "2026-09-07",
     category: { en: "AI Workflow", de: "KI-Workflow" },
     url: "https://medium.com/@timwalter23/how-i-work-on-proposals-with-claude-ms-copilot-step-by-step-c79f93db19e9",
+    image: { src: "/articles/proposals-claude-copilot.webp", width: 1024, height: 576 },
     summary: {
       en: "The AI-aided process I run as a technical project lead – from a wall of requirements to a QA'd offer, with the prompts I reuse.",
       de: "Mein KI-gestützter Prozess als Technical Project Lead – von der Anforderungswand zum qualitätsgesicherten Angebot, inklusive wiederverwendbarer Prompts.",
@@ -134,6 +138,7 @@ export const articles: Article[] = [
     date: "2026-09-06",
     category: { en: "Claude Code", de: "Claude Code" },
     url: "https://medium.com/@timwalter23/three-claude-sessions-a-day-instead-of-two-d998853c704e",
+    image: { src: "/articles/three-claude-sessions.webp", width: 1024, height: 603 },
     summary: {
       en: "A small systemd timer on a cheap home server that anchors my Claude usage windows to the workday.",
       de: "Ein kleiner systemd-Timer auf einem günstigen Heimserver, der meine Claude-Nutzungsfenster an den Arbeitstag koppelt.",
@@ -144,6 +149,7 @@ export const articles: Article[] = [
     date: "2026-04-27",
     category: { en: "Agentic AI Security", de: "Agentic-AI-Security" },
     url: "https://medium.com/@timwalter23/running-an-ai-agent-on-a-vps-security-first-setup-with-openclaw-hetzner-telegram-23f0ca37e43d",
+    image: { src: "/articles/ai-agent-vps.webp", width: 1024, height: 683 },
     summary: {
       en: "How to self-host an AI agent without opening the door to attackers – a hardened VPS setup for OpenClaw with Claude, GitHub and Telegram.",
       de: "Einen KI-Agenten selbst hosten, ohne Angreifern die Tür zu öffnen – ein gehärtetes VPS-Setup für OpenClaw mit Claude, GitHub und Telegram.",
@@ -154,6 +160,7 @@ export const articles: Article[] = [
     date: "2026-04-20",
     category: { en: "Growth", de: "Wachstum" },
     url: "https://medium.com/@timwalter23/the-law-of-the-limiting-factor-find-the-one-thing-thats-capping-all-your-growth-5d287f3cb46f",
+    image: { src: "/articles/limiting-factor.webp", width: 322, height: 400 },
     summary: {
       en: "A 19th-century chemist explains why hard work sometimes doesn't pay off – and how to find the one constraint that caps your growth.",
       de: "Ein Chemiker aus dem 19. Jahrhundert erklärt, warum harte Arbeit manchmal nichts bringt – und wie man den einen Engpass findet, der das Wachstum begrenzt.",
@@ -164,6 +171,7 @@ export const articles: Article[] = [
     date: "2024-10-06",
     category: { en: "Team Dynamics", de: "Teamdynamik" },
     url: "https://medium.com/@timwalter23/101-leveraging-reciprocity-in-software-development-3d69dd2c156e",
+    image: { src: "/articles/reciprocity.webp", width: 1024, height: 1024 },
     summary: {
       en: "How the principle of reciprocity builds stronger relationships, better collaboration and a culture of mutual support in software teams.",
       de: "Wie das Prinzip der Reziprozität in Softwareteams stärkere Beziehungen, bessere Zusammenarbeit und eine Kultur gegenseitiger Unterstützung schafft.",
@@ -174,6 +182,7 @@ export const articles: Article[] = [
     date: "2024-08-07",
     category: { en: "Leadership", de: "Leadership" },
     url: "https://medium.com/@timwalter23/persuasion-in-software-development-teams-mastering-social-conformity-5335cd7de421",
+    image: { src: "/articles/persuasion-conformity.webp", width: 1024, height: 1024 },
     summary: {
       en: "How social conformity shapes team decisions – and how to persuade while keeping integrity and psychological safety.",
       de: "Wie soziale Konformität Teamentscheidungen prägt – und wie man überzeugt, ohne Integrität und psychologische Sicherheit zu opfern.",

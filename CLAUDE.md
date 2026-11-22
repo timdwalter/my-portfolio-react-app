@@ -75,3 +75,4 @@ Persönliche Portfolio-Website (Next.js 16, Pages Router, React 18, Tailwind 3, 
 - Marketing-Floskeln: „passionate“, „innovative“, „digital experiences“, „cutting-edge“, „seamless“, „leidenschaftlich“, „maßgeschneiderte Lösungen“
 - Erfundene Zahlen, Platzhalter-Quotes, Fake-Testimonials, Stock- oder KI-Bilder
   - **Ausnahme (Tims Entscheidung):** die vorhandenen generierten Projektbilder in `public/` (SH-Beach, LH-Leap, Digital Aristoteles, Darth Vader) bleiben erlaubt. Keine neuen generierten Bilder hinzufügen.
+  - **Ausnahme:** die Titelbilder von Tims Medium-Artikeln (`public/articles/*.webp`), einmalig von Medium geladen und selbst gehostet – nie live von Medium einbinden (Datenschutz). Neue Artikel: Bild aus dem RSS-Feed laden, als WebP speichern, in `data.ts` mit Breite/Höhe eintragen.

@@ -134,7 +134,7 @@ export function ArticleRows({ articles, headingLevel = 3 }: { articles: Article[
                 </time>
                 <p className="meta">{a.category[locale]}</p>
               </div>
-              <div className="sm:col-span-6">
+              <div className={a.image ? "sm:col-span-4" : "sm:col-span-6"}>
                 <H
                   lang={locale === "de" ? "en" : undefined}
                   className="text-[1.375rem] leading-snug transition-colors group-hover:text-accent"
@@ -144,6 +144,17 @@ export function ArticleRows({ articles, headingLevel = 3 }: { articles: Article[
                 </H>
                 <p className="mt-xs max-w-[52ch] text-[0.9375rem] leading-relaxed text-muted">{nb(a.summary[locale])}</p>
               </div>
+              {a.image && (
+                // natural aspect ratio – nothing is cropped
+                <Image
+                  src={a.image.src}
+                  width={a.image.width}
+                  height={a.image.height}
+                  alt=""
+                  sizes="(min-width: 1024px) 200px, (min-width: 640px) 25vw, 14rem"
+                  className="mt-sm h-auto w-full max-w-[14rem] bg-rule sm:col-span-2 sm:mt-0 sm:max-w-none"
+                />
+              )}
             </a>
           </li>
         );
