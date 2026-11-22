@@ -9,27 +9,36 @@ import { useLocale, useT } from "@/lib/i18n";
 function LanguageSwitch() {
   const { asPath, pathname } = useRouter();
   const locale = useLocale();
+  const t = useT();
   // The 404 page is prerendered, so its server-side asPath ("/404") differs from the real URL.
   const target = pathname === "/404" ? "/" : asPath;
-  const t = useT();
   return (
-    <div className="flex items-center rounded-lg border border-line p-0.5 font-mono text-xs" aria-label={t.nav.language}>
-      {(["en", "de"] as const).map((l) => (
-        <Link
-          key={l}
-          href={target}
-          locale={l}
-          scroll={false}
-          aria-current={l === locale ? "true" : undefined}
-          className={classNames(
-            "rounded-md px-2 py-1 uppercase transition",
-            l === locale ? "bg-line text-heading" : "text-faint hover:text-body"
+    <p className="flex items-center gap-xs text-[0.875rem]" aria-label={t.nav.language}>
+      {(["en", "de"] as const).map((l, i) => (
+        <span key={l} className="flex items-center gap-xs">
+          {i > 0 && (
+            <span aria-hidden="true" className="text-muted">
+              /
+            </span>
           )}
-        >
-          {l}
-        </Link>
+          {l === locale ? (
+            <span aria-current="true" className="font-medium uppercase text-ink">
+              {l}
+            </span>
+          ) : (
+            <Link
+              href={target}
+              locale={l}
+              scroll={false}
+              hrefLang={l}
+              className="uppercase text-muted underline-offset-4 transition-colors hover:text-ink hover:underline"
+            >
+              {l}
+            </Link>
+          )}
+        </span>
       ))}
-    </div>
+    </p>
   );
 }
 
@@ -55,14 +64,17 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close the mobile menu on navigation
+  // Close the mobile menu on navigation and on Escape
   useEffect(() => {
     const close = () => setOpen(false);
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
     router.events.on("routeChangeStart", close);
     router.events.on("hashChangeStart", close);
+    window.addEventListener("keydown", onKey);
     return () => {
       router.events.off("routeChangeStart", close);
       router.events.off("hashChangeStart", close);
+      window.removeEventListener("keydown", onKey);
     };
   }, [router.events]);
 
@@ -73,33 +85,39 @@ export default function Navbar() {
   return (
     <header
       className={classNames(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-        scrolled || open ? "border-b border-line/80 bg-canvas/80 backdrop-blur-xl" : "border-b border-transparent"
+        "fixed inset-x-0 top-0 z-50 border-b bg-paper transition-colors duration-200",
+        scrolled || open ? "border-rule" : "border-transparent"
       )}
     >
-      <nav className="container flex h-16 items-center justify-between md:h-[72px]">
+      <nav className="container flex h-16 items-center justify-between">
         <Logo />
 
-        <div className="hidden items-center gap-7 lg:flex">
-          <ul className="flex items-center gap-6">
-            {links.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className={classNames(
-                    "text-sm transition",
-                    isActive(link.href) ? "text-heading" : "text-muted hover:text-heading"
-                  )}
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
+        <div className="hidden items-center gap-xl lg:flex">
+          <ul className="flex items-center gap-lg">
+            {links.map((link) => {
+              const active = isActive(link.href);
+              return (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    aria-current={active ? "page" : undefined}
+                    className={classNames(
+                      "text-[0.9375rem] underline-offset-[6px] transition-colors",
+                      active
+                        ? "text-ink underline decoration-accent decoration-2"
+                        : "text-muted hover:text-ink"
+                    )}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
           <LanguageSwitch />
           <Link
             href="/#contact"
-            className="border border-ink px-4 py-2 text-sm font-medium text-ink transition-colors hover:bg-ink hover:text-paper"
+            className="border border-ink px-md py-xs text-[0.875rem] font-medium leading-7 text-ink transition-colors hover:bg-ink hover:text-paper"
           >
             {t.nav.contact}
           </Link>
@@ -107,7 +125,7 @@ export default function Navbar() {
 
         <button
           type="button"
-          className="-mr-2 rounded-lg p-2 text-body hover:bg-surface-hover lg:hidden"
+          className="-mr-sm grid h-11 w-11 place-items-center text-ink lg:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-label={t.nav.menu}
           aria-expanded={open}
@@ -118,27 +136,31 @@ export default function Navbar() {
       </nav>
 
       {open && (
-        <div id="mobile-menu" className="container pb-6 lg:hidden">
-          <ul className="flex flex-col border-t border-line pt-4">
-            {links.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className={classNames(
-                    "block py-3 text-lg",
-                    isActive(link.href) ? "text-brand-400" : "text-body"
-                  )}
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
+        <div id="mobile-menu" className="container pb-lg lg:hidden">
+          <ul className="border-t border-rule">
+            {links.map((link) => {
+              const active = isActive(link.href);
+              return (
+                <li key={link.href} className="border-b border-rule">
+                  <Link
+                    href={link.href}
+                    aria-current={active ? "page" : undefined}
+                    className={classNames(
+                      "block py-md font-display text-[1.375rem] leading-snug",
+                      active ? "text-accent" : "text-ink"
+                    )}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
-          <div className="mt-4 flex items-center justify-between">
+          <div className="mt-lg flex items-center justify-between">
             <LanguageSwitch />
             <Link
               href="/#contact"
-              className="border border-ink px-4 py-2 text-sm font-medium text-ink"
+              className="border border-ink px-md py-xs text-[0.875rem] font-medium leading-7 text-ink"
               onClick={() => setOpen(false)}
             >
               {t.nav.contact}
