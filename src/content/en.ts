@@ -1,0 +1,172 @@
+export const en = {
+  nav: {
+    industries: "Industries",
+    projects: "Projects",
+    skills: "Skills",
+    about: "About",
+    blog: "Writing",
+    contact: "Contact",
+    menu: "Menu",
+    language: "Language",
+  },
+  footer: {
+    tagline: "Software, cloud & IoT systems – and the teams that build them.",
+    sitemap: "Site",
+    connect: "Connect",
+    legal: "Legal",
+    imprint: "Legal notice",
+    privacy: "Privacy",
+    rights: "All rights reserved.",
+  },
+  home: {
+    seoTitle: "Software, Cloud & IoT Architect",
+    seoDescription:
+      "Tim D. Walter – software developer, cloud & AI engineer and tech lead. I design and build scalable software, cloud platforms, AI and IoT solutions.",
+    available: "Open to selected side projects",
+    headline1: "Software, cloud & AI",
+    headline2: "that ships.",
+    intro:
+      "I help companies architect and build robust software systems, cloud platforms, AI and IoT solutions – and lead the teams that run them.",
+    ctaPrimary: "Start a project",
+    ctaSecondary: "View work",
+    servicesEyebrow: "What I do",
+    servicesTitle: "From the device to the cloud to the model – and the team in between.",
+    services: [
+      {
+        icon: "code",
+        title: "Software Development",
+        text: "Scalable, maintainable backends with Java, Spring Boot and Quarkus. Microservices where they help, monoliths where they don't.",
+      },
+      {
+        icon: "cloud",
+        title: "Cloud Architecture",
+        text: "Secure, cost-effective platforms on AWS, Azure, OpenShift and Kubernetes – including CI/CD, GitOps and infrastructure as code.",
+      },
+      {
+        icon: "ai",
+        title: "AI Engineering",
+        text: "Local LLMs with Ollama, LM Studio and Gemma 3, integrated into real systems – with tracing that makes model behaviour observable and measurable.",
+      },
+      {
+        icon: "agent",
+        title: "Agentic Development",
+        text: "Spec-driven development with AI agents – using GitHub Spec Kit, OpenSpec, Claude Code and Copilot to ship faster without losing control over quality.",
+      },
+      {
+        icon: "process",
+        title: "Process Mining",
+        text: "Making business processes visible with Celonis – finding bottlenecks in the data and turning them into concrete improvements.",
+      },
+      {
+        icon: "chip",
+        title: "IoT & Embedded",
+        text: "Connected devices and real-time data pipelines with MQTT, OPC UA and MicroPython – from the sensor to the dashboard.",
+      },
+      {
+        icon: "people",
+        title: "Tech Leadership & Product",
+        text: "Coaching and mentoring development teams, setting technical standards – and, as a former Product Owner, turning business goals into a clear backlog.",
+      },
+    ],
+    workEyebrow: "Selected work",
+    workTitle: "Projects",
+    workAll: "All projects",
+    careerLabel: "Career",
+    principlesEyebrow: "How I work",
+    principlesTitle: "Clear thinking, solid architecture, strong teams.",
+    principles: [
+      {
+        title: "Architecture first",
+        text: "Decisions that are documented, understood and built to last – not just to pass the next sprint.",
+      },
+      {
+        title: "People make software",
+        text: "Great systems come from great collaboration. I invest in communication, trust and shared purpose.",
+      },
+      {
+        title: "Pragmatic delivery",
+        text: "The simplest thing that solves the real problem, shipped early and improved continuously.",
+      },
+    ],
+    principlesLink: "More about me",
+    industriesEyebrow: "Industries",
+    industriesTitle: "Experience where reliability matters.",
+    writingEyebrow: "Writing",
+    writingTitle: "On AI, leadership & teams",
+    writingAll: "All articles",
+  },
+  contact: {
+    eyebrow: "Contact",
+    title: "Let's build something that lasts.",
+    text: "Whether you need a feature built, a platform designed or a team led – tell me about your project.",
+    email: "Write an email",
+    linkedin: "Connect on LinkedIn",
+    subject: "Project inquiry",
+  },
+  projects: {
+    seoTitle: "Projects",
+    seoDescription: "Selected projects by Tim D. Walter: cloud platforms, IoT, AI and interactive 3D.",
+    eyebrow: "Work",
+    title: "Projects",
+    intro: "A selection of things I have built – from production systems to experiments that keep my curiosity sharp.",
+    open: "Open",
+    comingSoon: "Case study coming soon",
+  },
+  threejs: {
+    seoTitle: "3D Playground",
+    seoDescription: "Interactive real-time 3D scene built with React Three Fiber.",
+    back: "All projects",
+    hint: "Move your mouse to look around.",
+    loading: "Loading scene…",
+  },
+  about: {
+    seoTitle: "About",
+    seoDescription:
+      "About Tim D. Walter – software developer, cloud & AI engineer and tech leader with 9+ years of experience.",
+    eyebrow: "About",
+    title: "Hi, I'm Tim.",
+    intro:
+      "I'm a Technical Project Lead at Lufthansa Industry Solutions – a software developer, cloud & AI engineer and tech leader with 9+ years of experience building scalable systems and mentoring development teams.",
+    mission:
+      "My mission is to help organizations deliver software that matters – while building cultures where great people thrive.",
+    storyTitle: "My story",
+    story: [
+      "I started my career deep in the code, building systems and solving complex technical problems. Over time I discovered something equally fascinating: the intersection of technology and people.",
+      "Today I combine technical expertise with leadership to solve complex problems and guide teams toward excellence. The best software comes from great collaboration, clear communication and shared purpose.",
+      "When I'm not building or mentoring, I write about technical leadership and psychology – how we can build better teams and ship better products.",
+    ],
+    yearsLabel: "years of experience",
+    skillsEyebrow: "Toolbox",
+    skillsTitle: "Skills & technologies",
+    careerTitle: "Career",
+    today: "today",
+    certsTitle: "Certifications",
+    certs: [
+      "Professional Scrum Product Owner (PSPO)",
+      "Professional Scrum Master (PSM)",
+      "SAFe Product Owner / Product Manager (POPM)",
+      "EU drone pilot certificate (A1/A3)",
+    ],
+    connectTitle: "Find me online",
+  },
+  blog: {
+    seoTitle: "Writing",
+    seoDescription: "Articles by Tim D. Walter on software development, team dynamics and technical leadership.",
+    eyebrow: "Writing",
+    title: "On AI, leadership & teams",
+    intro:
+      "Practical notes on AI agents, agentic workflows, team dynamics and technical leadership – lessons learned from years in the industry.",
+    read: "Read on Medium",
+    langNote: "",
+    moreTitle: "More coming soon",
+    moreText: "Upcoming topics: cloud architecture, engineering practices and team leadership.",
+    follow: "Follow on Medium",
+  },
+  notFound: {
+    title: "Page not found",
+    text: "The page you're looking for doesn't exist or has been moved.",
+    back: "Back to home",
+  },
+};
+
+export type Dictionary = typeof en;

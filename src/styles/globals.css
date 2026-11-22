@@ -2,149 +2,76 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Import Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@layer base {
+  html {
+    color-scheme: light;
+    scroll-behavior: smooth;
+  }
 
-/* Apply the global font family */
-body,
-html {
-  font-family: "Roboto", sans-serif;
-  color: #333; /* Default text color */
-}
+  body {
+    @apply bg-canvas font-sans text-body antialiased;
+  }
 
-/* Navbar styles */
-.navbar {
-  background-color: #ffffff;
-  color: #525252; /* Matches the `text-zinc-500` in Tailwind */
-  position: sticky;
-  top: 0;
-  width: 100%; /* Makes sure it spans the full width */
-  padding: 0 16px; /* Matches `px-4` padding */
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); /* Matches the shadow-sm */
-  display: flex;
-  align-items: center;
-}
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display text-heading;
+    letter-spacing: -0.02em;
+  }
 
-.navbar-icon-container {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  background-color: transparent;
-  justify-content: center;
-}
+  ::selection {
+    @apply bg-brand-100 text-heading;
+  }
 
-/* About container styles */
-.about-container {
-  display: flex;
-  flex-direction: column; /* Ensure that everything is stacked vertically */
-  align-items: center; /* Center items horizontally */
-  width: 90%;
-  height: 80vh; /* Set the height to 80% of the viewport height */
-  margin: 5vh auto; /* Center the container vertically and horizontally */
-  background-color: #fff;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-  padding: 20px; /* Add padding inside the scrollable container */
-  overflow-y: auto; /* Allow the entire container to scroll */
-  min-margin: 10px;
-}
-
-/* Desk animation styles */
-.desk-animation {
-  margin-bottom: 20px; /* Space between the SVG and the text */
-  width: 100%; /* Ensure it takes up full width */
-  display: flex;
-  justify-content: center;
-}
-
-.desk-animation svg {
-  width: 20%; /* Adjust width to your preference */
-  height: auto; /* Maintain aspect ratio */
-}
-
-/* Text container inside about section */
-.about-text-container {
-  width: 100%; /* Make sure the text container uses full width */
-  margin: 5px 0; /* Adjust margin for better spacing */
-  border-radius: 5px;
-  text-align: center; /* Center the text inside */
-  font-family: "Roboto", sans-serif;
-  padding: 10px; /* Add padding inside the text container */
-}
-
-/* Wrapper container styles */
-.wrapper-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 90%;
-}
-
-.project-container {
-  height: 20vh;
-}
-
-/* Media query for smaller screens, such as mobile phones */
-@media (max-width: 768px) {
-  .about-container {
-    width: 95%; /* Adjust width to fit smaller screens */
-    height: 70vh; /* Slightly reduce height for better fit */
-    margin: 5vh auto; /* Keep centering */
-    padding: 15px; /* Reduce padding for smaller screens */
+  :focus-visible {
+    @apply outline-none ring-2 ring-brand-400 ring-offset-2 ring-offset-canvas;
   }
 }
 
-@media (max-width: 480px) {
-  .about-container {
-    width: 100%; /* Use full width on very small screens */
-    height: 80vh; /* Further reduce height for very small screens */
-    margin: 5vh auto; /* Adjust vertical centering */
-    padding: 5px; /* Further reduce padding for very small screens */
+@layer components {
+  .text-gradient {
+    @apply text-brand-400;
+  }
+
+  .eyebrow {
+    @apply font-mono text-xs font-medium uppercase tracking-[0.2em] text-brand-400;
+  }
+
+  .card {
+    @apply rounded-2xl border border-line bg-surface transition duration-300;
+  }
+
+  .card-hover {
+    @apply hover:-translate-y-1 hover:border-line-strong hover:shadow-soft;
+  }
+
+  .tag {
+    @apply inline-flex items-center rounded-md border border-line bg-subtle px-2 py-0.5 font-mono text-[11px] text-muted;
+  }
+
+  .prose-legal h2 {
+    @apply mb-3 mt-10 text-xl font-semibold;
+  }
+
+  .prose-legal p,
+  .prose-legal li {
+    @apply mb-4 leading-relaxed text-body;
+  }
+
+  .prose-legal a {
+    @apply text-brand-400 underline-offset-4 hover:underline;
   }
 }
 
-/* Page transition animations */
-.page-transition {
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-.page-transition-enter {
-  opacity: 0;
-}
-
-.page-transition-enter-active {
-  opacity: 1;
-}
-
-.page-transition-exit {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-}
-
-.page-transition-exit-active {
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-/* Heading styles */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Roboto", sans-serif;
-  font-weight: 700; /* Bold weight for headings */
-  color: #222; /* Slightly darker text color for headings */
-  margin: 0 0 20px; /* Bottom margin for spacing */
-}
-
-/* Paragraph styles */
-p {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400; /* Regular weight for body text */
-  line-height: 1.6; /* Improved readability with line height */
-  margin: 0 0 20px; /* Bottom margin for spacing */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

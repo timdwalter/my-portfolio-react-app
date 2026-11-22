@@ -1,309 +1,204 @@
-import { NextPage } from "next";
-import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
-import Link from "next/link";
-import DeskAnimationSvg from "./DeskAnimationSvg";
+import Seo from "@/components/ui/Seo";
+import HexBackground from "@/components/ui/HexBackground";
+import Button, { Arrow } from "@/components/ui/Button";
+import { Reveal, Section, SectionHeader } from "@/components/ui/Section";
+import { ArticleGrid, ProjectCard, ServiceIcon } from "@/components/ui/Cards";
+import ContactSection from "@/components/ContactSection";
+import { articles, career, industries, projects } from "@/content/data";
+import { mailto, site } from "@/content/site";
+import { useLocale, useT } from "@/lib/i18n";
+import { BuildingOffice2Icon, PaperAirplaneIcon, ViewfinderCircleIcon } from "@heroicons/react/24/outline";
 
-const HomePage: NextPage = () => {
+const industryIcons = { imaging: ViewfinderCircleIcon, campus: BuildingOffice2Icon, aviation: PaperAirplaneIcon };
+
+const ease = [0.21, 0.47, 0.32, 0.98];
+
+function Hero() {
+  const t = useT();
   return (
-    <motion.div
-      initial={{ x: 300, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      exit={{ x: 300, opacity: 1 }}
-      transition={{
-        type: "spring",
-        stiffness: 230,
-        damping: 30,
-      }}
-      style={{ overflow: "hidden", maxWidth: "100%" }}
-    >
-      <main className="w-full">
-        {/* HERO SECTION */}
-        <section className="py-20 bg-white">
-          <div className="wrapper-container">
-            <div className="max-w-5xl mx-auto text-center mb-12">
-              <h1 className="text-5xl md:text-6xl font-bold text-secondary-900 mb-6">
-                Building Scalable Software & IoT Solutions
-              </h1>
-              <p className="text-xl text-secondary-700 mb-12 leading-relaxed">
-                I help companies architect and build robust software systems, cloud infrastructure, and IoT solutions. 
-                With expertise in Java, cloud platforms, and team leadership.
-              </p>
-              <div className="flex gap-4 justify-center flex-wrap">
-                <Link
-                  href="/play-around-projects"
-                  className="px-8 py-3 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-all font-semibold shadow-lg hover:shadow-xl"
-                >
-                  View Projects
-                </Link>
-                <a
-                  href="mailto:tim.d.walter@web.de"
-                  className="px-8 py-3 bg-secondary-200 text-secondary-900 rounded-lg hover:bg-secondary-300 transition-all font-semibold shadow-lg hover:shadow-xl"
-                >
-                  Get in Touch
-                </a>
-              </div>
-            </div>
+    <section className="relative overflow-hidden pb-16 pt-28 md:pb-24 md:pt-36">
+      <HexBackground />
+      <div className="container relative grid items-center gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
+        <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease }}>
+          {site.available && (
+            <p className="mb-8 inline-flex items-center gap-2.5 rounded-full border border-emerald-200 bg-emerald-50 px-3.5 py-1.5 text-xs font-medium text-emerald-800">
+              <span className="h-1.5 w-1.5 animate-pulse-dot rounded-full bg-emerald-500" />
+              {t.home.available}
+            </p>
+          )}
+          <p className="mb-4 font-display text-lg font-medium text-muted">{site.displayName} —</p>
+          <h1 className="text-[2.6rem] font-semibold leading-[1.04] sm:text-6xl lg:text-[4.5rem]">
+            {t.home.headline1}
+            <br />
+            <span className="text-gradient">{t.home.headline2}</span>
+          </h1>
+          <p className="mt-7 max-w-xl text-lg leading-relaxed text-body md:text-xl">{t.home.intro}</p>
+          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+            <Button href={mailto(t.contact.subject)}>
+              {t.home.ctaPrimary} <Arrow />
+            </Button>
+            <Button href="/projects" variant="secondary">
+              {t.home.ctaSecondary}
+            </Button>
           </div>
-        </section>
+        </motion.div>
 
-        {/* FEATURED PROJECTS */}
-        <section className="py-20 bg-secondary-50">
-          <div className="wrapper-container">
-            <div className="max-w-5xl mx-auto">
-              <h2 className="text-4xl font-bold text-secondary-900 mb-12">
-                Featured Projects
-              </h2>
-              <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
-                {/* Projects Grid - 4 columns */}
-                <div className="lg:col-span-4">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div className="bg-white rounded-lg border border-primary-200 p-6 hover:shadow-lg transition-shadow h-full flex flex-col">
-                      <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4 flex-shrink-0">
-                        <span className="text-2xl">🎨</span>
-                      </div>
-                      <h3 className="text-lg font-bold text-secondary-900 mb-3 flex-shrink-0">
-                        ThreeJS Visualization
-                      </h3>
-                      <p className="text-secondary-700 text-sm flex-grow">
-                        Interactive 3D graphics and real-time data visualization.
-                      </p>
-                    </div>
-
-                    <div className="bg-white rounded-lg border border-primary-200 p-6 hover:shadow-lg transition-shadow h-full flex flex-col">
-                      <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4 flex-shrink-0">
-                        <span className="text-2xl">🌊</span>
-                      </div>
-                      <h3 className="text-lg font-bold text-secondary-900 mb-3 flex-shrink-0">
-                        SH-Beach
-                      </h3>
-                      <p className="text-secondary-700 text-sm flex-grow">
-                        Full-stack application with scalable cloud architecture.
-                      </p>
-                    </div>
-
-                    <div className="bg-white rounded-lg border border-primary-200 p-6 hover:shadow-lg transition-shadow h-full flex flex-col">
-                      <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4 flex-shrink-0">
-                        <span className="text-2xl">🧠</span>
-                      </div>
-                      <h3 className="text-lg font-bold text-secondary-900 mb-3 flex-shrink-0">
-                        Digital Aristoteles
-                      </h3>
-                      <p className="text-secondary-700 text-sm flex-grow">
-                        AI-powered system for intelligent insights and analysis.
-                      </p>
-                    </div>
-
-                    <div className="bg-white rounded-lg border border-primary-200 p-6 hover:shadow-lg transition-shadow h-full flex flex-col">
-                      <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4 flex-shrink-0">
-                        <span className="text-2xl">⚙️</span>
-                      </div>
-                      <h3 className="text-lg font-bold text-secondary-900 mb-3 flex-shrink-0">
-                        IoT Solutions
-                      </h3>
-                      <p className="text-secondary-700 text-sm flex-grow">
-                        Connected devices and real-time data processing systems.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* View All Box - Right side */}
-                <div className="lg:col-span-1">
-                  <Link
-                    href="/play-around-projects"
-                    className="bg-white rounded-lg border border-primary-500 p-6 hover:shadow-lg transition-all h-full flex flex-col items-center justify-center text-center group"
-                  >
-                    <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">
-                      →
-                    </div>
-                    <h3 className="text-lg font-bold text-primary-600 mb-2">
-                      View All
-                    </h3>
-                    <p className="text-sm text-secondary-600">
-                      Explore more projects
-                    </p>
-                  </Link>
-                </div>
-              </div>
-            </div>
+        <motion.div
+          className="relative mx-auto w-full max-w-[300px] sm:max-w-[340px] lg:order-first lg:ml-0 lg:max-w-[360px]"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.15, ease }}
+        >
+          <div className="relative aspect-[4/5] overflow-hidden rounded-[1.75rem] bg-[#c9ced4]">
+            <Image
+              src="/TDW-Profil.jpg"
+              alt={site.fullName}
+              fill
+              priority
+              sizes="(min-width: 1024px) 360px, 340px"
+              className="object-cover object-[50%_20%]"
+            />
           </div>
-        </section>
-
-        {/* ABOUT (SHORT) */}
-        <section className="py-20 bg-white">
-          <div className="wrapper-container">
-            <div className="max-w-5xl mx-auto">
-              <div className="mb-12">
-                <h2 className="text-4xl font-bold text-secondary-900 mb-8">
-                  Who I Am
-                </h2>
-                <p className="text-xl text-secondary-700 mb-8 leading-relaxed">
-                  I&apos;m a software developer and cloud architect with a focus on building scalable systems, IoT solutions, 
-                  and leading high-performing teams. My expertise spans Java backend development, cloud infrastructure, 
-                  and modern software architecture.
-                </p>
-                <p className="text-xl text-secondary-700 mb-8 leading-relaxed">
-                  I believe great software comes from clear thinking, solid architecture, and strong teams. 
-                  That&apos;s what I bring to every project.
-                </p>
-              </div>
-              <div>
-                <Link
-                  href="/about"
-                  className="inline-block px-8 py-3 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-all font-semibold shadow-lg hover:shadow-xl"
-                >
-                  Learn More About Me
-                </Link>
-              </div>
-            </div>
+          {/* floating cards */}
+          <div className="absolute -bottom-6 -right-4 rounded-2xl border border-line bg-white/95 px-5 py-4 shadow-soft backdrop-blur sm:-right-8">
+            <p className="font-display text-3xl font-semibold text-heading">{site.yearsExperience}+</p>
+            <p className="font-mono text-[11px] uppercase tracking-wider text-muted">{t.about.yearsLabel}</p>
           </div>
-        </section>
-
-        {/* SKILLS */}
-        <section className="py-20 bg-secondary-50">
-          <div className="wrapper-container">
-            <div className="max-w-5xl mx-auto">
-              <div className="mb-12">
-                <h2 className="text-4xl font-bold text-secondary-900 mb-12">
-                  Core Expertise
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-                  <div className="bg-white rounded-lg border border-primary-200 p-8 flex flex-col">
-                    <h3 className="text-2xl font-bold text-primary-600 mb-6 h-16 flex items-start">
-                      IoT & Embedded
-                    </h3>
-                    <ul className="space-y-3 text-secondary-700">
-                      <li className="flex items-start gap-3">
-                        <span className="text-primary-500 font-bold">›</span>
-                        <span>IoT Architecture & Design</span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <span className="text-primary-500 font-bold">›</span>
-                        <span>Real-time Data Processing</span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <span className="text-primary-500 font-bold">›</span>
-                        <span>Connected Systems</span>
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div className="bg-white rounded-lg border border-primary-200 p-8 flex flex-col">
-                    <h3 className="text-2xl font-bold text-primary-600 mb-6 h-16 flex items-start">
-                      Backend & Cloud
-                    </h3>
-                    <ul className="space-y-3 text-secondary-700">
-                      <li className="flex items-start gap-3">
-                        <span className="text-primary-500 font-bold">›</span>
-                        <span>Java & Microservices</span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <span className="text-primary-500 font-bold">›</span>
-                        <span>Cloud Architecture</span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <span className="text-primary-500 font-bold">›</span>
-                        <span>DevOps & Infrastructure</span>
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div className="bg-white rounded-lg border border-primary-200 p-8 flex flex-col">
-                    <h3 className="text-2xl font-bold text-primary-600 mb-6 h-16 flex items-start">
-                      Leadership & Strategy
-                    </h3>
-                    <ul className="space-y-3 text-secondary-700">
-                      <li className="flex items-start gap-3">
-                        <span className="text-primary-500 font-bold">›</span>
-                        <span>Technical Leadership</span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <span className="text-primary-500 font-bold">›</span>
-                        <span>Architecture Decisions</span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <span className="text-primary-500 font-bold">›</span>
-                        <span>Team Mentoring</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="absolute -left-3 top-8 hidden rounded-xl border border-line bg-white/95 px-4 py-2.5 shadow-soft backdrop-blur sm:block">
+            <p className="font-mono text-[11px] text-muted">Software · Cloud · AI · IoT</p>
           </div>
-        </section>
+        </motion.div>
+      </div>
 
-        {/* ARTICLES */}
-        <section className="py-20 bg-white">
-          <div className="wrapper-container">
-            <div className="max-w-5xl mx-auto">
-              <div className="mb-12">
-                <h2 className="text-4xl font-bold text-secondary-900 mb-8">
-                  Latest Articles
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <a
-                    href="https://medium.com/@timwalter23/101-leveraging-reciprocity-in-software-development-3d69dd2c156e"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-secondary-50 rounded-lg border border-primary-200 p-6 hover:shadow-lg transition-shadow"
-                  >
-                    <span className="text-sm font-semibold text-primary-600">TEAM DYNAMICS</span>
-                    <h3 className="text-lg font-bold text-secondary-900 mt-2 mb-3">
-                      Leveraging Reciprocity in Software Development
-                    </h3>
-                    <p className="text-secondary-700 text-sm">Read on Medium →</p>
-                  </a>
-
-                  <a
-                    href="https://medium.com/@timwalter23/persuasion-in-software-development-teams-mastering-social-conformity-5335cd7de421"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-secondary-50 rounded-lg border border-primary-200 p-6 hover:shadow-lg transition-shadow"
-                  >
-                    <span className="text-sm font-semibold text-primary-600">LEADERSHIP</span>
-                    <h3 className="text-lg font-bold text-secondary-900 mt-2 mb-3">
-                      Persuasion in Software Development Teams
-                    </h3>
-                    <p className="text-secondary-700 text-sm">Read on Medium →</p>
-                  </a>
-                </div>
-              </div>
-              <div>
-                <Link
-                  href="/blog"
-                  className="inline-block w-full md:w-auto text-center px-8 py-4 bg-white border-2 border-primary-500 text-primary-600 rounded-lg hover:bg-primary-50 transition-all font-semibold"
-                >
-                  View all articles
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA SECTION */}
-        <section className="py-20 bg-primary-50 border-t-2 border-primary-200">
-          <div className="wrapper-container">
-            <div className="max-w-5xl mx-auto text-center">
-              <h2 className="text-4xl font-bold text-secondary-900 mb-6">
-                Ready to Work Together?
-              </h2>
-              <p className="text-xl text-secondary-700 mb-12">
-                Let&apos;s discuss how I can help bring your vision to life.
-              </p>
-              <a
-                href="mailto:tim.d.walter@web.de"
-                className="inline-block px-8 py-3 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-all font-semibold shadow-lg hover:shadow-xl"
-              >
-                Get in Touch
-              </a>
-            </div>
-          </div>
-        </section>
-      </main>
-    </motion.div>
+      {/* career + stack strips */}
+      <div className="container relative mt-20 md:mt-24">
+        <div className="flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-line pt-8">
+          <span className="font-mono text-xs uppercase tracking-[0.2em] text-faint">{t.home.careerLabel}</span>
+          {career.map((c) => (
+            <span key={c.company} className="font-display text-lg font-semibold text-heading">
+              {c.company}
+            </span>
+          ))}
+        </div>
+        <div className="mt-6 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-line pt-6">
+          <span className="font-mono text-xs uppercase tracking-[0.2em] text-faint">Stack</span>
+          {site.stack.map((s) => (
+            <span key={s} className="font-display text-base font-medium text-muted">
+              {s}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
   );
-};
+}
 
-export default HomePage;
+export default function HomePage() {
+  const t = useT();
+  const locale = useLocale();
+
+  return (
+    <>
+      <Seo title={t.home.seoTitle} description={t.home.seoDescription} />
+      <Hero />
+
+      {/* Services – editorial numbered list */}
+      <Section className="bg-subtle">
+        <div className="grid gap-12 lg:grid-cols-[1fr_1.6fr]">
+          <SectionHeader
+            eyebrow={t.home.servicesEyebrow}
+            title={t.home.servicesTitle}
+            className="lg:sticky lg:top-28 lg:self-start"
+          />
+          <div className="border-t border-line-strong">
+            {t.home.services.map((s, i) => (
+              <Reveal key={s.title} delay={i * 0.05}>
+                <div className="group grid grid-cols-[auto_1fr] gap-x-6 gap-y-2 border-b border-line-strong py-8 sm:grid-cols-[3rem_1fr_auto]">
+                  <span className="pt-1 font-mono text-sm text-brand-400">0{i + 1}</span>
+                  <div>
+                    <h3 className="mb-2 text-2xl font-semibold">{s.title}</h3>
+                    <p className="max-w-xl leading-relaxed text-muted">{s.text}</p>
+                  </div>
+                  <span className="hidden h-12 w-12 place-items-center rounded-full border border-line-strong text-heading transition group-hover:border-heading group-hover:bg-heading group-hover:text-white sm:grid">
+                    <ServiceIcon icon={s.icon} className="h-5 w-5" />
+                  </span>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      <Section id="industries">
+        <SectionHeader eyebrow={t.home.industriesEyebrow} title={t.home.industriesTitle} />
+        <div className="grid gap-6 md:grid-cols-3">
+          {industries.map((ind, i) => {
+            const Icon = industryIcons[ind.icon];
+            return (
+              <Reveal key={ind.id} delay={i * 0.06}>
+                <div className="card h-full p-8">
+                  <span className="mb-8 grid h-14 w-14 place-items-center rounded-2xl bg-brand-50 text-brand-400">
+                    <Icon className="h-7 w-7" />
+                  </span>
+                  <p className="mb-2 font-mono text-xs uppercase tracking-wider text-faint">{ind.meta[locale]}</p>
+                  <h3 className="mb-3 text-2xl font-semibold">{ind.title[locale]}</h3>
+                  <p className="leading-relaxed text-muted">{ind.text[locale]}</p>
+                </div>
+              </Reveal>
+            );
+          })}
+        </div>
+      </Section>
+
+      <Section className="bg-subtle">
+        <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <SectionHeader eyebrow={t.home.workEyebrow} title={t.home.workTitle} className="mb-0" />
+          <Button href="/projects" variant="ghost">
+            {t.home.workAll} <Arrow />
+          </Button>
+        </div>
+        <div className="grid gap-6 md:grid-cols-2">
+          {projects.map((p, i) => (
+            <Reveal key={p.id} delay={(i % 2) * 0.06}>
+              <ProjectCard project={p} />
+            </Reveal>
+          ))}
+        </div>
+      </Section>
+
+      <Section>
+        <SectionHeader eyebrow={t.home.principlesEyebrow} title={t.home.principlesTitle} />
+        <div className="grid gap-10 md:grid-cols-3">
+          {t.home.principles.map((p, i) => (
+            <Reveal key={p.title} delay={i * 0.06}>
+              <div className="border-t-2 border-heading pt-6">
+                <span className="font-mono text-sm text-brand-400">0{i + 1}</span>
+                <h3 className="mb-3 mt-3 text-xl font-semibold">{p.title}</h3>
+                <p className="leading-relaxed text-muted">{p.text}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+        <Reveal className="mt-12">
+          <Button href="/about" variant="secondary">
+            {t.home.principlesLink} <Arrow />
+          </Button>
+        </Reveal>
+      </Section>
+
+      <Section className="bg-subtle">
+        <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <SectionHeader eyebrow={t.home.writingEyebrow} title={t.home.writingTitle} className="mb-0" />
+          <Button href="/blog" variant="ghost">
+            {t.home.writingAll} <Arrow />
+          </Button>
+        </div>
+        <ArticleGrid articles={articles} />
+      </Section>
+
+      <ContactSection />
+    </>
+  );
+}
