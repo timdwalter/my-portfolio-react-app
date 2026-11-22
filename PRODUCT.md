@@ -65,7 +65,7 @@ Refined by Tim:
 - Certifications: PSPO, PSM, SAFe POPM, CKAD, EU drone pilot certificate A1/A3.
 - Skills (abilities) and tech stack are shown separately; the tech stack keeps every item of Tim's original list (`src/content/data.ts`) – do not prune it. AWS and Celonis are practical experience, not certifications.
 - 7 Medium articles (listed in `src/content/data.ts`).
-- IoT hacking event: Tim has organised it at Lufthansa Industry Solutions for five years (meet, pizza, latest topics, own projects around home automation, drones and robots, articles). Shown as one project. **Individual projects from the event (including colleagues' private projects) are not published.**
+- IoT hacking event: Tim has organised it at Lufthansa Industry Solutions for five years (meet, pizza, latest topics, own projects around home automation, drones and robots, articles). Shown as one project that lists **Tim's own builds** from the event (walnut-shell Bluetooth speaker, light siren for loud Teams calls, anonymous Bluetooth office occupancy counter, Raspberry Pi smart car with a planned parking challenge and hackathon). **Colleagues' private projects are never published.**
 - /now page: led by upcoming Medium articles (currently mostly AI); titles go into `plannedArticles` in `src/content/data.ts` – only titles Tim provides. Update `site.nowUpdated` with every change.
 - Footer colophon is exactly: "Mit Claude Code gebaut und von mir überarbeitet." (EN: "Built with Claude Code and reworked by me.") – nothing else.
 - Projects: 3D Playground (live demo), SH-Beach, Digital Aristoteles, LH-Leap – the last three have only short or placeholder descriptions.

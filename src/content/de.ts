@@ -21,7 +21,6 @@ export const de: Dictionary = {
     imprint: "Impressum",
     privacy: "Datenschutz",
     rights: "Alle Rechte vorbehalten.",
-    colophonLabel: "Kolophon",
     colophon: "Mit Claude Code gebaut und von mir überarbeitet.",
   },
   now: {
@@ -37,6 +36,10 @@ export const de: Dictionary = {
       {
         title: "Arbeit",
         text: "Technical Project Lead bei Lufthansa Industry Solutions. Angebote schreibe ich inzwischen KI-gestützt mit Claude und Microsoft 365 Copilot.",
+      },
+      {
+        title: "Bauen",
+        text: "Ein Smart Car mit Raspberry Pi 4 und Freenove-Kit. Als Nächstes eine Park-Challenge und ein Hackathon.",
       },
       {
         title: "Community",

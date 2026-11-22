@@ -79,6 +79,19 @@ export function ProjectRows({ projects, headingLevel = 3 }: { projects: Project[
               {p.summary && (
                 <p className="mt-sm max-w-[52ch] text-[0.9375rem] leading-relaxed text-ink">{nb(p.summary[locale])}</p>
               )}
+              {p.items && p.items.length > 0 && (
+                <div className="mt-lg">
+                  {p.itemsTitle && <p className="text-[0.9375rem] font-medium text-ink">{p.itemsTitle[locale]}</p>}
+                  <ul className="mt-sm border-t border-rule">
+                    {p.items.map((it) => (
+                      <li key={it.title.en} className="border-b border-rule py-sm">
+                        <p className="text-[0.9375rem] font-medium leading-snug text-ink">{it.title[locale]}</p>
+                        <p className="mt-xs max-w-[52ch] text-[0.9375rem] leading-relaxed text-muted">{nb(it.text[locale])}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
               <div className="mt-lg">
                 {p.href ? (
                   <Link href={p.href} className="action">

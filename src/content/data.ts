@@ -11,6 +11,9 @@ export type Project = {
   href?: string;
   /** Shown instead of "case study coming soon" when there is no link, e.g. "ongoing". */
   status?: L;
+  /** Sub-projects listed inside the row (Tim's own builds from the IoT hacking event). */
+  items?: { title: L; text: L }[];
+  itemsTitle?: L;
   featured?: boolean;
 };
 
@@ -32,6 +35,34 @@ export const projects: Project[] = [
     title: { en: "IoT hacking event", de: "IoT-Hacking-Event" },
     tags: ["IoT", "Hardware", "Community"],
     status: { en: "Ongoing, five years so far", de: "Laufend, seit fünf Jahren" },
+    itemsTitle: { en: "My projects from the event", de: "Meine Projekte aus dem Event" },
+    items: [
+      {
+        title: { en: "Walnut-shell Bluetooth speaker", de: "Bluetooth-Lautsprecher in der Walnussschale" },
+        text: { en: "A Bluetooth speaker built into a walnut shell.", de: "Ein Bluetooth-Lautsprecher, eingebaut in eine Walnussschale." },
+      },
+      {
+        title: { en: "Light siren for loud Teams calls", de: "Lichtsirene für laute Teams-Calls" },
+        text: {
+          en: "Switches on when a colleague talks too loudly on a Teams call.",
+          de: "Geht an, wenn ein Kollege zu laut in Teams telefoniert.",
+        },
+      },
+      {
+        title: { en: "Office occupancy via Bluetooth", de: "Büro-Belegung per Bluetooth" },
+        text: {
+          en: "Counts how many colleagues are in the office from their permanent Bluetooth MAC addresses and shows the number on a public web page, without names.",
+          de: "Erkennt anhand der festen Bluetooth-MAC-Adressen, wie viele Kollegen im Office sind, und zeigt die Zahl auf einer öffentlichen Webseite, ohne Namen.",
+        },
+      },
+      {
+        title: { en: "Raspberry Pi smart car (in progress)", de: "Raspberry-Pi-Smart-Car (in Arbeit)" },
+        text: {
+          en: "Built on the Freenove kit and a Raspberry Pi 4. Next up: a parking challenge and a hackathon.",
+          de: "Auf Basis des Freenove-Kits und eines Raspberry Pi 4. Als Nächstes: eine Park-Challenge und ein Hackathon.",
+        },
+      },
+    ],
     summary: {
       en: "For five years I have been organising a regular IoT hacking event at Lufthansa Industry Solutions. We meet, eat pizza, talk about the latest topics and show our own projects around home automation, drones and robots, plus articles worth sharing.",
       de: "Seit fünf Jahren organisiere ich bei Lufthansa Industry Solutions regelmäßig ein IoT-Hacking-Event. Wir treffen uns, essen Pizza, reden über die neuesten Themen und zeigen eigene Projekte rund um Heimautomatisierung, Drohnen und Roboter sowie Artikel, die uns aufgefallen sind.",

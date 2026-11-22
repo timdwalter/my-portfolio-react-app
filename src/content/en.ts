@@ -19,7 +19,6 @@ export const en = {
     imprint: "Legal notice",
     privacy: "Privacy",
     rights: "All rights reserved.",
-    colophonLabel: "Colophon",
     colophon: "Built with Claude Code and reworked by me.",
   },
   now: {
@@ -35,6 +34,10 @@ export const en = {
       {
         title: "Work",
         text: "Technical Project Lead at Lufthansa Industry Solutions. These days I write proposals with AI support, using Claude and Microsoft 365 Copilot.",
+      },
+      {
+        title: "Building",
+        text: "A smart car with a Raspberry Pi 4 and the Freenove kit. Next up: a parking challenge and a hackathon.",
       },
       {
         title: "Community",

@@ -75,9 +75,7 @@ export default function Footer() {
           <p className="col-meta">
             © {new Date().getFullYear()} {site.displayName}, {site.brand}. {t.footer.rights}
           </p>
-          <p className="col-main max-w-[70ch]">
-            <span className="font-medium text-ink">{t.footer.colophonLabel}:</span> {t.footer.colophon}
-          </p>
+          <p className="col-main max-w-[70ch]">{t.footer.colophon}</p>
         </div>
       </div>
     </footer>
