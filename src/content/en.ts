@@ -47,6 +47,11 @@ export const en = {
     servicesTitle: "From the device to the cloud to the model – and the team in between.",
     services: [
       {
+        icon: "chip",
+        title: "IoT & Embedded",
+        text: "Connected devices and real-time data pipelines with MQTT, OPC UA and MicroPython – from the sensor to the dashboard.",
+      },
+      {
         icon: "code",
         title: "Software Development",
         text: "Scalable, maintainable backends with Java, Spring Boot and Quarkus. Microservices where they help, monoliths where they don't.",
@@ -70,11 +75,6 @@ export const en = {
         icon: "process",
         title: "Process Mining",
         text: "Making business processes visible with Celonis – finding bottlenecks in the data and turning them into concrete improvements.",
-      },
-      {
-        icon: "chip",
-        title: "IoT & Embedded",
-        text: "Connected devices and real-time data pipelines with MQTT, OPC UA and MicroPython – from the sensor to the dashboard.",
       },
       {
         icon: "people",

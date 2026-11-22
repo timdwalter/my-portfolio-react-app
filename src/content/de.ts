@@ -49,6 +49,11 @@ export const de: Dictionary = {
     servicesTitle: "Vom Gerät über die Cloud bis zum Modell – und das Team dazwischen.",
     services: [
       {
+        icon: "chip",
+        title: "IoT & Embedded",
+        text: "Vernetzte Geräte und Echtzeit-Datenpipelines mit MQTT, OPC UA und MicroPython – vom Sensor bis zum Dashboard.",
+      },
+      {
         icon: "code",
         title: "Softwareentwicklung",
         text: "Skalierbare, wartbare Backends mit Java, Spring Boot und Quarkus. Microservices, wo sie helfen – Monolithen, wo sie reichen.",
@@ -72,11 +77,6 @@ export const de: Dictionary = {
         icon: "process",
         title: "Process Mining",
         text: "Geschäftsprozesse mit Celonis sichtbar machen – Engpässe in den Daten finden und in konkrete Verbesserungen übersetzen.",
-      },
-      {
-        icon: "chip",
-        title: "IoT & Embedded",
-        text: "Vernetzte Geräte und Echtzeit-Datenpipelines mit MQTT, OPC UA und MicroPython – vom Sensor bis zum Dashboard.",
       },
       {
         icon: "people",

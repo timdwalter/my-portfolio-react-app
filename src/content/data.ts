@@ -288,6 +288,11 @@ export const industries: Industry[] = [
     title: { en: "Logistics", de: "Logistik" },
   },
   {
+    id: "tourism",
+    title: { en: "Tourism", de: "Tourismus" },
+    meta: { en: "Germany", de: "Deutschland" },
+  },
+  {
     id: "bus",
     title: { en: "Bus Network Planning", de: "Bus-Verkehrsplanung" },
     meta: { en: "Public transport", de: "ÖPNV" },
