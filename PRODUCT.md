@@ -67,7 +67,7 @@ Refined by Tim:
 - 7 Medium articles (listed in `src/content/data.ts`).
 - IoT hacking event: Tim has organised it at Lufthansa Industry Solutions for five years (meet, pizza, latest topics, own projects around home automation, drones and robots, articles). Shown as one project. **Individual projects from the event (including colleagues' private projects) are not published.**
 - /now page: led by upcoming Medium articles (currently mostly AI); titles go into `plannedArticles` in `src/content/data.ts` – only titles Tim provides. Update `site.nowUpdated` with every change.
-- Footer colophon states honestly: built with Claude Code and reworked by Tim.
+- Footer colophon is exactly: "Mit Claude Code gebaut und von mir überarbeitet." (EN: "Built with Claude Code and reworked by me.") – nothing else.
 - Projects: 3D Playground (live demo), SH-Beach, Digital Aristoteles, LH-Leap – the last three have only short or placeholder descriptions.
 - **Absent – must not be fabricated:** testimonials, client logos, metrics beyond those above, project outcomes.
 

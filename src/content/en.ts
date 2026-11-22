@@ -20,8 +20,7 @@ export const en = {
     privacy: "Privacy",
     rights: "All rights reserved.",
     colophonLabel: "Colophon",
-    colophon:
-      "Built with Next.js and Tailwind CSS, set in Fraunces and IBM Plex, hosted on Vercel. Built with Claude Code and reworked by me.",
+    colophon: "Built with Claude Code and reworked by me.",
   },
   now: {
     seoTitle: "Now",

@@ -22,8 +22,7 @@ export const de: Dictionary = {
     privacy: "Datenschutz",
     rights: "Alle Rechte vorbehalten.",
     colophonLabel: "Kolophon",
-    colophon:
-      "Gebaut mit Next.js und Tailwind CSS, gesetzt in Fraunces und IBM Plex, gehostet auf Vercel. Mit Claude Code gebaut und von mir überarbeitet.",
+    colophon: "Mit Claude Code gebaut und von mir überarbeitet.",
   },
   now: {
     seoTitle: "Jetzt",
