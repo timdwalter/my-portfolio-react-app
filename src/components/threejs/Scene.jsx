@@ -2,7 +2,7 @@ import * as THREE from "three";
 import { useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useGLTF, Float, Preload } from "@react-three/drei";
-import { Effects } from "../../../components/threejs-components/Effects";
+import { Effects } from "./Effects";
 
 export default function App() {
   return (

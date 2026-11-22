@@ -1,51 +1,60 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
+    container: {
+      center: true,
+      padding: { DEFAULT: "1.25rem", md: "2rem" },
+      screens: { "2xl": "1200px" },
+    },
     extend: {
       colors: {
-        // Primary: Light Blue / Cyan
-        primary: {
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
-          400: '#38bdf8',
-          500: '#0ea5e9',
-          600: '#0284c7',
-          700: '#0369a1',
-          800: '#075985',
-          900: '#0c2d6b',
-          950: '#051e3e',
-        },
-        // Secondary: Dark Navy (for dark elements)
-        secondary: {
-          50: '#f8fafc',
-          100: '#f1f5f9',
-          900: '#0f172a',
-          950: '#020617',
-        },
-        // Accent: Vibrant Cyan (for interactive elements)
-        accent: {
-          400: '#06b6d4',
-          500: '#06b6d4',
-          600: '#0891b2',
+        // Surfaces – light editorial theme
+        canvas: "#ffffff", // page background
+        subtle: "#f4f6f9", // alternating sections, inputs
+        surface: { DEFAULT: "#ffffff", hover: "#fbfcfd" }, // cards
+        line: { DEFAULT: "#e4e8ee", strong: "#cdd4de" }, // borders
+        // Text
+        heading: "#0b1220",
+        body: "#334155",
+        muted: "#5b6678",
+        faint: "#8a94a6",
+        // Dark block (contact section, footer accents)
+        night: { DEFAULT: "#0b1220", soft: "#131c2e", line: "#24304a" },
+        // Brand cyan (from the TimTech logo); 400+ is dark enough for text on white
+        brand: {
+          50: "#ecfeff",
+          100: "#cffafe",
+          200: "#a5f3fc",
+          300: "#155e75",
+          400: "#0e7490",
+          500: "#06b6d4",
+          600: "#3dd8f5",
         },
       },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      fontFamily: {
+        sans: ["var(--font-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "var(--font-sans)", "sans-serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
       },
-      gridTemplateColumns: {
-        sidebar: "300px auto", //for sidebar layout
-        "sidebar-collapsed": "64px auto", //for sidebar layout
+      boxShadow: {
+        soft: "0 1px 2px rgba(11,18,32,0.04), 0 12px 32px -12px rgba(11,18,32,0.14)",
+      },
+      keyframes: {
+        pulseDot: {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.35" },
+        },
+        flow: {
+          from: { backgroundPosition: "0 -80px" },
+          to: { backgroundPosition: "0 80px" },
+        },
+      },
+      animation: {
+        "pulse-dot": "pulseDot 2s ease-in-out infinite",
+        flow: "flow 1.6s linear infinite",
       },
     },
   },
   plugins: [],
-}
+};
