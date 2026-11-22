@@ -30,3 +30,13 @@ FORM: Brief-pinned world (CLAUDE.md design system) plus approved Phase 1 replace
 Motion: one staggered CSS fade-in of the hero on load, disabled under prefers-reduced-motion. No scroll reveals, no hover lifts.
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+
+## Phase 3 – rest of the home page
+
+Every section below the hero uses one pattern (`DocSection` in src/components/ui/Doc.tsx): heading plus a one-line intro in the margin column (cols 1–3, sticky on desktop), content in the main column (5–12). No kickers, numbering, icons, cards or scroll animations. Variation comes from the content form, not from decoration:
+- Services: two-column text blocks, each under a 1px rule.
+- Industries: ruled rows – title and mono meta left, description right.
+- Projects: ruled rows – image (4:3, 16:9 on mobile; Tim keeps his generated images by explicit decision) left, title, mono stack, summary and a plain text link right.
+- How I work: three text blocks under a 1px ink rule (copy unchanged at Tim's request).
+- Writing: an index – mono date and category left, Fraunces title and summary right; whole row links to Medium.
+- Contact: the one dark block (ink), aligned to the page grid; LinkedIn as the primary paper-filled action, email as text link beside it.

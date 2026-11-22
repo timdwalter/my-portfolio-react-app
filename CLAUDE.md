@@ -67,3 +67,4 @@ Persönliche Portfolio-Website (Next.js 13, Pages Router, Tailwind, TypeScript),
 - Gestreute Micro-Animationen, Hover-Scale auf allem
 - Marketing-Floskeln: „passionate“, „innovative“, „digital experiences“, „cutting-edge“, „seamless“, „leidenschaftlich“, „maßgeschneiderte Lösungen“
 - Erfundene Zahlen, Platzhalter-Quotes, Fake-Testimonials, Stock- oder KI-Bilder
+  - **Ausnahme (Tims Entscheidung):** die vorhandenen generierten Projektbilder in `public/` (SH-Beach, LH-Leap, Digital Aristoteles, Darth Vader, Not Found) bleiben erlaubt. Keine neuen generierten Bilder hinzufügen.

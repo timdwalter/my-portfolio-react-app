@@ -55,6 +55,7 @@ Refined by Tim:
 ## Evidence on Hand
 
 - Professional photo: `public/TDW-Profil.jpg`.
+- Project images in `public/` are AI-generated; Tim explicitly keeps them (he likes them and will not make better ones).
 - Career: Lufthansa Industry Solutions (current, Technical Project Lead); earlier Fraunhofer IAPT (Institute for Additive Production Technologies) and Siemens Healthcare – shown by name only, without roles (Tim's request).
 - 9+ years of experience; 2 years as Product Owner (aviation CMS).
 - Industries: MRI/CT prototypes and training software for the Indian and Chinese markets; aviation CMS (Product Owner, in contact with all airlines of the Lufthansa Group); process mining for airlines; maritime (Port of Lübeck); logistics; bus network planning (public transport); smart-campus use cases (project still running – keep it vague: no client, no number of use cases, no specific features); ESG reporting; a corporate talent management tool. Most of these have no further detail yet – do not invent any.

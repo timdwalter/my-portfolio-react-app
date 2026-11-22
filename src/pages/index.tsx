@@ -1,8 +1,6 @@
 import Image from "next/image";
 import Seo from "@/components/ui/Seo";
-import Button, { Arrow } from "@/components/ui/Button";
-import { Reveal, Section, SectionHeader } from "@/components/ui/Section";
-import { ArticleGrid, ProjectCard, ServiceIcon } from "@/components/ui/Cards";
+import { ArticleRows, DocSection, ProjectRows, TextLink, nb } from "@/components/ui/Doc";
 import ContactSection from "@/components/ContactSection";
 import { articles, career, industries, projects } from "@/content/data";
 import { mailto, site } from "@/content/site";
@@ -101,103 +99,82 @@ export default function HomePage() {
       <Seo title={t.home.seoTitle} description={t.home.seoDescription} />
       <Hero />
 
-      {/* Services – editorial numbered list */}
-      <Section className="bg-subtle">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.6fr]">
-          <SectionHeader
-            eyebrow={t.home.servicesEyebrow}
-            title={t.home.servicesTitle}
-            className="lg:sticky lg:top-28 lg:self-start"
-          />
-          <div className="border-t border-line-strong">
-            {t.home.services.map((s, i) => (
-              <Reveal key={s.title} delay={i * 0.05}>
-                <div className="group grid grid-cols-[auto_1fr] gap-x-6 gap-y-2 border-b border-line-strong py-8 sm:grid-cols-[3rem_1fr_auto]">
-                  <span className="pt-1 font-mono text-sm text-brand-400">0{i + 1}</span>
-                  <div>
-                    <h3 className="mb-2 text-2xl font-semibold">{s.title}</h3>
-                    <p className="max-w-xl leading-relaxed text-muted">{s.text}</p>
-                  </div>
-                  <span className="hidden h-12 w-12 place-items-center rounded-full border border-line-strong text-heading transition group-hover:border-heading group-hover:bg-heading group-hover:text-white sm:grid">
-                    <ServiceIcon icon={s.icon} className="h-5 w-5" />
-                  </span>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </Section>
-
-      {/* Industries – heading in the margin column, industries as ruled rows */}
-      <section id="industries" aria-labelledby="industries-title" className="scroll-mt-xl py-2xl">
-        <div className="container grid-12 gap-y-lg">
-          <div className="col-meta lg:sticky lg:top-2xl lg:self-start">
-            <h2 id="industries-title" className="text-[2rem] leading-tight">
-              {t.home.industriesTitle}
-            </h2>
-            <p className="mt-sm text-muted">{t.home.industriesIntro}</p>
-          </div>
-          <ul className="col-main border-t border-rule">
-            {industries.map((ind) => (
-              <li key={ind.id} className="grid gap-y-sm border-b border-rule py-lg sm:grid-cols-8 sm:gap-x-lg">
-                <div className="sm:col-span-3">
-                  <h3 className="text-[1.375rem] leading-snug">{ind.title[locale]}</h3>
-                  {ind.meta && <p className="meta mt-xs">{ind.meta[locale]}</p>}
-                </div>
-                {ind.text && (
-                  <p className="text-[0.9375rem] leading-relaxed text-ink sm:col-span-5">{ind.text[locale]}</p>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      <Section className="bg-subtle">
-        <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
-          <SectionHeader eyebrow={t.home.workEyebrow} title={t.home.workTitle} className="mb-0" />
-          <Button href="/projects" variant="ghost">
-            {t.home.workAll} <Arrow />
-          </Button>
-        </div>
-        <div className="grid gap-6 md:grid-cols-2">
-          {projects.map((p, i) => (
-            <Reveal key={p.id} delay={(i % 2) * 0.06}>
-              <ProjectCard project={p} />
-            </Reveal>
-          ))}
-        </div>
-      </Section>
-
-      <Section>
-        <SectionHeader eyebrow={t.home.principlesEyebrow} title={t.home.principlesTitle} />
-        <div className="grid gap-10 md:grid-cols-3">
-          {t.home.principles.map((p, i) => (
-            <Reveal key={p.title} delay={i * 0.06}>
-              <div className="border-t-2 border-heading pt-6">
-                <span className="font-mono text-sm text-brand-400">0{i + 1}</span>
-                <h3 className="mb-3 mt-3 text-xl font-semibold">{p.title}</h3>
-                <p className="leading-relaxed text-muted">{p.text}</p>
+      <DocSection id="services" title={t.home.servicesEyebrow} intro={nb(t.home.servicesTitle)}>
+        <div className="grid gap-x-lg gap-y-xl sm:grid-cols-2">
+          {/* Tech leadership is Tim's primary role: first, across both columns */}
+          {[...t.home.services]
+            .sort((a, b) => Number(b.icon === "people") - Number(a.icon === "people"))
+            .map((s) => (
+              <div key={s.title} className={`border-t border-rule pt-md ${s.icon === "people" ? "sm:col-span-2" : ""}`}>
+                <h3 className="text-[1.375rem] leading-snug">{s.title}</h3>
+                <p className="mt-sm max-w-[62ch] text-[0.9375rem] leading-relaxed text-ink">{nb(s.text)}</p>
               </div>
-            </Reveal>
+            ))}
+        </div>
+      </DocSection>
+
+      <DocSection id="industries" title={t.home.industriesTitle} intro={t.home.industriesIntro}>
+        <ul className="border-t border-rule">
+          {industries.map((ind) => (
+            <li key={ind.id} className="border-b border-rule">
+              {ind.text ? (
+                <div className="grid gap-y-sm py-lg sm:grid-cols-8 sm:gap-x-lg">
+                  <div className="sm:col-span-3">
+                    <h3 className="text-[1.375rem] leading-snug">{ind.title[locale]}</h3>
+                    {ind.meta && <p className="meta mt-xs">{ind.meta[locale]}</p>}
+                  </div>
+                  <p className="text-[0.9375rem] leading-relaxed text-ink sm:col-span-5">{nb(ind.text[locale])}</p>
+                </div>
+              ) : (
+                /* no description yet: one compact line, meta on the title's baseline */
+                <div className="grid gap-y-xs py-md sm:grid-cols-8 sm:items-baseline sm:gap-x-lg">
+                  <h3 className="text-[1.375rem] leading-snug sm:col-span-3">{ind.title[locale]}</h3>
+                  {ind.meta && <p className="meta sm:col-span-5">{ind.meta[locale]}</p>}
+                </div>
+              )}
+            </li>
+          ))}
+        </ul>
+      </DocSection>
+
+      <DocSection
+        id="projects"
+        title={t.home.workTitle}
+        intro={t.home.workEyebrow}
+        aside={<TextLink href="/projects">{t.home.workAll}</TextLink>}
+      >
+        <ProjectRows projects={projects} />
+      </DocSection>
+
+      <DocSection
+        id="principles"
+        title={t.home.principlesEyebrow}
+        intro={t.home.principlesTitle}
+        aside={<TextLink href="/about">{t.home.principlesLink}</TextLink>}
+      >
+        <div className="grid gap-x-lg gap-y-xl sm:grid-cols-3">
+          {t.home.principles.map((p) => (
+            <div key={p.title} className="border-t border-ink pt-md">
+              <h3 className="text-[1.375rem] leading-snug">{p.title}</h3>
+              <p className="mt-sm text-[0.9375rem] leading-relaxed text-ink">{nb(p.text)}</p>
+            </div>
           ))}
         </div>
-        <Reveal className="mt-12">
-          <Button href="/about" variant="secondary">
-            {t.home.principlesLink} <Arrow />
-          </Button>
-        </Reveal>
-      </Section>
+      </DocSection>
 
-      <Section className="bg-subtle">
-        <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
-          <SectionHeader eyebrow={t.home.writingEyebrow} title={t.home.writingTitle} className="mb-0" />
-          <Button href="/blog" variant="ghost">
-            {t.home.writingAll} <Arrow />
-          </Button>
-        </div>
-        <ArticleGrid articles={articles} />
-      </Section>
+      <DocSection
+        id="writing"
+        title={t.home.writingEyebrow}
+        intro={t.home.writingTitle}
+        aside={
+          <div className="space-y-sm">
+            {t.blog.langNote && <p className="text-[0.875rem] text-muted">{t.blog.langNote}</p>}
+            <TextLink href="/blog">{t.home.writingAll}</TextLink>
+          </div>
+        }
+      >
+        <ArticleRows articles={articles} />
+      </DocSection>
 
       <ContactSection />
     </>

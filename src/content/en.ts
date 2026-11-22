@@ -110,8 +110,7 @@ export const en = {
   },
   contact: {
     eyebrow: "Contact",
-    title: "Let's build something that lasts.",
-    text: "Whether you need a feature built, a platform designed or a team led – tell me about your project.",
+    text: "The easiest way to reach me is LinkedIn. For project inquiries, email works too.",
     email: "Write an email",
     linkedin: "Connect on LinkedIn",
     subject: "Project inquiry",
@@ -122,7 +121,7 @@ export const en = {
     eyebrow: "Work",
     title: "Projects",
     intro: "A selection of things I have built – from production systems to experiments that keep my curiosity sharp.",
-    open: "Open",
+    open: "Open live demo",
     comingSoon: "Case study coming soon",
   },
   threejs: {

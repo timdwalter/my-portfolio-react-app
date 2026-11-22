@@ -5,7 +5,7 @@ export type Project = {
   title: string;
   image: string;
   tags: string[];
-  summary: L;
+  summary?: L;
   /** Internal or external link. Without it, the card shows "case study coming soon". */
   href?: string;
   featured?: boolean;
@@ -51,10 +51,6 @@ export const projects: Project[] = [
     title: "LH-Leap",
     image: "/Lh-leap.png",
     tags: [],
-    summary: {
-      en: "Case study in preparation.",
-      de: "Case Study in Vorbereitung.",
-    },
   },
 ];
 
@@ -72,7 +68,7 @@ export const articles: Article[] = [
   {
     title: "A Guide to Unhappiness with Artificial Intelligence",
     date: "2026-10-18",
-    category: { en: "AI · Satire", de: "KI · Satire" },
+    category: { en: "AI, Satire", de: "KI, Satire" },
     url: "https://medium.com/@timwalter23/a-guide-to-unhappiness-with-artificial-intelligence-f062d9b82107",
     summary: {
       en: "Paul Watzlawick wrote a guide to making yourself unhappy. Here is the AI edition: how to lose control entirely with AI agents.",

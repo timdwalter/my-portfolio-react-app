@@ -112,8 +112,7 @@ export const de: Dictionary = {
   },
   contact: {
     eyebrow: "Kontakt",
-    title: "Bauen wir etwas, das bleibt.",
-    text: "Ob ein Feature umgesetzt, eine Plattform entworfen oder ein Team geführt werden soll – erzählen Sie mir von Ihrem Projekt.",
+    text: "Am einfachsten erreichen Sie mich über LinkedIn. Für Projektanfragen gern auch per E-Mail.",
     email: "E-Mail schreiben",
     linkedin: "Auf LinkedIn vernetzen",
     subject: "Projektanfrage",
@@ -124,7 +123,7 @@ export const de: Dictionary = {
     eyebrow: "Arbeiten",
     title: "Projekte",
     intro: "Eine Auswahl dessen, was ich gebaut habe – von Produktivsystemen bis zu Experimenten, die meine Neugier wach halten.",
-    open: "Öffnen",
+    open: "Live-Demo öffnen",
     comingSoon: "Case Study folgt",
   },
   threejs: {

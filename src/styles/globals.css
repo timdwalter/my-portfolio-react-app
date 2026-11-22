@@ -80,7 +80,7 @@
 
   /* Rectangular framed action */
   .action {
-    @apply inline-flex items-center border border-ink px-5 py-3 text-[0.9375rem] font-medium text-ink transition-colors hover:bg-ink hover:text-paper;
+    @apply inline-flex items-center border border-ink px-lg py-sm text-[0.9375rem] font-medium leading-7 text-ink transition-colors hover:bg-ink hover:text-paper;
   }
 
   /* ---------- legacy (sections not redesigned yet) ---------- */

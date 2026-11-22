@@ -52,7 +52,7 @@ export function ProjectCard({ project }: { project: Project }) {
       </div>
       <div className="flex flex-1 flex-col p-6">
         <h3 className="mb-2 text-lg font-semibold">{project.title}</h3>
-        <p className="mb-5 flex-1 text-[15px] leading-relaxed text-muted">{project.summary[locale]}</p>
+        <p className="mb-5 flex-1 text-[15px] leading-relaxed text-muted">{project.summary?.[locale]}</p>
         {project.tags.length > 0 && (
           <div className="mb-5 flex flex-wrap gap-1.5">
             {project.tags.map((tag) => (
