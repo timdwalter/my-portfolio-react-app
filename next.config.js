@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  images: {
+    // Next 16 only serves qualities listed here; 90 is used for the portrait.
+    qualities: [75, 90],
+  },
   i18n: {
     locales: ["en", "de"],
     defaultLocale: "en",

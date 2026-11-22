@@ -7,15 +7,17 @@ import Logo from "@/components/ui/Logo";
 import { useLocale, useT } from "@/lib/i18n";
 
 function LanguageSwitch() {
-  const { asPath } = useRouter();
+  const { asPath, pathname } = useRouter();
   const locale = useLocale();
+  // The 404 page is prerendered, so its server-side asPath ("/404") differs from the real URL.
+  const target = pathname === "/404" ? "/" : asPath;
   const t = useT();
   return (
     <div className="flex items-center rounded-lg border border-line p-0.5 font-mono text-xs" aria-label={t.nav.language}>
       {(["en", "de"] as const).map((l) => (
         <Link
           key={l}
-          href={asPath}
+          href={target}
           locale={l}
           scroll={false}
           aria-current={l === locale ? "true" : undefined}

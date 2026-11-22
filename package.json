@@ -9,36 +9,32 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint src"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.17",
     "@react-three/drei": "^9.65.5",
     "@react-three/fiber": "^8.12.2",
     "@react-three/postprocessing": "^2.7.1",
-    "@types/node": "18.15.13",
-    "@types/react": "18.0.38",
-    "@types/react-dom": "18.0.11",
     "autoprefixer": "10.4.14",
     "classnames": "^2.3.2",
-    "components": "^0.1.0",
-    "eslint": "8.39.0",
-    "eslint-config-next": "13.3.1",
     "framer-motion": "^10.12.4",
     "leva": "^0.9.34",
-    "next": "13.3.1",
+    "next": "^16.4.6",
     "postcss": "8.4.23",
     "postprocessing": "^6.30.2",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "reactstrap": "^9.1.9",
-    "sass": "^1.62.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "tailwindcss": "3.3.1",
-    "three": "^0.167.1",
-    "typescript": "5.0.4"
+    "three": "^0.167.1"
   },
   "devDependencies": {
-    "html-loader": "^4.2.0",
-    "prettier": "^2.8.8"
+    "@types/node": "^24.19.2",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.4.6",
+    "prettier": "^2.8.8",
+    "typescript": "^5.9.3"
   }
 }
