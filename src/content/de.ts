@@ -22,9 +22,9 @@ export const de: Dictionary = {
     rights: "Alle Rechte vorbehalten.",
   },
   hero: {
-    headline: "Softwareprojekte leiten und selbst mitbauen.",
+    headline: "Ich leite Softwareprojekte und baue selbst mit.",
     intro:
-      "Seit über neun Jahren zwischen Entwicklung und Kunde, als Tech Lead und als Product Owner. Ich setze auf kritisches Denken: Ich stelle kritische Fragen zu Anforderungen, Schätzungen und Architektur, und ich prüfe KI-generierten Code genauso kritisch wie alles andere. Einen guten Teil baue ich noch selbst. Hohe Qualität ist mir wichtiger als schneller Output.",
+      "Seit über neun Jahren arbeite ich an der Schnittstelle zwischen Entwicklung und Kunden, als Tech Lead und als Product Owner. Bevor etwas gebaut wird, hinterfrage ich Anforderungen, Schätzungen und Architektur. KI-generierten Code prüfe ich genauso gründlich wie jeden anderen. Einen guten Teil der Entwicklung mache ich nach wie vor selbst, und Qualität ist mir dabei wichtiger als Tempo.",
     linkedin: "Auf LinkedIn vernetzen",
     email: "oder E-Mail schreiben",
     factsLabel: "Über Tim",
