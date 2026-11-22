@@ -16,15 +16,15 @@
     "@react-three/drei": "^9.65.5",
     "@react-three/fiber": "^8.12.2",
     "@react-three/postprocessing": "^2.7.1",
-    "autoprefixer": "10.4.14",
+    "autoprefixer": "^10.7.0",
     "classnames": "^2.5.1",
     "leva": "^0.9.34",
     "next": "^16.4.6",
-    "postcss": "8.4.23",
+    "postcss": "^8.5.33",
     "postprocessing": "^6.30.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "tailwindcss": "3.3.1",
+    "tailwindcss": "^3.4.19",
     "three": "^0.167.1"
   },
   "devDependencies": {

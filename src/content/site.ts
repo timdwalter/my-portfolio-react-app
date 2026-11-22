@@ -14,8 +14,8 @@ export const site = {
   yearsExperience: 9,
   /** Shows the green "available" badge in the hero. */
   available: true,
-  /** Absolute production URL, used for canonical/OG tags. Set NEXT_PUBLIC_SITE_URL on Vercel. */
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "",
+  /** Absolute production URL (no trailing slash), used for canonical and link-preview tags. */
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.timtechsolutions.de",
   socials: {
     linkedin: "https://www.linkedin.com/in/tim-d-walter/",
     xing: "https://www.xing.com/profile/Tim_Walter96/cv",

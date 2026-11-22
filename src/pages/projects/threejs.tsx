@@ -19,7 +19,7 @@ export default function ThreeJsPage() {
   const t = useT();
   return (
     <>
-      <Seo title={t.threejs.seoTitle} description={t.threejs.seoDescription} image="/Darth_Vader.png" />
+      <Seo title={t.threejs.seoTitle} description={t.threejs.seoDescription} />
       <section aria-labelledby="page-title" className="pb-2xl pt-2xl">
         <div className="container grid-12 gap-y-lg">
           <div className="col-main lg:row-start-1">
