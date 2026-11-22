@@ -23,20 +23,6 @@ module.exports = {
       accent: { DEFAULT: accent, dark: accentDark },
       logo: logoCyan,
 
-      // Legacy aliases – mapped onto the palette above so sections that are not
-      // redesigned yet keep rendering. Remove each alias once no section uses it.
-      canvas: paper,
-      subtle: paper,
-      surface: { DEFAULT: paper, hover: paper },
-      line: { DEFAULT: rule, strong: rule },
-      heading: ink,
-      body: ink,
-      faint: muted,
-      white: paper,
-      black: ink,
-      night: { DEFAULT: ink, soft: ink, line: muted },
-      brand: { 50: paper, 100: rule, 200: rule, 300: accentDark, 400: accent, 500: accent, 600: logoCyan },
-      emerald: { 50: paper, 200: rule, 500: accent, 800: ink },
     },
     fontFamily: {
       sans: ["var(--font-sans)", "sans-serif"],

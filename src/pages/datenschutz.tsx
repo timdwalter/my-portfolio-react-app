@@ -50,7 +50,7 @@ export default function DatenschutzPage() {
         Außerdem können Sie sich bei einer Datenschutz-Aufsichtsbehörde beschweren (Art. 77 DSGVO).
       </p>
 
-      <p className="mt-10 font-mono text-xs text-faint">Stand: November 2026</p>
+      <p className="meta mt-xl">Stand: November 2026</p>
     </LegalPage>
   );
 }

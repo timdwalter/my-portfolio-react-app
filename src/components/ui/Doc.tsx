@@ -42,7 +42,7 @@ export function DocSection({
 
 /** Plain text link; external URLs open in a new tab. */
 export function TextLink({ href, children, className = "" }: { href: string; children: ReactNode; className?: string }) {
-  const cls = `link text-[0.9375rem] ${className}`;
+  const cls = `link ${className || "text-[0.9375rem]"}`;
   if (/^https?:/.test(href))
     return (
       <a href={href} target="_blank" rel="noopener noreferrer" className={cls}>
@@ -56,9 +56,10 @@ export function TextLink({ href, children, className = "" }: { href: string; chi
   );
 }
 
-export function ProjectRows({ projects }: { projects: Project[] }) {
+export function ProjectRows({ projects, headingLevel = 3 }: { projects: Project[]; headingLevel?: 2 | 3 }) {
   const locale = useLocale();
   const t = useT();
+  const H = headingLevel === 2 ? "h2" : "h3";
   return (
     <ul className="border-t border-rule">
       {projects.map((p) => (
@@ -68,9 +69,9 @@ export function ProjectRows({ projects }: { projects: Project[] }) {
             <Image src={p.image} alt="" fill sizes="(min-width: 1024px) 300px, (min-width: 640px) 40vw, 100vw" className="object-cover" />
           </div>
           <div className="sm:col-span-5">
-            <h3 className="text-[1.5rem] leading-snug">{p.title}</h3>
+            <H className="text-[1.5rem] leading-snug">{p.title}</H>
             {p.tags.length > 0 && <p className="meta mt-xs">{p.tags.join(", ")}</p>}
-            {p.summary && <p className="mt-sm max-w-[60ch] text-[0.9375rem] leading-relaxed text-ink">{nb(p.summary[locale])}</p>}
+            {p.summary && <p className="mt-sm max-w-[52ch] text-[0.9375rem] leading-relaxed text-ink">{nb(p.summary[locale])}</p>}
             <div className="mt-lg">
               {p.href ? (
                 <Link href={p.href} className="action">
@@ -87,9 +88,10 @@ export function ProjectRows({ projects }: { projects: Project[] }) {
   );
 }
 
-export function ArticleRows({ articles }: { articles: Article[] }) {
+export function ArticleRows({ articles, headingLevel = 3 }: { articles: Article[]; headingLevel?: 2 | 3 }) {
   const locale = useLocale();
   const t = useT();
+  const H = headingLevel === 2 ? "h2" : "h3";
   return (
     <ul className="border-t border-rule">
       {articles.map((a) => {
@@ -112,16 +114,73 @@ export function ArticleRows({ articles }: { articles: Article[] }) {
                 <p className="meta">{a.category[locale]}</p>
               </div>
               <div className="sm:col-span-6">
-                <h3 className="text-[1.375rem] leading-snug transition-colors group-hover:text-accent">
+                <H className="text-[1.375rem] leading-snug transition-colors group-hover:text-accent">
                   {nb(a.title)}
                   <span className="sr-only"> – {t.blog.read}</span>
-                </h3>
-                <p className="mt-xs max-w-[62ch] text-[0.9375rem] leading-relaxed text-muted">{nb(a.summary[locale])}</p>
+                </H>
+                <p className="mt-xs max-w-[52ch] text-[0.9375rem] leading-relaxed text-muted">{nb(a.summary[locale])}</p>
               </div>
             </a>
           </li>
         );
       })}
     </ul>
+  );
+}
+
+/** Page opening for sub-pages: h1 in the main column, optional margin content (photo, facts). */
+export function PageIntro({ title, children, aside }: { title: string; children?: ReactNode; aside?: ReactNode }) {
+  return (
+    <section aria-labelledby="page-title" className="pb-xl pt-2xl lg:pb-2xl">
+      <div className="container grid-12 gap-y-xl">
+        <div className="stagger col-main lg:row-start-1">
+          <h1
+            id="page-title"
+            className="text-[2.625rem] leading-[1.06] sm:text-[3.25rem] lg:text-[4.25rem] lg:leading-[1.04]"
+          >
+            {title}
+          </h1>
+          {children && <div className="mt-lg max-w-[52ch] space-y-md text-lg leading-relaxed lg:text-xl">{children}</div>}
+        </div>
+        {aside && <div className="stagger stagger-late col-meta lg:row-start-1 lg:pt-sm">{aside}</div>}
+      </div>
+    </section>
+  );
+}
+
+export type Row = { key: string; title: ReactNode; meta?: ReactNode; body?: ReactNode };
+
+/** Ruled rows: title (+ mono meta) left, body right; rows without a body collapse to one line. */
+export function RuledRows({ rows }: { rows: Row[] }) {
+  return (
+    <ul className="border-t border-rule">
+      {rows.map((r) => (
+        <li key={r.key} className="border-b border-rule">
+          {r.body ? (
+            <div className="grid gap-y-sm py-lg sm:grid-cols-8 sm:gap-x-lg">
+              <div className="sm:col-span-3">
+                <h3 className="text-[1.375rem] leading-snug">{r.title}</h3>
+                {r.meta && <p className="meta mt-xs">{r.meta}</p>}
+              </div>
+              <div className="text-[0.9375rem] leading-relaxed text-ink sm:col-span-5">{r.body}</div>
+            </div>
+          ) : (
+            <div className="grid gap-y-xs py-md sm:grid-cols-8 sm:items-baseline sm:gap-x-lg">
+              <h3 className={`text-[1.375rem] leading-snug ${r.meta ? "sm:col-span-3" : "sm:col-span-8"}`}>{r.title}</h3>
+              {r.meta && <p className="meta sm:col-span-5">{r.meta}</p>}
+            </div>
+          )}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+/** Main-column wrapper for page content that has no margin heading. */
+export function MainColumn({ children }: { children: ReactNode }) {
+  return (
+    <div className="container grid-12">
+      <div className="col-main">{children}</div>
+    </div>
   );
 }

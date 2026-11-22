@@ -1,10 +1,6 @@
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { CheckBadgeIcon } from "@heroicons/react/24/outline";
 import Seo from "@/components/ui/Seo";
-import HexBackground from "@/components/ui/HexBackground";
-import { Arrow } from "@/components/ui/Button";
-import { Reveal, Section, SectionHeader } from "@/components/ui/Section";
+import { DocSection, PageIntro, RuledRows, TextLink, nb } from "@/components/ui/Doc";
 import ContactSection from "@/components/ContactSection";
 import { career, skillGroups, techStack } from "@/content/data";
 import { site } from "@/content/site";
@@ -25,158 +21,94 @@ export default function AboutPage() {
     <>
       <Seo title={t.about.seoTitle} description={t.about.seoDescription} />
 
-      <section className="relative overflow-hidden pb-16 pt-32 md:pb-24 md:pt-44">
-        <HexBackground />
-        <div className="container relative grid items-center gap-12 md:grid-cols-[1fr_1.3fr] lg:gap-20">
-          <motion.div
-            className="relative"
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7 }}
-          >
-            <div className="relative mx-auto aspect-[4/5] max-w-[280px] overflow-hidden rounded-[1.75rem] bg-[#c9ced4]">
+      <PageIntro
+        title={t.about.title}
+        aside={
+          <div className="grid grid-cols-[7rem_1fr] gap-x-lg sm:grid-cols-[9rem_1fr] lg:block">
+            <div className="relative aspect-[4/5] w-full overflow-hidden bg-rule">
               <Image
                 src="/TDW-Profil.jpg"
                 alt={site.fullName}
                 fill
                 priority
-                sizes="(min-width: 768px) 480px, 100vw"
+                // object-cover scales the landscape photo to ~1.35× the box width
+                sizes="(min-width: 1024px) 520px, 250px"
                 quality={90}
-                className="object-cover object-[50%_20%]"
+                className="object-cover object-[50%_18%]"
               />
             </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            <p className="eyebrow mb-5">{t.about.eyebrow}</p>
-            <h1 className="text-4xl font-semibold md:text-6xl">{t.about.title}</h1>
-            <p className="mt-6 text-lg leading-relaxed text-body md:text-xl">{t.about.intro}</p>
-            <p className="mt-4 border-l-2 border-brand-400 pl-4 text-lg leading-relaxed text-muted">
-              {t.about.mission}
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      <Section>
-        <div className="grid gap-10 lg:grid-cols-[1fr_2fr]">
-          <Reveal>
-            <h2 className="text-3xl font-semibold md:text-4xl">{t.about.storyTitle}</h2>
-          </Reveal>
-          <div className="space-y-6 text-lg leading-relaxed text-muted">
-            {t.about.story.map((p, i) => (
-              <Reveal key={i} delay={i * 0.06}>
-                <p>{p}</p>
-              </Reveal>
-            ))}
+            <p className="font-medium leading-snug text-ink lg:mt-md">{site.displayName}</p>
           </div>
-        </div>
-      </Section>
+        }
+      >
+        <p className="text-ink">{t.about.intro}</p>
+        <p className="text-muted">{nb(t.about.mission)}</p>
+      </PageIntro>
 
-      <Section className="bg-subtle">
-        <Reveal>
-          <h2 className="mb-10 text-3xl font-semibold md:text-4xl">{t.about.careerTitle}</h2>
-        </Reveal>
-        <ol className="border-t border-line-strong">
-          {career.map((c, i) => (
-            <Reveal key={c.company} delay={i * 0.06}>
-              <li className="flex flex-col gap-1 border-b border-line-strong py-6 sm:flex-row sm:items-center sm:justify-between">
-                <div className="flex items-center gap-4">
-                  <span className="font-mono text-sm text-brand-400">0{i + 1}</span>
-                  <span className="font-display text-xl font-semibold text-heading">{c.company}</span>
-                  {c.current && (
-                    <span className="rounded-full bg-emerald-50 px-2.5 py-0.5 text-xs font-medium text-emerald-800">
-                      {t.about.today}
-                    </span>
-                  )}
-                </div>
-                {c.role && <span className="pl-9 text-muted sm:pl-0">{c.role[locale]}</span>}
-              </li>
-            </Reveal>
-          ))}
-        </ol>
-      </Section>
-
-      <Section id="skills">
-        <SectionHeader eyebrow={t.about.skillsEyebrow} title={t.about.skillsTitle} />
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {skillGroups.map((group, i) => (
-            <Reveal key={group.title.en} delay={(i % 4) * 0.05}>
-              <div className="card h-full p-6">
-                <h3 className="mb-4 text-base font-semibold">{group.title[locale]}</h3>
-                <ul className="space-y-1.5 text-[0.9375rem] text-body">
-                  {group.items.map((item) => (
-                    <li key={item.en}>{item[locale]}</li>
-                  ))}
-                </ul>
-              </div>
-            </Reveal>
+      <DocSection id="story" title={t.about.storyTitle}>
+        <div className="max-w-[52ch] space-y-md text-lg leading-relaxed text-ink">
+          {t.about.story.map((p) => (
+            <p key={p.slice(0, 24)}>{nb(p)}</p>
           ))}
         </div>
-      </Section>
+      </DocSection>
 
-      <Section id="stack">
-        <SectionHeader eyebrow={t.about.stackEyebrow} title={t.about.stackTitle} />
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {techStack.map((group, i) => (
-            <Reveal key={group.title.en} delay={(i % 3) * 0.05}>
-              <div className="card h-full p-6">
-                <h3 className="mb-4 text-base font-semibold">{group.title[locale]}</h3>
-                <div className="flex flex-wrap gap-2">
-                  {group.items.map((item) => (
-                    <span key={item} className="rounded-md border border-line bg-subtle px-2.5 py-1 text-sm text-body">
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </Section>
+      <DocSection id="career" title={t.about.careerTitle}>
+        <RuledRows
+          rows={career.map((c) => ({
+            key: c.company,
+            title: c.company,
+            meta: c.current ? (
+              <span className="flex items-baseline gap-sm">
+                <span aria-hidden="true" className="inline-block h-2 w-2 shrink-0 bg-accent" />
+                {[c.role?.[locale], t.about.today].filter(Boolean).join(", ")}
+              </span>
+            ) : (
+              c.role?.[locale]
+            ),
+          }))}
+        />
+      </DocSection>
 
-      <Section className="!pb-0">
-        <Reveal>
-          <h2 className="mb-8 text-2xl font-semibold">{t.about.certsTitle}</h2>
-        </Reveal>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {t.about.certs.map((cert) => (
-            <Reveal key={cert}>
-              <div className="card flex items-center gap-4 px-6 py-5">
-                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-brand-50 text-brand-400">
-                  <CheckBadgeIcon className="h-5 w-5" />
-                </span>
-                <span className="font-semibold text-heading">{cert}</span>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </Section>
+      <DocSection id="skills" title={t.about.skillsEyebrow} intro={t.about.skillsTitle}>
+        <RuledRows
+          rows={skillGroups.map((g) => ({
+            key: g.title.en,
+            title: g.title[locale],
+            body: <p>{g.items.map((i) => i[locale]).join(", ")}</p>,
+          }))}
+        />
+      </DocSection>
 
-      <Section className="!pb-0">
-        <Reveal>
-          <h2 className="mb-8 text-2xl font-semibold">{t.about.connectTitle}</h2>
-        </Reveal>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <DocSection id="stack" title={t.about.stackEyebrow} intro={t.about.stackTitle}>
+        <RuledRows
+          rows={techStack.map((g) => ({
+            key: g.title.en,
+            title: g.title[locale],
+            body: <p className="font-mono text-[0.8125rem] leading-6">{g.items.join(", ")}</p>,
+          }))}
+        />
+      </DocSection>
+
+      <DocSection id="certifications" title={t.about.certsTitle}>
+        <RuledRows rows={t.about.certs.map((c) => ({ key: c, title: c }))} />
+      </DocSection>
+
+      <DocSection
+        id="profiles"
+        title={t.about.connectTitle}
+        intro={site.showGithub ? t.github.note : undefined}
+      >
+        <ul className="flex flex-wrap gap-x-xl gap-y-md border-t border-rule pt-lg">
           {profiles.map((p) => (
-            <a
-              key={p.label}
-              href={p.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="card card-hover group flex items-center justify-between px-6 py-5"
-            >
-              <span className="font-semibold text-heading">{p.label}</span>
-              <Arrow className="text-brand-400" />
-            </a>
+            <li key={p.label}>
+              <TextLink href={p.href} className="text-lg">
+                {p.label}
+              </TextLink>
+            </li>
           ))}
-        </div>
-        {site.showGithub && <p className="mt-md max-w-[60ch] text-[0.9375rem] text-muted">{t.github.note}</p>}
-      </Section>
+        </ul>
+      </DocSection>
 
       <ContactSection />
     </>

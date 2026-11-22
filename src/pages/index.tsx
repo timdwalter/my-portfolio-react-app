@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Seo from "@/components/ui/Seo";
-import { ArticleRows, DocSection, ProjectRows, TextLink, nb } from "@/components/ui/Doc";
+import { ArticleRows, DocSection, ProjectRows, RuledRows, TextLink, nb } from "@/components/ui/Doc";
 import ContactSection from "@/components/ContactSection";
 import { articles, career, industries, projects } from "@/content/data";
 import { mailto, site } from "@/content/site";
@@ -107,34 +107,21 @@ export default function HomePage() {
             .map((s) => (
               <div key={s.title} className={`border-t border-rule pt-md ${s.icon === "people" ? "sm:col-span-2" : ""}`}>
                 <h3 className="text-[1.375rem] leading-snug">{s.title}</h3>
-                <p className="mt-sm max-w-[62ch] text-[0.9375rem] leading-relaxed text-ink">{nb(s.text)}</p>
+                <p className="mt-sm max-w-[52ch] text-[0.9375rem] leading-relaxed text-ink">{nb(s.text)}</p>
               </div>
             ))}
         </div>
       </DocSection>
 
       <DocSection id="industries" title={t.home.industriesTitle} intro={t.home.industriesIntro}>
-        <ul className="border-t border-rule">
-          {industries.map((ind) => (
-            <li key={ind.id} className="border-b border-rule">
-              {ind.text ? (
-                <div className="grid gap-y-sm py-lg sm:grid-cols-8 sm:gap-x-lg">
-                  <div className="sm:col-span-3">
-                    <h3 className="text-[1.375rem] leading-snug">{ind.title[locale]}</h3>
-                    {ind.meta && <p className="meta mt-xs">{ind.meta[locale]}</p>}
-                  </div>
-                  <p className="text-[0.9375rem] leading-relaxed text-ink sm:col-span-5">{nb(ind.text[locale])}</p>
-                </div>
-              ) : (
-                /* no description yet: one compact line, meta on the title's baseline */
-                <div className="grid gap-y-xs py-md sm:grid-cols-8 sm:items-baseline sm:gap-x-lg">
-                  <h3 className="text-[1.375rem] leading-snug sm:col-span-3">{ind.title[locale]}</h3>
-                  {ind.meta && <p className="meta sm:col-span-5">{ind.meta[locale]}</p>}
-                </div>
-              )}
-            </li>
-          ))}
-        </ul>
+        <RuledRows
+          rows={industries.map((ind) => ({
+            key: ind.id,
+            title: ind.title[locale],
+            meta: ind.meta?.[locale],
+            body: ind.text && <p>{nb(ind.text[locale])}</p>,
+          }))}
+        />
       </DocSection>
 
       <DocSection

@@ -1,37 +1,29 @@
 import Seo from "@/components/ui/Seo";
-import PageHeader from "@/components/PageHeader";
-import { Reveal } from "@/components/ui/Section";
-import { ProjectCard } from "@/components/ui/Cards";
+import { MainColumn, PageIntro, ProjectRows, TextLink } from "@/components/ui/Doc";
 import ContactSection from "@/components/ContactSection";
 import { projects } from "@/content/data";
-import { useT } from "@/lib/i18n";
 import { site } from "@/content/site";
+import { useT } from "@/lib/i18n";
 
 export default function ProjectsPage() {
   const t = useT();
   return (
     <>
       <Seo title={t.projects.seoTitle} description={t.projects.seoDescription} />
-      <PageHeader eyebrow={t.projects.eyebrow} title={t.projects.title}>
-        {t.projects.intro}
+      <PageIntro title={t.projects.title}>
+        <p className="text-ink">{t.projects.intro}</p>
         {site.showGithub && (
-          <span className="mt-md block text-base text-muted">
+          <p className="text-base text-muted">
             {t.github.note}{" "}
-            <a href={site.socials.github} target="_blank" rel="noopener noreferrer" className="link">
+            <TextLink href={site.socials.github} className="text-base">
               {t.github.link}
-            </a>
-          </span>
+            </TextLink>
+          </p>
         )}
-      </PageHeader>
-      <section className="pb-8">
-        <div className="container grid gap-6 md:grid-cols-2">
-          {projects.map((p, i) => (
-            <Reveal key={p.id} delay={(i % 2) * 0.06}>
-              <ProjectCard project={p} />
-            </Reveal>
-          ))}
-        </div>
-      </section>
+      </PageIntro>
+      <MainColumn>
+        <ProjectRows projects={projects} headingLevel={2} />
+      </MainColumn>
       <ContactSection />
     </>
   );

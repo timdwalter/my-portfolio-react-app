@@ -14,6 +14,13 @@ Persönliche Portfolio-Website (Next.js 13, Pages Router, Tailwind, TypeScript),
 - Bei Textänderungen immer Vorher/Nachher zeigen.
 - Ton: direkt, nüchtern, erste Person, kurze aktive Sätze, keine Superlative. Konkret statt abstrakt: Problem → Entscheidung/Lösung → Ergebnis. Zahlen nur, wenn sie schon in den Texten stehen.
 
+## Bausteine (wiederverwenden statt neu bauen)
+
+- `src/components/ui/Doc.tsx`: `PageIntro` (Seitentitel + Randspalte), `DocSection` (Überschrift links, Inhalt rechts), `RuledRows` (Zeilen mit Trennlinien), `ProjectRows`, `ArticleRows`, `MainColumn`, `TextLink`, `nb()` (verhindert Gedankenstrich am Zeilenanfang)
+- `src/components/ContactSection.tsx`: der einzige dunkle Block, LinkedIn als Hauptaktion
+- CSS-Klassen in `globals.css`: `.container`, `.grid-12`, `.col-meta`, `.col-main`, `.col-wide`, `.meta`, `.link`, `.action`, `.stagger` (einzige Lade-Animation)
+- Farben nur aus dem Theme: `paper`, `ink`, `muted`, `rule`, `accent`, `accent-dark`, `logo` – es gibt keine anderen
+
 ## Design-System (verbindlich)
 
 **Ziel:** Die Seite darf nicht nach KI-Template aussehen.
