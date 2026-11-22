@@ -8,6 +8,7 @@ export const de: Dictionary = {
     stack: "Tech-Stack",
     about: "Über mich",
     blog: "Artikel",
+    now: "Jetzt",
     contact: "Kontakt",
     menu: "Menü",
     language: "Sprache",
@@ -20,6 +21,33 @@ export const de: Dictionary = {
     imprint: "Impressum",
     privacy: "Datenschutz",
     rights: "Alle Rechte vorbehalten.",
+    colophonLabel: "Kolophon",
+    colophon:
+      "Gebaut mit Next.js und Tailwind CSS, gesetzt in Fraunces und IBM Plex, gehostet auf Vercel. Mit Claude Code gebaut und von mir überarbeitet.",
+  },
+  now: {
+    seoTitle: "Jetzt",
+    seoDescription: "Woran Tim D. Walter gerade arbeitet.",
+    title: "Jetzt",
+    intro: "Woran ich gerade arbeite und was mich beschäftigt.",
+    updatedLabel: "Stand",
+    writingTitle: "Geplante Artikel",
+    writingText: "Für Medium plane ich gerade mehrere Artikel, zurzeit vor allem zu KI.",
+    latestLabel: "Zuletzt erschienen",
+    rows: [
+      {
+        title: "Arbeit",
+        text: "Technical Project Lead bei Lufthansa Industry Solutions. Angebote schreibe ich inzwischen KI-gestützt mit Claude und Microsoft 365 Copilot.",
+      },
+      {
+        title: "Community",
+        text: "Ich organisiere weiter das IoT-Hacking-Event bei Lufthansa Industry Solutions.",
+      },
+      {
+        title: "Offen für",
+        text: "Ausgewählte Nebenprojekte. Am einfachsten erreichen Sie mich über LinkedIn.",
+      },
+    ],
   },
   hero: {
     headline: "Ich leite Softwareprojekte und baue selbst mit.",

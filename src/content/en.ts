@@ -6,6 +6,7 @@ export const en = {
     stack: "Tech stack",
     about: "About",
     blog: "Writing",
+    now: "Now",
     contact: "Contact",
     menu: "Menu",
     language: "Language",
@@ -18,6 +19,33 @@ export const en = {
     imprint: "Legal notice",
     privacy: "Privacy",
     rights: "All rights reserved.",
+    colophonLabel: "Colophon",
+    colophon:
+      "Built with Next.js and Tailwind CSS, set in Fraunces and IBM Plex, hosted on Vercel. Built with Claude Code and reworked by me.",
+  },
+  now: {
+    seoTitle: "Now",
+    seoDescription: "What Tim D. Walter is working on right now.",
+    title: "Now",
+    intro: "What I'm working on and thinking about right now.",
+    updatedLabel: "Last updated",
+    writingTitle: "Upcoming articles",
+    writingText: "I am planning several articles for Medium, currently mostly about AI.",
+    latestLabel: "Latest",
+    rows: [
+      {
+        title: "Work",
+        text: "Technical Project Lead at Lufthansa Industry Solutions. These days I write proposals with AI support, using Claude and Microsoft 365 Copilot.",
+      },
+      {
+        title: "Community",
+        text: "I keep running the IoT hacking event at Lufthansa Industry Solutions.",
+      },
+      {
+        title: "Open to",
+        text: "Selected side projects. LinkedIn is the easiest way to reach me.",
+      },
+    ],
   },
   hero: {
     headline: "Managing software projects and building them, too.",

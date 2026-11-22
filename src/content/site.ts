@@ -10,6 +10,8 @@ export const site = {
   fullName: "Tim Daniel Walter",
   brand: "TimTech Solutions",
   email: "tim.d.walter@web.de",
+  /** Month the /now page was last updated (ISO, YYYY-MM). Update it with the content. */
+  nowUpdated: "2026-11",
   /** Years of professional experience (hero card, about page). */
   yearsExperience: 9,
   /** Shows the green "available" badge in the hero. */

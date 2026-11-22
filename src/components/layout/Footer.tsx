@@ -41,6 +41,7 @@ export default function Footer() {
     { href: "/about#stack", label: t.nav.stack },
     { href: "/about", label: t.nav.about },
     { href: "/blog", label: t.nav.blog },
+    { href: "/now", label: t.nav.now },
   ];
   const profiles: FooterLink[] = [
     { href: site.socials.linkedin, label: "LinkedIn" },
@@ -70,9 +71,14 @@ export default function Footer() {
         </nav>
       </div>
       <div className="container">
-        <p className="border-t border-rule py-md text-[0.8125rem] text-muted">
-          © {new Date().getFullYear()} {site.displayName}, {site.brand}. {t.footer.rights}
-        </p>
+        <div className="grid-12 gap-y-sm border-t border-rule py-md text-[0.8125rem] leading-relaxed text-muted">
+          <p className="col-meta">
+            © {new Date().getFullYear()} {site.displayName}, {site.brand}. {t.footer.rights}
+          </p>
+          <p className="col-main max-w-[70ch]">
+            <span className="font-medium text-ink">{t.footer.colophonLabel}:</span> {t.footer.colophon}
+          </p>
+        </div>
       </div>
     </footer>
   );

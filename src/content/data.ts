@@ -2,12 +2,15 @@ import type { L } from "@/lib/i18n";
 
 export type Project = {
   id: string;
-  title: string;
-  image: string;
+  title: string | L;
+  /** Square image; rows without one keep the text on the same column as the others. */
+  image?: string;
   tags: string[];
   summary?: L;
-  /** Internal or external link. Without it, the card shows "case study coming soon". */
+  /** Internal or external link. */
   href?: string;
+  /** Shown instead of "case study coming soon" when there is no link, e.g. "ongoing". */
+  status?: L;
   featured?: boolean;
 };
 
@@ -22,6 +25,16 @@ export const projects: Project[] = [
     summary: {
       en: "Interactive real-time 3D scene with GLTF models, bloom and screen-space reflections, rendered in the browser.",
       de: "Interaktive Echtzeit-3D-Szene mit GLTF-Modellen, Bloom und Screen-Space-Reflections – direkt im Browser gerendert.",
+    },
+  },
+  {
+    id: "iot-hacking-event",
+    title: { en: "IoT hacking event", de: "IoT-Hacking-Event" },
+    tags: ["IoT", "Hardware", "Community"],
+    status: { en: "Ongoing, five years so far", de: "Laufend, seit fünf Jahren" },
+    summary: {
+      en: "For five years I have been organising a regular IoT hacking event at Lufthansa Industry Solutions. We meet, eat pizza, talk about the latest topics and show our own projects around home automation, drones and robots, plus articles worth sharing.",
+      de: "Seit fünf Jahren organisiere ich bei Lufthansa Industry Solutions regelmäßig ein IoT-Hacking-Event. Wir treffen uns, essen Pizza, reden über die neuesten Themen und zeigen eigene Projekte rund um Heimautomatisierung, Drohnen und Roboter sowie Artikel, die uns aufgefallen sind.",
     },
   },
   {
@@ -330,3 +343,6 @@ export const career: Station[] = [
   { company: "Fraunhofer IAPT" },
   { company: "Siemens\u00a0Healthcare" },
 ];
+
+/** Medium articles Tim is planning (shown on /now). Add titles as they are decided; currently mostly AI topics. */
+export const plannedArticles: L[] = [];

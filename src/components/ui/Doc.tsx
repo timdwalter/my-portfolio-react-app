@@ -63,28 +63,35 @@ export function ProjectRows({ projects, headingLevel = 3 }: { projects: Project[
   const H = headingLevel === 2 ? "h2" : "h3";
   return (
     <ul className="border-t border-rule">
-      {projects.map((p) => (
-        <li key={p.id} className="grid gap-x-lg gap-y-md border-b border-rule py-lg sm:grid-cols-8">
-          {/* the project images are square – show them whole */}
-          <div className="relative aspect-square w-full max-w-[18rem] overflow-hidden bg-rule sm:col-span-3 sm:max-w-none">
-            <Image src={p.image} alt="" fill sizes="(min-width: 1024px) 300px, (min-width: 640px) 40vw, 100vw" className="object-cover" />
-          </div>
-          <div className="sm:col-span-5">
-            <H className="text-[1.5rem] leading-snug">{p.title}</H>
-            {p.tags.length > 0 && <p className="meta mt-xs">{p.tags.join(", ")}</p>}
-            {p.summary && <p className="mt-sm max-w-[52ch] text-[0.9375rem] leading-relaxed text-ink">{nb(p.summary[locale])}</p>}
-            <div className="mt-lg">
-              {p.href ? (
-                <Link href={p.href} className="action">
-                  {t.projects.open}
-                </Link>
-              ) : (
-                <p className="meta">{t.projects.comingSoon}</p>
+      {projects.map((p) => {
+        const title = typeof p.title === "string" ? p.title : p.title[locale];
+        return (
+          <li key={p.id} className="grid gap-x-lg gap-y-md border-b border-rule py-lg sm:grid-cols-8">
+            {/* the project images are square – show them whole */}
+            {p.image && (
+              <div className="relative aspect-square w-full max-w-[18rem] overflow-hidden bg-rule sm:col-span-3 sm:max-w-none">
+                <Image src={p.image} alt="" fill sizes="(min-width: 1024px) 300px, (min-width: 640px) 40vw, 100vw" className="object-cover" />
+              </div>
+            )}
+            <div className="sm:col-span-5 sm:col-start-4">
+              <H className="text-[1.5rem] leading-snug">{title}</H>
+              {p.tags.length > 0 && <p className="meta mt-xs">{p.tags.join(", ")}</p>}
+              {p.summary && (
+                <p className="mt-sm max-w-[52ch] text-[0.9375rem] leading-relaxed text-ink">{nb(p.summary[locale])}</p>
               )}
+              <div className="mt-lg">
+                {p.href ? (
+                  <Link href={p.href} className="action">
+                    {t.projects.open}
+                  </Link>
+                ) : (
+                  <p className="meta">{p.status ? p.status[locale] : t.projects.comingSoon}</p>
+                )}
+              </div>
             </div>
-          </div>
-        </li>
-      ))}
+          </li>
+        );
+      })}
     </ul>
   );
 }
@@ -155,7 +162,8 @@ export function PageIntro({ title, children, aside }: { title: string; children?
 export type Row = { key: string; title: ReactNode; meta?: ReactNode; body?: ReactNode };
 
 /** Ruled rows: title (+ mono meta below it) left, body right; rows without a body are compact. */
-export function RuledRows({ rows }: { rows: Row[] }) {
+export function RuledRows({ rows, headingLevel = 3 }: { rows: Row[]; headingLevel?: 2 | 3 }) {
+  const H = headingLevel === 2 ? "h2" : "h3";
   return (
     <ul className="border-t border-rule">
       {rows.map((r) => (
@@ -163,14 +171,14 @@ export function RuledRows({ rows }: { rows: Row[] }) {
           {r.body ? (
             <div className="grid gap-y-sm py-lg sm:grid-cols-8 sm:gap-x-lg">
               <div className="sm:col-span-3">
-                <h3 className="text-[1.375rem] leading-snug">{r.title}</h3>
+                <H className="text-[1.375rem] leading-snug">{r.title}</H>
                 {r.meta && <p className="meta mt-xs">{r.meta}</p>}
               </div>
               <div className="text-[0.9375rem] leading-relaxed text-ink sm:col-span-5">{r.body}</div>
             </div>
           ) : (
             <div className="py-md">
-              <h3 className="text-[1.375rem] leading-snug">{r.title}</h3>
+              <H className="text-[1.375rem] leading-snug">{r.title}</H>
               {r.meta && <p className="meta mt-xs">{r.meta}</p>}
             </div>
           )}

@@ -55,6 +55,7 @@ export default function Navbar() {
     { href: "/about#stack", label: t.nav.stack },
     { href: "/about", label: t.nav.about },
     { href: "/blog", label: t.nav.blog },
+    { href: "/now", label: t.nav.now },
   ];
 
   useEffect(() => {
