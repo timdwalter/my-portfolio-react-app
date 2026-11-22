@@ -3,6 +3,9 @@ import { Leva } from "leva";
 import Seo from "@/components/ui/Seo";
 import { TextLink } from "@/components/ui/Doc";
 import { useT } from "@/lib/i18n";
+import { projects } from "@/content/data";
+
+const demo = projects.find((p) => p.id === "threejs");
 
 function Loading() {
   const t = useT();
@@ -19,14 +22,14 @@ export default function ThreeJsPage() {
       <Seo title={t.threejs.seoTitle} description={t.threejs.seoDescription} image="/Darth_Vader.png" />
       <section aria-labelledby="page-title" className="pb-2xl pt-2xl">
         <div className="container grid-12 gap-y-lg">
-          <div className="col-meta">
-            <TextLink href="/projects">{t.threejs.back}</TextLink>
-            <p className="meta mt-md">React Three Fiber, Three.js, Postprocessing</p>
-          </div>
-          <div className="col-main">
+          <div className="col-main lg:row-start-1">
             <h1 id="page-title" className="text-[2.625rem] leading-[1.06] lg:text-[3.25rem]">
               {t.threejs.seoTitle}
             </h1>
+          </div>
+          <div className="col-meta lg:row-start-1">
+            <TextLink href="/projects">{t.threejs.back}</TextLink>
+            {demo && <p className="meta mt-sm">{demo.tags.join(", ")}</p>}
           </div>
           <div className="col-span-12">
             <div className="relative h-[60vh] overflow-hidden border border-rule bg-ink md:h-[72vh]">

@@ -1,6 +1,6 @@
 # Portfolio – Tim D. Walter
 
-Persönliche Portfolio-Website (Next.js 13, Pages Router, Tailwind, TypeScript), gehostet auf Vercel.
+Persönliche Portfolio-Website (Next.js 16, Pages Router, React 18, Tailwind 3, TypeScript), gehostet auf Vercel mit Node 26. Das Design-System ist in `DESIGN.md` dokumentiert.
 
 - Inhalte zentral in `src/content/`: `site.ts` (Kontakt, Links, Flags), `en.ts` / `de.ts` (UI-Texte), `data.ts` (Projekte, Artikel, Skills, Branchen, Stationen)
 - Zweisprachig über Next.js i18n: `en` (Standard) und `/de`. Jeder Text muss in beiden Sprachen gepflegt werden.

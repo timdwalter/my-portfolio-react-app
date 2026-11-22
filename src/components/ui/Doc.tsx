@@ -114,7 +114,10 @@ export function ArticleRows({ articles, headingLevel = 3 }: { articles: Article[
                 <p className="meta">{a.category[locale]}</p>
               </div>
               <div className="sm:col-span-6">
-                <H className="text-[1.375rem] leading-snug transition-colors group-hover:text-accent">
+                <H
+                  lang={locale === "de" ? "en" : undefined}
+                  className="text-[1.375rem] leading-snug transition-colors group-hover:text-accent"
+                >
                   {nb(a.title)}
                   <span className="sr-only"> – {t.blog.read}</span>
                 </H>
@@ -150,7 +153,7 @@ export function PageIntro({ title, children, aside }: { title: string; children?
 
 export type Row = { key: string; title: ReactNode; meta?: ReactNode; body?: ReactNode };
 
-/** Ruled rows: title (+ mono meta) left, body right; rows without a body collapse to one line. */
+/** Ruled rows: title (+ mono meta below it) left, body right; rows without a body are compact. */
 export function RuledRows({ rows }: { rows: Row[] }) {
   return (
     <ul className="border-t border-rule">
@@ -165,9 +168,9 @@ export function RuledRows({ rows }: { rows: Row[] }) {
               <div className="text-[0.9375rem] leading-relaxed text-ink sm:col-span-5">{r.body}</div>
             </div>
           ) : (
-            <div className="grid gap-y-xs py-md sm:grid-cols-8 sm:items-baseline sm:gap-x-lg">
-              <h3 className={`text-[1.375rem] leading-snug ${r.meta ? "sm:col-span-3" : "sm:col-span-8"}`}>{r.title}</h3>
-              {r.meta && <p className="meta sm:col-span-5">{r.meta}</p>}
+            <div className="py-md">
+              <h3 className="text-[1.375rem] leading-snug">{r.title}</h3>
+              {r.meta && <p className="meta mt-xs">{r.meta}</p>}
             </div>
           )}
         </li>

@@ -80,7 +80,7 @@ export const de: Dictionary = {
       },
       {
         icon: "people",
-        title: "Tech Leadership & Product",
+        title: "Tech Leadership & Produkt",
         text: "Coaching und Mentoring von Entwicklungsteams, technische Standards setzen – und als ehemaliger Product Owner Geschäftsziele in ein klares Backlog übersetzen.",
       },
     ],
@@ -130,7 +130,7 @@ export const de: Dictionary = {
     seoTitle: "3D Playground",
     seoDescription: "Interaktive Echtzeit-3D-Szene, gebaut mit React Three Fiber.",
     back: "Alle Projekte",
-    hint: "Bewegen Sie die Maus, um sich umzusehen.",
+    hint: "Bewegen Sie Maus oder Finger über die Szene, um sich umzusehen.",
     loading: "Szene wird geladen…",
   },
   about: {

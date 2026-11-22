@@ -18,11 +18,11 @@ export function HexMark({ className = "h-7 w-7" }: { className?: string }) {
 
 export default function Logo() {
   return (
-    <Link href="/" className="group flex items-center gap-2.5" aria-label="TimTech Solutions – Home">
-      <HexMark className="h-8 w-8 transition-transform duration-500 group-hover:rotate-[60deg]" />
+    <Link href="/" className="flex items-center gap-sm" aria-label="TimTech Solutions – Home">
+      <HexMark className="h-8 w-8" />
       <span className="font-sans text-[15px] font-semibold leading-none tracking-[0.04em] text-ink">
         TIM<span className="text-accent">TECH</span>
-        <span className="mt-1 block font-sans text-[11px] font-medium tracking-[0.18em] text-muted">
+        <span className="mt-xs block font-sans text-[11px] font-medium tracking-[0.18em] text-muted">
           SOLUTIONS
         </span>
       </span>

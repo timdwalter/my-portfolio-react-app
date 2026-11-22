@@ -10,16 +10,18 @@ export default function ProjectsPage() {
   return (
     <>
       <Seo title={t.projects.seoTitle} description={t.projects.seoDescription} />
-      <PageIntro title={t.projects.title}>
+      <PageIntro
+        title={t.projects.title}
+        aside={
+          site.showGithub && (
+            <p className="text-[0.9375rem] leading-relaxed text-muted">
+              {t.github.note}{" "}
+              <TextLink href={site.socials.github}>{t.github.link}</TextLink>
+            </p>
+          )
+        }
+      >
         <p className="text-ink">{t.projects.intro}</p>
-        {site.showGithub && (
-          <p className="text-base text-muted">
-            {t.github.note}{" "}
-            <TextLink href={site.socials.github} className="text-base">
-              {t.github.link}
-            </TextLink>
-          </p>
-        )}
       </PageIntro>
       <MainColumn>
         <ProjectRows projects={projects} headingLevel={2} />

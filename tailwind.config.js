@@ -45,15 +45,6 @@ module.exports = {
     extend: {
       // Spacing scale (CLAUDE.md): use these names for new and redesigned sections.
       spacing: { xs: "4px", sm: "8px", md: "16px", lg: "24px", xl: "48px", "2xl": "96px" },
-      keyframes: {
-        pulseDot: {
-          "0%, 100%": { opacity: "1" },
-          "50%": { opacity: "0.35" },
-        },
-      },
-      animation: {
-        "pulse-dot": "pulseDot 2s ease-in-out infinite",
-      },
     },
   },
   // .container is defined in globals.css (fixed max width + responsive gutter on the spacing scale)

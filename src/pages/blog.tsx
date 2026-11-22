@@ -10,16 +10,19 @@ export default function BlogPage() {
   return (
     <>
       <Seo title={t.blog.seoTitle} description={t.blog.seoDescription} />
-      <PageIntro title={t.blog.title}>
+      <PageIntro
+        title={t.blog.title}
+        aside={t.blog.langNote && <p className="text-[0.9375rem] leading-relaxed text-muted">{t.blog.langNote}</p>}
+      >
         <p className="text-ink">{t.blog.intro}</p>
-        {t.blog.langNote && <p className="text-base text-muted">{t.blog.langNote}</p>}
       </PageIntro>
       <MainColumn>
         <ArticleRows articles={articles} headingLevel={2} />
-        <div className="grid gap-y-sm border-b border-rule py-lg sm:grid-cols-8 sm:gap-x-lg">
-          <h2 className="font-display text-[1.375rem] leading-snug sm:col-span-3">{t.blog.moreTitle}</h2>
-          <div className="sm:col-span-5">
-            <p className="text-[0.9375rem] leading-relaxed text-ink">{t.blog.moreText}</p>
+        <div className="grid gap-y-xs border-b border-rule py-lg sm:grid-cols-8 sm:gap-x-lg">
+          <div className="sm:col-span-2" aria-hidden="true" />
+          <div className="sm:col-span-6">
+            <h2 className="font-display text-[1.375rem] leading-snug">{t.blog.moreTitle}</h2>
+            <p className="mt-xs text-[0.9375rem] leading-relaxed text-ink">{t.blog.moreText}</p>
             <TextLink href={site.socials.medium} className="mt-sm inline-block text-[0.9375rem]">
               {t.blog.follow}
             </TextLink>

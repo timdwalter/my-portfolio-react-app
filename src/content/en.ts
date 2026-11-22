@@ -128,7 +128,7 @@ export const en = {
     seoTitle: "3D Playground",
     seoDescription: "Interactive real-time 3D scene built with React Three Fiber.",
     back: "All projects",
-    hint: "Move your mouse to look around.",
+    hint: "Move your mouse or finger across the scene to look around.",
     loading: "Loading scene…",
   },
   about: {

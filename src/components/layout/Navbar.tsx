@@ -78,6 +78,9 @@ export default function Navbar() {
     };
   }, [router.events]);
 
+  // Pages that render <ContactSection /> link to their own block; others go to the home page's.
+  const contactHref = ["/", "/about", "/projects", "/blog"].includes(router.pathname) ? "#contact" : "/#contact";
+
   // Anchor links (#industries, #skills) never show as active – only real pages do.
   const isActive = (href: string) =>
     !href.includes("#") && (router.pathname === href || router.pathname.startsWith(`${href}/`));
@@ -116,7 +119,7 @@ export default function Navbar() {
           </ul>
           <LanguageSwitch />
           <Link
-            href="/#contact"
+            href={contactHref}
             className="border border-ink px-md py-xs text-[0.875rem] font-medium leading-7 text-ink transition-colors hover:bg-ink hover:text-paper"
           >
             {t.nav.contact}
@@ -159,7 +162,7 @@ export default function Navbar() {
           <div className="mt-lg flex items-center justify-between">
             <LanguageSwitch />
             <Link
-              href="/#contact"
+              href={contactHref}
               className="border border-ink px-md py-xs text-[0.875rem] font-medium leading-7 text-ink"
               onClick={() => setOpen(false)}
             >

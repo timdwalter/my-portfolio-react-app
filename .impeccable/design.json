@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-22T12:00:00Z",
+  "title": "Design System: TimTech Solutions – Tim D. Walter",
+  "extensions": {
+    "colorMeta": {
+      "paper": { "role": "neutral", "displayName": "Warm Paper", "canonical": "#F8F7F4", "tonalRamp": ["#2B2A27", "#4A4844", "#6E6B65", "#94918A", "#B9B5AD", "#D9D6CF", "#ECEAE5", "#F8F7F4"] },
+      "ink": { "role": "neutral", "displayName": "Press Ink", "canonical": "#111111", "tonalRamp": ["#111111", "#262626", "#3B3B3B", "#555555", "#777777", "#9A9A9A", "#C4C4C4", "#EDEDED"] },
+      "muted": { "role": "neutral", "displayName": "Graphite", "canonical": "#555555", "tonalRamp": ["#1C1C1C", "#2E2E2E", "#424242", "#555555", "#727272", "#969696", "#BDBDBD", "#E6E6E6"] },
+      "rule": { "role": "neutral", "displayName": "Hairline Stone", "canonical": "#D9D6CF", "tonalRamp": ["#2E2C28", "#4D4A44", "#706C64", "#958F85", "#B7B2A8", "#D9D6CF", "#E9E7E2", "#F6F5F2"] },
+      "accent": { "role": "primary", "displayName": "Logbook Teal", "canonical": "#0E6F86", "tonalRamp": ["#05262E", "#083D4A", "#0A5C70", "#0E6F86", "#3A8DA1", "#71AFBE", "#A9D0DA", "#DDEEF2"] },
+      "accent-dark": { "role": "primary", "displayName": "Deep Logbook Teal", "canonical": "#0A5C70", "tonalRamp": ["#041E25", "#07323D", "#0A5C70", "#2C7486", "#5C95A3", "#8FB8C2", "#BFD8DE", "#E7F1F3"] },
+      "logo": { "role": "tertiary", "displayName": "Logo Cyan (logo mark only)", "canonical": "#3DD8F5", "tonalRamp": ["#0A3D47", "#0E6F86", "#0E9FC0", "#3DD8F5", "#6FE2F7", "#A5F3FC", "#CFF8FD", "#ECFDFF"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "The single h1 per page (hero statement, PageIntro titles). 68px desktop, 52px from sm, 42px mobile." },
+      "headline": { "displayName": "Headline", "purpose": "Section headings in the margin column. 40px desktop, 32px mobile." },
+      "title": { "displayName": "Title", "purpose": "Row and block titles in ruled rows and text blocks; project titles 24px." },
+      "lead": { "displayName": "Lead", "purpose": "Intro paragraph under a page title and the About story. 20px desktop, 18px mobile, max 52ch." },
+      "body": { "displayName": "Body", "purpose": "Base running text." },
+      "body-sm": { "displayName": "Body small", "purpose": "Row bodies, summaries, actions, links, nav." },
+      "label": { "displayName": "Label (mono)", "purpose": "Real metadata only: roles, dates, categories, stack. Sentence case, no tracking." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "rise", "value": "rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; from opacity 0, translateY(10px)", "purpose": "The only load animation: staggered page opening (PageIntro / hero)." },
+      { "name": "stagger-step", "value": "80ms", "purpose": "Delay between children; the margin column continues the sequence at 240ms / 320ms." },
+      { "name": "state-transition", "value": "color/background 150ms (Tailwind transition-colors default)", "purpose": "Hover and active colour changes on links, actions and nav." },
+      { "name": "reduced-motion", "value": "@media (prefers-reduced-motion: reduce) { .stagger > * { animation: none } html { scroll-behavior: auto } }", "purpose": "Content simply appears; colour transitions on controls stay." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ],
+    "grid": {
+      "container": "max-width calc(1280px + 6rem); padding-inline 16px / 24px (md) / 48px (lg)",
+      "columns": "12, column gap 24px",
+      "meta": "1 / span 3 from 1024px",
+      "main": "5 / span 8 from 1024px (column 4 empty)",
+      "wide": "5 / -1 from 1024px",
+      "mobile": "single column below 1024px"
+    }
+  },
+  "components": [
+    {
+      "name": "Action (framed link)",
+      "kind": "button",
+      "refersTo": "action",
+      "description": "Rectangular 1px-ink framed link for the primary action of a block; fills ink on hover.",
+      "html": "<a class=\"ds-action\" href=\"#\">Connect on LinkedIn</a>",
+      "css": ".ds-action { display: inline-flex; align-items: center; border: 1px solid #111111; border-radius: 0; background: transparent; color: #111111; padding: 8px 24px; font-family: 'IBM Plex Sans', sans-serif; font-size: 0.9375rem; font-weight: 500; line-height: 1.75rem; text-decoration: none; transition: color 150ms, background-color 150ms; } .ds-action:hover { background: #111111; color: #F8F7F4; } .ds-action:focus-visible { outline: 2px solid #0E6F86; outline-offset: 2px; }"
+    },
+    {
+      "name": "Action on ink",
+      "kind": "button",
+      "refersTo": "action-on-ink",
+      "description": "Paper-filled primary action inside the dark contact block.",
+      "html": "<div class=\"ds-ink-ground\"><a class=\"ds-action-ink\" href=\"#\">Connect on LinkedIn</a></div>",
+      "css": ".ds-ink-ground { background: #111111; padding: 24px; } .ds-action-ink { display: inline-flex; align-items: center; border: 1px solid #F8F7F4; border-radius: 0; background: #F8F7F4; color: #111111; padding: 8px 24px; font-family: 'IBM Plex Sans', sans-serif; font-size: 0.9375rem; font-weight: 500; line-height: 1.75rem; text-decoration: none; transition: color 150ms, background-color 150ms; } .ds-action-ink:hover { background: transparent; color: #F8F7F4; } .ds-action-ink:focus-visible { outline: 2px solid #0E6F86; outline-offset: 2px; }"
+    },
+    {
+      "name": "Text link",
+      "kind": "custom",
+      "refersTo": "text-link",
+      "description": "Accent text link with a 40% accent underline; darkens on hover. No arrows.",
+      "html": "<a class=\"ds-link\" href=\"#\">All projects</a>",
+      "css": ".ds-link { color: #0E6F86; font-family: 'IBM Plex Sans', sans-serif; font-size: 0.9375rem; text-decoration: underline; text-decoration-color: rgba(14,111,134,0.4); text-decoration-thickness: 1px; text-underline-offset: 0.2em; transition: color 150ms, text-decoration-color 150ms; } .ds-link:hover { color: #0A5C70; text-decoration-color: #0A5C70; } .ds-link:focus-visible { outline: 2px solid #0E6F86; outline-offset: 2px; }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav-contact",
+      "description": "Fixed paper header: logo, graphite links with an accent underline on the active page, EN / DE switch, framed contact action.",
+      "html": "<nav class=\"ds-nav\"><span class=\"ds-nav-logo\">TIM<span>TECH</span></span><ul><li><a href=\"#\" aria-current=\"page\">Projects</a></li><li><a href=\"#\">About</a></li><li><a href=\"#\">Writing</a></li></ul><span class=\"ds-nav-lang\"><b>EN</b> / <a href=\"#\">DE</a></span><a class=\"ds-nav-contact\" href=\"#\">Contact</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 48px; height: 64px; padding: 0 24px; background: #F8F7F4; border-bottom: 1px solid #D9D6CF; font-family: 'IBM Plex Sans', sans-serif; } .ds-nav-logo { font-size: 15px; font-weight: 600; letter-spacing: 0.04em; color: #111111; margin-right: auto; } .ds-nav-logo span { color: #0E6F86; } .ds-nav ul { display: flex; gap: 24px; list-style: none; margin: 0; padding: 0; } .ds-nav ul a { font-size: 0.9375rem; color: #555555; text-decoration: none; text-underline-offset: 6px; transition: color 150ms; } .ds-nav ul a:hover { color: #111111; } .ds-nav ul a[aria-current] { color: #111111; text-decoration: underline; text-decoration-color: #0E6F86; text-decoration-thickness: 2px; } .ds-nav-lang { font-size: 0.875rem; color: #555555; } .ds-nav-lang b { font-weight: 500; color: #111111; } .ds-nav-lang a { color: #555555; text-decoration: none; } .ds-nav-contact { border: 1px solid #111111; padding: 4px 16px; font-size: 0.875rem; font-weight: 500; line-height: 1.75rem; color: #111111; text-decoration: none; transition: color 150ms, background-color 150ms; } .ds-nav-contact:hover { background: #111111; color: #F8F7F4; } .ds-nav a:focus-visible { outline: 2px solid #0E6F86; outline-offset: 2px; }"
+    },
+    {
+      "name": "Ruled rows",
+      "kind": "custom",
+      "refersTo": "ruled-row",
+      "description": "Signature list pattern: hairline rules between rows, Fraunces title and mono meta left, body right.",
+      "html": "<ul class=\"ds-rows\"><li><div><h3>Aviation</h3><p class=\"ds-meta\">CMS, Product Owner, 2 years</p></div><p>Product Owner for a content management system in aviation.</p></li><li><div><h3>Medical imaging</h3><p class=\"ds-meta\">MRI and CT</p></div><p>Prototypes and training software for MRI and CT systems.</p></li></ul>",
+      "css": ".ds-rows { list-style: none; margin: 0; padding: 0; border-top: 1px solid #D9D6CF; background: #F8F7F4; } .ds-rows li { display: grid; grid-template-columns: 3fr 5fr; column-gap: 24px; padding: 24px 0; border-bottom: 1px solid #D9D6CF; } .ds-rows h3 { margin: 0; font-family: 'Fraunces', serif; font-weight: 400; font-size: 1.375rem; line-height: 1.375; letter-spacing: -0.015em; color: #111111; } .ds-rows li > p { margin: 0; font-family: 'IBM Plex Sans', sans-serif; font-size: 0.9375rem; line-height: 1.625; color: #111111; } .ds-meta { margin: 4px 0 0; font-family: 'IBM Plex Mono', monospace; font-size: 0.8125rem; line-height: 1.5rem; color: #555555; }"
+    },
+    {
+      "name": "Article row",
+      "kind": "custom",
+      "refersTo": "ruled-row",
+      "description": "Whole-row link in the writing index: mono date and category left, Fraunces title turning accent on hover.",
+      "html": "<a class=\"ds-article\" href=\"#\"><div><time class=\"ds-article-date\">Oct 2026</time><p class=\"ds-article-cat\">AI, Leadership</p></div><div><h3>A Guide to Unhappiness with Artificial Intelligence</h3><p>A short summary of the article in one or two lines.</p></div></a>",
+      "css": ".ds-article { display: grid; grid-template-columns: 2fr 6fr; column-gap: 24px; padding: 24px 0; border-top: 1px solid #D9D6CF; border-bottom: 1px solid #D9D6CF; text-decoration: none; } .ds-article-date, .ds-article-cat { display: block; margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 0.8125rem; line-height: 1.5rem; } .ds-article-date { color: #111111; } .ds-article-cat { color: #555555; } .ds-article h3 { margin: 0; font-family: 'Fraunces', serif; font-weight: 400; font-size: 1.375rem; line-height: 1.375; color: #111111; transition: color 150ms; } .ds-article:hover h3 { color: #0E6F86; } .ds-article p { margin: 4px 0 0; max-width: 52ch; font-family: 'IBM Plex Sans', sans-serif; font-size: 0.9375rem; line-height: 1.625; color: #555555; } .ds-article:focus-visible { outline: 2px solid #0E6F86; outline-offset: 2px; }"
+    },
+    {
+      "name": "Contact block",
+      "kind": "card",
+      "refersTo": "contact-block",
+      "description": "The one dark block: ink ground, margin heading, Fraunces statement, paper-filled LinkedIn action and an email text link.",
+      "html": "<section class=\"ds-contact\"><h2>Contact</h2><div><p class=\"ds-contact-text\">The easiest way to reach me is LinkedIn.</p><div class=\"ds-contact-actions\"><a class=\"ds-contact-primary\" href=\"#\">Connect on LinkedIn</a><a class=\"ds-contact-mail\" href=\"#\">Write an email</a></div></div></section>",
+      "css": ".ds-contact { display: grid; grid-template-columns: 3fr 1fr 8fr; column-gap: 24px; background: #111111; color: #F8F7F4; padding: 96px 48px; border-radius: 0; } .ds-contact h2 { margin: 0; font-family: 'Fraunces', serif; font-weight: 400; font-size: 2.5rem; line-height: 1.25; letter-spacing: -0.015em; color: #F8F7F4; } .ds-contact > div { grid-column: 3; } .ds-contact-text { margin: 0; max-width: 34ch; font-family: 'Fraunces', serif; font-size: 2.25rem; line-height: 1.375; color: #F8F7F4; } .ds-contact-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; margin-top: 48px; font-family: 'IBM Plex Sans', sans-serif; } .ds-contact-primary { border: 1px solid #F8F7F4; background: #F8F7F4; color: #111111; padding: 8px 24px; font-size: 0.9375rem; font-weight: 500; line-height: 1.75rem; text-decoration: none; transition: color 150ms, background-color 150ms; } .ds-contact-primary:hover { background: transparent; color: #F8F7F4; } .ds-contact-mail { font-size: 0.9375rem; color: #F8F7F4; text-decoration: underline; text-decoration-color: rgba(248,247,244,0.4); text-underline-offset: 4px; transition: text-decoration-color 150ms; } .ds-contact-mail:hover { text-decoration-color: #F8F7F4; } .ds-contact a:focus-visible { outline: 2px solid #0E6F86; outline-offset: 2px; }"
+    },
+    {
+      "name": "Fact list",
+      "kind": "custom",
+      "refersTo": "ruled-row",
+      "description": "Margin-column facts under the portrait: mono labels over sans values, ruled, with the square accent status marker.",
+      "html": "<dl class=\"ds-facts\"><div><dt>Role</dt><dd>Technical Project Lead</dd></div><div><dt>Experience</dt><dd>9+ years</dd></div><div><dt>Status</dt><dd><span class=\"ds-dot\" aria-hidden=\"true\"></span>Open to selected projects</dd></div></dl>",
+      "css": ".ds-facts { margin: 0; border-top: 1px solid #D9D6CF; max-width: 18rem; } .ds-facts > div { padding: 8px 0; border-bottom: 1px solid #D9D6CF; } .ds-facts > div:last-child { border-bottom: 0; } .ds-facts dt { font-family: 'IBM Plex Mono', monospace; font-size: 0.8125rem; line-height: 1.5rem; color: #555555; } .ds-facts dd { margin: 0; display: flex; align-items: baseline; gap: 8px; font-family: 'IBM Plex Sans', sans-serif; font-size: 0.9375rem; line-height: 1.375; color: #111111; } .ds-dot { display: inline-block; width: 8px; height: 8px; flex-shrink: 0; background: #0E6F86; border-radius: 0; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Technical Journal Page",
+    "overview": "Every page reads like a page from a technical journal or a well-kept documentation site: a narrow margin column on the left carries headings, facts and metadata; a wide main column on the right carries the text. Nothing floats, nothing is boxed. Order comes from a 12-column grid, 1px hairline rules between rows and a strong size jump between a serif display face and a quiet sans body. The page is warm off-white paper with near-black ink; colour is almost absent, so the one accent carries meaning wherever it appears.\n\nThe system is a deliberate replacement for an earlier card-based look. It refuses the SaaS landing page: no centred hero, no badges or pills over the headline, no card grids, no gradients, glows or shadows, no decorative icons. Variation between sections comes from the form of the content (two-column text blocks, ruled rows, an index of dates and titles), never from decoration.\n\nDensity is generous: sections breathe on a 48/96px rhythm, body text stays under ~52ch, and the desktop grid deliberately leaves one column empty as air between margin and content.",
+    "keyCharacteristics": [
+      "Asymmetric 12-column grid: margin column 1–3, column 4 empty, main column 5–12.",
+      "1px hairline rules instead of boxes; lists of things are ruled rows.",
+      "Fraunces display at regular weight against IBM Plex Sans body; IBM Plex Mono only for real metadata.",
+      "Paper, ink, grey and exactly one accent (darkened logo cyan).",
+      "Square corners, no shadows, one staggered load animation.",
+      "One dark block per page: the closing contact section."
+    ],
+    "rules": [
+      { "name": "The Closed Palette Rule", "body": "Tailwind's colour palette is replaced, not extended: paper, ink, muted, rule, accent, accent-dark and logo are the only colours that exist. Opacity variants of these (paper at 70%, accent at 40% for link underlines) are the only derivations.", "section": "colors" },
+      { "name": "The One Accent Rule", "body": "The accent marks something actionable or current – a link, the active page, a status – and appears at most once as a highlight per section. It is never a background panel, never decoration.", "section": "colors" },
+      { "name": "The 3x Jump Rule", "body": "The page headline is at least three times body size on desktop (68px over 20px lead). Recorded exception: on mobile it is 42px over 18px, because German compounds would overflow at a larger size.", "section": "typography" },
+      { "name": "The Honest Mono Rule", "body": "Mono is reserved for real metadata – years, roles, categories, stack – always in sentence case without letter-spacing. Never tracked uppercase labels, never a kicker above a heading; classification lives in the margin column.", "section": "typography" },
+      { "name": "The Regular Weight Rule", "body": "Headings are Fraunces at weight 400 with slight negative tracking and balanced wrapping; emphasis comes from size, not boldness. Medium (500) is used only for action labels, the name and the current language code.", "section": "typography" },
+      { "name": "The Empty Column Rule", "body": "Column 4 is never filled on desktop. It is the air that keeps the headline from touching the portrait and gives the page its asymmetry.", "section": "layout" },
+      { "name": "The Token Spacing Rule", "body": "Spacing uses only the named scale (4 / 8 / 16 / 24 / 48 / 96px as xs–2xl). Numeric Tailwind steps are legacy and do not belong in redesigned work.", "section": "layout" },
+      { "name": "The Ruled-Not-Raised Rule", "body": "Separation is a 1px line, never a shadow or a box. A heavier 1px ink rule (instead of stone) marks a set of equal-weight principles; that is the only rule-weight variation.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do build new sections from the existing blocks: DocSection, PageIntro, RuledRows, ProjectRows, ArticleRows, MainColumn, TextLink and the contact block.",
+      "Do keep headings and classification in the margin column (1–3) and content in the main column (5–12), leaving column 4 empty on desktop.",
+      "Do separate items with 1px stone rules and keep lists as ruled rows.",
+      "Do use only paper, ink, muted, rule, accent, accent-dark and logo, and only the 4 / 8 / 16 / 24 / 48 / 96px spacing names.",
+      "Do keep the h1 at least 3× body size on desktop; the mobile 42/18px ratio is the one recorded exception.",
+      "Do cap running text at 52ch and bind spaced dashes to the preceding word so no line starts with a dash.",
+      "Do keep WCAG AA contrast, the visible 2px accent focus outline, unbroken heading levels and no functional text below 11px.",
+      "Do keep the existing generated project images (SH-Beach, LH-Leap, Digital Aristoteles, Darth Vader, Not Found) – the owner's explicit exception – shown whole in square frames."
+    ],
+    "donts": [
+      "Don't use gradients (especially purple/blue/indigo), gradient text, aurora or glow backgrounds.",
+      "Don't use drop shadows, glassmorphism or blur.",
+      "Don't build identical three-column card grids, bento grids, icon-plus-heading tiles, or skill badges with logos.",
+      "Don't use rounded pill buttons or pill badges above the headline (\"New\", \"Available for work\").",
+      "Don't set kickers or eyebrows above headings, tracked uppercase labels, numbering on non-sequences, or arrows on links.",
+      "Don't use Inter, Roboto, Open Sans, Space Grotesk or a system font stack, and don't load fonts from a CDN.",
+      "Don't attach decorative icons to headings; icons are for function only (the mobile menu toggle).",
+      "Don't scatter micro-animations, scroll reveals or hover scale; the staggered page opening is the only load animation.",
+      "Don't use the light logo cyan for text or highlights on paper.",
+      "Don't add new generated or stock images, invented figures, placeholder quotes or testimonials.",
+      "Don't centre standard blocks in a Hero → Features → Testimonials → CTA sequence."
+    ]
+  }
+}

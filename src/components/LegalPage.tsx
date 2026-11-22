@@ -9,9 +9,16 @@ export default function LegalPage({ title, children }: { title: string; children
   return (
     <>
       <Seo title={title} description={title} />
-      <PageIntro title={title}>
-        {locale === "en" && <p className="text-base text-muted">This page is provided in German, as required by German law.</p>}
-      </PageIntro>
+      <PageIntro
+        title={title}
+        aside={
+          locale === "en" && (
+            <p className="text-[0.9375rem] leading-relaxed text-muted">
+              This page is provided in German, as required by German law.
+            </p>
+          )
+        }
+      />
       <MainColumn>
         <div className="prose-legal max-w-[52ch] border-t border-rule pb-2xl">{children}</div>
       </MainColumn>

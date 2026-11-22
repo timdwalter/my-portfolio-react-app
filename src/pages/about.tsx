@@ -94,11 +94,7 @@ export default function AboutPage() {
         <RuledRows rows={t.about.certs.map((c) => ({ key: c, title: c }))} />
       </DocSection>
 
-      <DocSection
-        id="profiles"
-        title={t.about.connectTitle}
-        intro={site.showGithub ? t.github.note : undefined}
-      >
+      <DocSection id="profiles" title={t.about.connectTitle}>
         <ul className="flex flex-wrap gap-x-xl gap-y-md border-t border-rule pt-lg">
           {profiles.map((p) => (
             <li key={p.label}>

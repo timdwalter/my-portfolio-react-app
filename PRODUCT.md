@@ -37,7 +37,7 @@ Refined by Tim:
 
 - Bilingual: English (default) and German (`/de`).
 - Visitors often come from LinkedIn and Medium; the site links back to both.
-- Hosted on Vercel; Next.js 13 Pages Router, Tailwind, TypeScript. Content lives in `src/content/`.
+- Hosted on Vercel; Next.js 16 Pages Router, React 18, Tailwind, TypeScript, Node 26. Content lives in `src/content/`.
 
 ## Capabilities and Constraints
 
