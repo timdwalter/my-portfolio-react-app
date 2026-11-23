@@ -70,6 +70,17 @@ export default function AboutPage() {
         />
       </DocSection>
 
+      <DocSection id="education" title={t.about.educationTitle}>
+        <RuledRows
+          rows={t.about.education.map((e) => ({
+            key: e.degree,
+            title: e.degree,
+            meta: e.school || undefined,
+            body: <p>{e.focus}</p>,
+          }))}
+        />
+      </DocSection>
+
       <DocSection id="skills" title={t.about.skillsEyebrow} intro={t.about.skillsTitle}>
         <RuledRows
           rows={skillGroups.map((g) => ({

@@ -203,7 +203,22 @@ export const en = {
       "Professional Scrum Master (PSM)",
       "SAFe Product Owner / Product Manager (POPM)",
       "Certified Kubernetes Application Developer (CKAD)",
+      "iSAQB Certified Professional for Software Architecture – Foundation Level (CPSA-F)",
+      "Microsoft Certified: Azure Fundamentals (AZ-900)",
       "EU drone pilot certificate (A1/A3)",
+    ],
+    educationTitle: "Education",
+    education: [
+      {
+        degree: "Master's (M.Eng.) in Electrical and Mechatronic Systems",
+        school: "Nuremberg University of Applied Sciences",
+        focus: "Mechatronics, web and native app development, control engineering and automation",
+      },
+      {
+        degree: "Bachelor's (B.Eng.) in Medical Engineering",
+        school: "Nuremberg University of Applied Sciences",
+        focus: "Mechatronics and precision engineering",
+      },
     ],
     connectTitle: "Find me online",
   },

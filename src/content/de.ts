@@ -205,7 +205,22 @@ export const de: Dictionary = {
       "Professional Scrum Master (PSM)",
       "SAFe Product Owner / Product Manager (POPM)",
       "Certified Kubernetes Application Developer (CKAD)",
+      "iSAQB Certified Professional for Software Architecture – Foundation Level (CPSA-F)",
+      "Microsoft Certified: Azure Fundamentals (AZ-900)",
       "EU-Kompetenznachweis Drohne (A1/A3)",
+    ],
+    educationTitle: "Studium",
+    education: [
+      {
+        degree: "Master (M.Eng.) Elektrische und Mechatronische Systeme",
+        school: "Technische Hochschule Nürnberg",
+        focus: "Mechatronik, Web- und native App-Entwicklung, Regelungstechnik und Automatisierung",
+      },
+      {
+        degree: "Bachelor (B.Eng.) Medizintechnik",
+        school: "Technische Hochschule Nürnberg",
+        focus: "Mechatronik und Feinwerktechnik",
+      },
     ],
     connectTitle: "Online finden",
   },

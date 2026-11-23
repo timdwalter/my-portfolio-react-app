@@ -291,6 +291,10 @@ export const techStack: StackGroup[] = [
     items: ["Arduino IDE", "MicroPython", "MATLAB / Simulink", "LabVIEW", "OPC UA", "MQTT", "M2M Protocols"],
   },
   {
+    title: { en: "3D Printing", de: "3D-Druck" },
+    items: ["Selective Laser Melting (SLM)", "FDM"],
+  },
+  {
     title: { en: "Tools & IDEs", de: "Tools & IDEs" },
     items: ["IntelliJ IDEA (Ultimate & Community)", "Android Studio", "Eclipse", "Visual Studio CE", "Xcode", "ATOM", "StarUML"],
   },
