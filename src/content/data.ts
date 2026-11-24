@@ -411,4 +411,9 @@ export const career: Station[] = [
 ];
 
 /** Medium articles Tim is planning (shown on /now). Add titles as they are decided; currently mostly AI topics. */
-export const plannedArticles: L[] = [];
+export const plannedArticles: L[] = [
+  {
+    en: "European Cloud Alternatives (3/3) — The Same Stack on Three Providers",
+    de: "European Cloud Alternatives (3/3) — The Same Stack on Three Providers",
+  },
+];
