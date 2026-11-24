@@ -112,6 +112,28 @@ export type Article = {
 /** Newest first. Source: https://medium.com/@timwalter23 */
 export const articles: Article[] = [
   {
+    title: "European Cloud Alternatives (2/3) — How to Build Your Stack in Europe",
+    date: "2026-11-24",
+    category: { en: "Cloud, Data Sovereignty", de: "Cloud, Datensouveränität" },
+    url: "https://medium.com/@timwalter23/european-cloud-alternatives-2-3-how-to-build-your-stack-in-europe-19211020d169",
+    image: { src: "/articles/eu-cloud-2.webp", width: 1024, height: 576 },
+    summary: {
+      en: "How to build a typical Kubernetes-based cloud stack on European providers, which ones to combine, and what it costs.",
+      de: "Wie ich einen typischen Kubernetes-Stack bei europäischen Anbietern aufbaue, welche ich kombiniere und was das kostet.",
+    },
+  },
+  {
+    title: "European Cloud Alternatives (1/3) — Why We Still Choose AWS and Azure",
+    date: "2026-11-23",
+    category: { en: "Cloud, Data Sovereignty", de: "Cloud, Datensouveränität" },
+    url: "https://medium.com/@timwalter23/european-cloud-alternatives-why-we-still-choose-aws-and-azure-1-3-5e9c5721dddc",
+    image: { src: "/articles/eu-cloud-1.webp", width: 1024, height: 576 },
+    summary: {
+      en: "Why enterprises default to AWS and Azure, how small Europe's providers still are, and why relying only on US providers has become a risk.",
+      de: "Warum Unternehmen fast automatisch AWS und Azure wählen, wie klein Europas Anbieter noch sind und warum die alleinige Abhängigkeit von US-Anbietern zum Risiko geworden ist.",
+    },
+  },
+  {
     title: "A Guide to Unhappiness with Artificial Intelligence",
     date: "2026-10-18",
     category: { en: "AI, Satire", de: "KI, Satire" },
